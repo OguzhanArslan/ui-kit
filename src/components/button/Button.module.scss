@@ -1,0 +1,46 @@
+@use "../../styles/colors.scss";
+
+.button {
+    appearance: none;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 14px;
+    transition: all 0.2s ease-in-out;
+
+    &.primary {
+        border-color: var(--color-primary-500);
+        background-color: var(--color-primary-500);
+        color: var(--color-white);
+
+        &:hover {
+            border-color: var(--color-primary-600);
+            background-color: var(--color-primary-600);
+        }
+    }
+
+    &.secondary {
+        border-color: var(--color-primary-100);
+        background-color: var(--color-primary-100);
+        color: var(--color-primary-500);
+
+        &:hover {
+            border-color: var(--color-primary-200);
+            background-color: var(--color-primary-200);
+        }
+    }
+
+    &.tertiary {
+        border-color: var(--color-primary-500);
+        background-color: var(--color-white);
+        color: var(--color-primary-500);
+
+        &:hover {
+            border-color: var(--color-primary-600);
+            background-color: var(--color-primary-100);
+        }
+    }
+}
