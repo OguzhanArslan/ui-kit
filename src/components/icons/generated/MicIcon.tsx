@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const MicIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M8 6a4 4 0 1 1 8 0v6a4 4 0 0 1-8 0zm6 0v6a2 2 0 1 1-4 0V6a2 2 0 1 1 4 0" clipRule="evenodd" /><path fill="#17163A" d="M7.5 11.5a1 1 0 1 0-2 0v.5a6.5 6.5 0 0 0 5.5 6.424V20H9a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-1.576A6.5 6.5 0 0 0 18.5 12v-.5a1 1 0 1 0-2 0v.5a4.5 4.5 0 1 1-9 0z" /></svg>;
+export default MicIcon;

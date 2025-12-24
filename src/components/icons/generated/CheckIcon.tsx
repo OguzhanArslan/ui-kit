@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const CheckIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M19.136 5.729a1 1 0 0 1 .135 1.407l-8.578 10.4a.5.5 0 0 1-.717.056L5.338 13.5A1 1 0 1 1 6.662 12l3.475 3.066 7.592-9.202a1 1 0 0 1 1.407-.135" clipRule="evenodd" /></svg>;
+export default CheckIcon;

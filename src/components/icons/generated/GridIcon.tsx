@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const GridIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3zm15-1h-2.25v3.25H19V6a1 1 0 0 0-1-1m-4.25 0v3.25h-3.5V5zm0 5.25h-3.5v3.5h3.5zm0 5.5h-3.5V19h3.5zm-5.5-2v-3.5H5v3.5zm-3.25 2h3.25V19H6a1 1 0 0 1-1-1zm14 0V18a1 1 0 0 1-1 1h-2.25v-3.25zm0-2h-3.25v-3.5H19zM8.25 5v3.25H5V6a1 1 0 0 1 1-1z" clipRule="evenodd" /></svg>;
+export default GridIcon;
