@@ -21,3 +21,17 @@ export const Primary: Story = {
         label: "Button",
     },
 };
+
+export const Secondary: Story = {
+    args: {
+        type: "secondary",
+        label: "Button",
+    },
+};
+
+export const Tertiary: Story = {
+    args: {
+        type: "tertiary",
+        label: "Button",
+    },
+};

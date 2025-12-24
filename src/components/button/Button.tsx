@@ -1,4 +1,7 @@
-export type ButtonTypes = "primary" | "secondary";
+import classNames from 'classnames';
+import styles from './Button.module.scss';
+
+export type ButtonTypes = "primary" | "secondary" | "tertiary";
 
 export interface IButtonProps {
     label: string;
@@ -10,6 +13,6 @@ export const Button = (props: IButtonProps) => {
     const { label, type = "primary", onClick } = props;
 
     return (
-        <button className={type} onClick={onClick}>{label}</button>
+        <button className={classNames(styles.button, styles[type])} onClick={onClick}>{label}</button>
     )
 }
