@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const BasketMinusIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" d="M9.5 12.5a1 1 0 1 0 0 2h5a1 1 0 1 0 0-2z" /><path fill="#17163A" fillRule="evenodd" d="M11.114 5.29a1 1 0 1 0-1.228-1.58L5.656 7H3a1 1 0 0 0 0 2h.16q0 .076.006.153l.62 8.077A3 3 0 0 0 6.779 20h10.444a3 3 0 0 0 2.991-2.77l.621-8.077q.006-.077.006-.153H21a1 1 0 1 0 0-2h-2.657l-4.23-3.29a1 1 0 1 0-1.227 1.58l2.2 1.71H8.915zM5.16 9l.621 8.077a1 1 0 0 0 .997.923h10.444a1 1 0 0 0 .997-.923L18.84 9z" clipRule="evenodd" /></svg>;
+export default BasketMinusIcon;

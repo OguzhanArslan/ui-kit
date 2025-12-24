@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const CalendarMinusIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" d="M9.5 13.5a1 1 0 1 0 0 2h5a1 1 0 1 0 0-2z" /><path fill="#17163A" fillRule="evenodd" d="M8 2a1 1 0 0 1 1 1h6a1 1 0 1 1 2 0h1a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3h1a1 1 0 0 1 1-1m11 4v1H5V6a1 1 0 0 1 1-1h1a1 1 0 0 0 2 0h6a1 1 0 1 0 2 0h1a1 1 0 0 1 1 1M5 19V9h14v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1" clipRule="evenodd" /></svg>;
+export default CalendarMinusIcon;

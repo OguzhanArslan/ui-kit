@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const FolderMinusIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" d="M9.5 12.5a1 1 0 1 0 0 2h5a1 1 0 1 0 0-2z" /><path fill="#17163A" fillRule="evenodd" d="M10.879 4.879 12 6h7a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h3.757a3 3 0 0 1 2.122.879M9.464 6.293 11.172 8H19a1 1 0 0 1 1 1v8.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3.757a1 1 0 0 1 .707.293" clipRule="evenodd" /></svg>;
+export default FolderMinusIcon;

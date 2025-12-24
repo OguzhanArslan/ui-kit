@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const TabletIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" d="M10.5 17a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z" /><path fill="#17163A" fillRule="evenodd" d="M3.5 5a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3h-11a3 3 0 0 1-3-3zm3-1h11a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1" clipRule="evenodd" /></svg>;
+export default TabletIcon;

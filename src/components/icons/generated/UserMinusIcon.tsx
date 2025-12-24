@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const UserMinusIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M12 11a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9m0-2a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" clipRule="evenodd" /><path fill="#17163A" d="M14.077 14a4.925 4.925 0 0 1 4.606 3.182c.175.461.588.818 1.082.818.622 0 1.106-.552.92-1.145A6.93 6.93 0 0 0 14.078 12H9.923A6.923 6.923 0 0 0 3 18.923C3 20.07 3.93 21 5.077 21H13a1 1 0 1 0 0-2H5.077A.077.077 0 0 1 5 18.923 4.923 4.923 0 0 1 9.923 14z" /><path fill="#17163A" d="M16 19a1 1 0 1 0 0 2h5a1 1 0 1 0 0-2z" /></svg>;
+export default UserMinusIcon;

@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const FileIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M4 5a3 3 0 0 1 3-3h7.757a3 3 0 0 1 2.122.879L19.12 5.12A3 3 0 0 1 20 7.243V19a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3zm10-1H7a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8h-2.9A1.1 1.1 0 0 1 14 6.9zm3.172 2L16 4.828V6z" clipRule="evenodd" /></svg>;
+export default FileIcon;

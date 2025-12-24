@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const FolderOpenIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M5 20.5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h3.672a3 3 0 0 1 2.12.879L11.915 6H18a3 3 0 0 1 3 3v2.196a2 2 0 0 1 1.008 2.495l-2.026 5.5a2 2 0 0 1-1.877 1.309zM4 7a1 1 0 0 1 1-1h3.672a1 1 0 0 1 .707.293L11.086 8H18a1 1 0 0 1 1 1v2H7.328a2 2 0 0 0-1.843 1.224L4 15.75zm1.012 11.5h13.093l2.027-5.5H7.328z" clipRule="evenodd" /></svg>;
+export default FolderOpenIcon;

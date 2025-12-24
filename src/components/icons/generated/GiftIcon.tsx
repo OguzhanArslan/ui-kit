@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const GiftIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M14.293 2.293a1 1 0 1 1 1.414 1.414L14.414 5H20a2 2 0 0 1 2 2v2a2 2 0 0 1-1.501 1.937L20.5 11v9a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-9l.001-.063A2 2 0 0 1 2 9V7a2 2 0 0 1 2-2h5.586L8.293 3.707a1 1 0 0 1 1.414-1.414L12 4.586zM11 7H4v2h7zm0 4H5.5v9H11zm2 9v-9h5.5v9zm0-11V7h7v2z" clipRule="evenodd" /></svg>;
+export default GiftIcon;

@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const PenIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M20.766 8.184a3 3 0 0 0 0-4.242l-.707-.708a3 3 0 0 0-4.243 0L4.429 14.621a3 3 0 0 0-.816 1.512l-.804 3.876a1 1 0 0 0 1.182 1.182l3.876-.804a3 3 0 0 0 1.512-.816zM19.35 5.356l-.707-.707a1 1 0 0 0-1.414 0l-1.06 1.06 2.12 2.122 1.061-1.061a1 1 0 0 0 0-1.414m-2.474 3.889-2.122-2.121-8.912 8.911a1 1 0 0 0-.272.504l-.494 2.384 2.384-.494a1 1 0 0 0 .504-.272z" clipRule="evenodd" /></svg>;
+export default PenIcon;

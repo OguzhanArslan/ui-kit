@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const CornerUpRightIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" d="M13.293 5.707a1 1 0 0 1 1.414-1.414l5.354 5.353a.5.5 0 0 1 0 .708l-5.354 5.353a1 1 0 0 1-1.414-1.414L16.586 11H8a2 2 0 0 0-2 2v6a1 1 0 1 1-2 0v-6a4 4 0 0 1 4-4h8.586z" /></svg>;
+export default CornerUpRightIcon;

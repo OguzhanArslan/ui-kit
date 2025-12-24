@@ -1,0 +1,3 @@
+import type { SVGProps } from "react";
+const BookmarkPlusIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" d="M12 6.5a1 1 0 0 1 1 1V9h1.5a1 1 0 1 1 0 2H13v1.5a1 1 0 1 1-2 0V11H9.5a1 1 0 1 1 0-2H11V7.5a1 1 0 0 1 1-1" /><path fill="#17163A" fillRule="evenodd" d="M8 2a3 3 0 0 0-3 3v15.414c0 1.252 1.443 1.953 2.427 1.18l4.419-3.473a.25.25 0 0 1 .309 0l4.418 3.472c.985.774 2.427.073 2.427-1.18V5a3 3 0 0 0-3-3zm8 2H8a1 1 0 0 0-1 1v14.385l3.61-2.836a2.25 2.25 0 0 1 2.78 0L17 19.385V5a1 1 0 0 0-1-1" clipRule="evenodd" /></svg>;
+export default BookmarkPlusIcon;
