@@ -1,3 +1,3 @@
 import type { SVGProps } from "react";
-const EnvelopeIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M2 7a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3zm16.333-1H5.667l5.733 4.3a1 1 0 0 0 1.2 0zM4 7.25V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V7.25l-6.2 4.65a3 3 0 0 1-3.6 0z" clipRule="evenodd" /></svg>;
+const EnvelopeIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="M2 7a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3zm16.333-1H5.667l5.733 4.3a1 1 0 0 0 1.2 0zM4 7.25V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V7.25l-6.2 4.65a3 3 0 0 1-3.6 0z" clipRule="evenodd" /></svg>;
 export default EnvelopeIcon;

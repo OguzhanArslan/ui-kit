@@ -1,3 +1,3 @@
 import type { SVGProps } from "react";
-const SearchIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M14.785 16.199A8.002 8.002 0 0 1 4.222 4.222a8 8 0 0 1 11.977 10.563l4.286 4.286a1 1 0 0 1-1.414 1.414zM5.636 14.12a6 6 0 1 0 8.485-8.485 6 6 0 0 0-8.485 8.485" clipRule="evenodd" /></svg>;
+const SearchIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="M14.785 16.199A8.002 8.002 0 0 1 4.222 4.222a8 8 0 0 1 11.977 10.563l4.286 4.286a1 1 0 0 1-1.414 1.414zM5.636 14.12a6 6 0 1 0 8.485-8.485 6 6 0 0 0-8.485 8.485" clipRule="evenodd" /></svg>;
 export default SearchIcon;

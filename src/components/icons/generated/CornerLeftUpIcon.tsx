@@ -1,3 +1,3 @@
 import type { SVGProps } from "react";
-const CornerLeftUpIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" d="M5.707 10.707a1 1 0 0 1-1.414-1.414l4.995-4.996.01-.009.348-.349a.5.5 0 0 1 .708 0l.349.35.009.008 4.995 4.996a1 1 0 0 1-1.414 1.414L11 7.414V16a2 2 0 0 0 2 2h6a1 1 0 1 1 0 2h-6a4 4 0 0 1-4-4V7.414z" /></svg>;
+const CornerLeftUpIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M5.707 10.707a1 1 0 0 1-1.414-1.414l4.995-4.996.01-.009.348-.349a.5.5 0 0 1 .708 0l.349.35.009.008 4.995 4.996a1 1 0 0 1-1.414 1.414L11 7.414V16a2 2 0 0 0 2 2h6a1 1 0 1 1 0 2h-6a4 4 0 0 1-4-4V7.414z" /></svg>;
 export default CornerLeftUpIcon;

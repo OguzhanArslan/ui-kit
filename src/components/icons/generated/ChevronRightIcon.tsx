@@ -1,3 +1,3 @@
 import type { SVGProps } from "react";
-const ChevronRightIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M8.793 5.293a1 1 0 0 0 0 1.414L14.086 12l-5.293 5.293a1 1 0 1 0 1.414 1.414l6.354-6.353a.5.5 0 0 0 0-.708l-6.354-6.353a1 1 0 0 0-1.414 0" clipRule="evenodd" /></svg>;
+const ChevronRightIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="M8.793 5.293a1 1 0 0 0 0 1.414L14.086 12l-5.293 5.293a1 1 0 1 0 1.414 1.414l6.354-6.353a.5.5 0 0 0 0-.708l-6.354-6.353a1 1 0 0 0-1.414 0" clipRule="evenodd" /></svg>;
 export default ChevronRightIcon;
