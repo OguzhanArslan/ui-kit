@@ -1,3 +1,3 @@
 import type { SVGProps } from "react";
-const SendIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="M5.719 3.181c-1.64-.776-3.384.857-2.716 2.544L5.487 12l-2.484 6.275c-.668 1.687 1.076 3.32 2.716 2.544l14.801-7.011c1.525-.723 1.525-2.893 0-3.615zM17.553 11 4.863 4.989 7.243 11zm-10.31 2-2.38 6.011L17.553 13z" clipRule="evenodd" /></svg>;
+const SendIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="M5.719 3.181c-1.64-.776-3.384.857-2.716 2.544L5.487 12l-2.484 6.275c-.668 1.687 1.076 3.32 2.716 2.544l14.801-7.011c1.525-.723 1.525-2.893 0-3.615zM17.553 11 4.863 4.989 7.243 11zm-10.31 2-2.38 6.011L17.553 13z" clipRule="evenodd" /></svg>;
 export default SendIcon;

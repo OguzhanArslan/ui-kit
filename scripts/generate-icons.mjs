@@ -40,11 +40,12 @@ async function main() {
         const componentName = `${pascalCase(slug)}Icon`;
         const outPath = path.join(OUT_DIR, `${componentName}.tsx`);
 
-        // (İsteğe bağlı) tek renk ikonlarda siyahları currentColor'a çevir
-        const normalized = raw
-            .replace(/stroke="(#000000|#000|black)"/gi, 'stroke="currentColor"')
-            .replace(/fill="(#000000|#000|black)"/gi, 'fill="currentColor"');
+        const normalizeToCurrentColor = (svg) =>
+            svg
+                .replace(/\sfill="(?!none\b)(?!url\()[^"]*"/gi, ' fill="currentColor"')
+                .replace(/\sstroke="(?!none\b)(?!url\()[^"]*"/gi, ' stroke="currentColor"');
 
+        const normalized = normalizeToCurrentColor(raw);
         const code = await transform(
             normalized,
             {

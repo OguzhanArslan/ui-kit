@@ -1,3 +1,3 @@
 import type { SVGProps } from "react";
-const CornerRightDownIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" d="m13.298 19.712-.01-.01-4.995-4.995a1 1 0 1 1 1.414-1.414L13 16.586V8a2 2 0 0 0-2-2H5a1 1 0 1 1 0-2h6a4 4 0 0 1 4 4v8.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4.995 4.996-.01.009-.348.349a.5.5 0 0 1-.708 0z" /></svg>;
+const CornerRightDownIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="m13.298 19.712-.01-.01-4.995-4.995a1 1 0 1 1 1.414-1.414L13 16.586V8a2 2 0 0 0-2-2H5a1 1 0 1 1 0-2h6a4 4 0 0 1 4 4v8.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4.995 4.996-.01.009-.348.349a.5.5 0 0 1-.708 0z" /></svg>;
 export default CornerRightDownIcon;

@@ -1,3 +1,3 @@
 import type { SVGProps } from "react";
-const LoveIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="#17163A" fillRule="evenodd" d="m11.978 7.586-1.414-1.414a4 4 0 0 0-5.657 5.656l7.07 7.072 7.055-7.054.017-.018a4 4 0 1 0-5.657-5.656zm-8.485 5.657a6 6 0 0 1 8.485-8.486 6 6 0 0 1 8.485 8.486l-.026.026-7.398 7.398a1.5 1.5 0 0 1-2.122 0z" clipRule="evenodd" /></svg>;
+const LoveIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="m11.978 7.586-1.414-1.414a4 4 0 0 0-5.657 5.656l7.07 7.072 7.055-7.054.017-.018a4 4 0 1 0-5.657-5.656zm-8.485 5.657a6 6 0 0 1 8.485-8.486 6 6 0 0 1 8.485 8.486l-.026.026-7.398 7.398a1.5 1.5 0 0 1-2.122 0z" clipRule="evenodd" /></svg>;
 export default LoveIcon;
