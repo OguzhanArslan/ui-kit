@@ -1767,6 +1767,11 @@ eslint-plugin-react-refresh@^0.4.24:
   resolved "https://registry.npmjs.org/eslint-plugin-react-refresh/-/eslint-plugin-react-refresh-0.4.26.tgz"
   integrity sha512-1RETEylht2O6FM/MvgnyvT+8K21wLqDNg4qD51Zj3guhjt433XbnnkVttHMyaVyAFD03QSV4LPS5iE3VQmO7XQ==
 
+eslint-plugin-simple-import-sort@^12.1.1:
+  version "12.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-12.1.1.tgz#e64bfdaf91c5b98a298619aa634a9f7aa43b709e"
+  integrity sha512-6nuzu4xwQtE3332Uz0to+TxDQYRLTKRESSc2hefVT48Zc8JthmN23Gx9lnYhu0FtkRSL1oxny3kJ2aveVhmOVA==
+
 eslint-plugin-storybook@^10.1.10:
   version "10.1.10"
   resolved "https://registry.npmjs.org/eslint-plugin-storybook/-/eslint-plugin-storybook-10.1.10.tgz"

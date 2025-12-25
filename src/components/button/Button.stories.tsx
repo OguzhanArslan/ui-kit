@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button } from "./Button";
 import { fn } from "storybook/test";
-import { ArrowUpIcon } from "../icons";
-import { SIZE } from "../../foundation/sizes";
-import { TYPE } from "../../foundation/types";
+
+import { ArrowUpIcon } from "@/components/icons";
+import { SIZE } from "@/foundation/sizes";
+import { TYPE } from "@/foundation/types";
+
+import { Button } from "./Button";
 
 const meta = {
     title: 'Components/Button',

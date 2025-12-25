@@ -1,8 +1,10 @@
 import classNames from 'classnames';
+
+import { Loader } from '@/components/loader/Loader';
+import { SIZE, type SIZES } from '@/foundation/sizes';
+import { TYPE, type TYPES } from '@/foundation/types';
+
 import styles from './Button.module.scss';
-import { Loader } from '../loader/Loader';
-import { SIZE, type SIZES } from '../../foundation/sizes';
-import { TYPE, type TYPES } from '../../foundation/types';
 
 export interface IButtonProps {
     label?: string;
