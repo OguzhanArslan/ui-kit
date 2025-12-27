@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
+import { SIZE } from "@/foundation/sizes";
+
 import { Loader } from "./Loader";
-import { SIZE } from "../../foundation/sizes";
 
 const meta = {
     title: 'Components/Loader',
