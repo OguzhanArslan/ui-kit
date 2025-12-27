@@ -37,7 +37,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "generate:icons": "node scripts/generate-icons.mjs"
+    "generate:icons": "node scripts/generate-icons.mjs",
+    "chromatic": "npx chromatic --project-token=chpt_c39d1b5b0f455b9"
   },
   "dependencies": {
     "@fontsource/dm-sans": "^5.2.8"
@@ -60,6 +61,7 @@
     "@vitest/browser-playwright": "^4.0.16",
     "@vitest/coverage-v8": "^4.0.16",
     "classnames": "^2.5.1",
+    "chromatic": "^13.3.4",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",

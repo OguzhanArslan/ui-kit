@@ -56,6 +56,7 @@ export const Tertiary: Story = {
 
 export const Loading: Story = {
     args: {
+        type: TYPE.tertiary,
         label: "Button",
         disabled: false,
         isLoading: true,
