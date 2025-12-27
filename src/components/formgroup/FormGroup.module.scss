@@ -1,0 +1,7 @@
+@use "../../styles/colors.scss";
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
