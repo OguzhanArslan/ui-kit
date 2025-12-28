@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Input } from "./Input";
+import { Textarea } from "./Textarea";
 
 const meta = {
-    title: 'Forms & Fields/Input',
-    component: Input,
+    title: 'Forms & Fields/Textarea',
+    component: Textarea,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof Textarea>;
 
 export default meta;
 

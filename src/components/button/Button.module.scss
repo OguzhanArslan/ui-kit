@@ -62,27 +62,27 @@
     }
 
     &.secondary {
-        border-color: var(--color-primary-100);
-        background-color: var(--color-primary-100);
-        color: var(--color-primary-500);
+        border-color: var(--color-primary-200);
+        background-color: var(--color-primary-200);
+        color: var(--color-primary-700);
 
         svg {
-            fill: var(--color-primary-500);
+            fill: var(--color-primary-700);
         }
 
         &:not(:disabled):hover {
             border-color: var(--color-primary-200);
             background-color: var(--color-primary-200);
-            color: var(--color-primary-600);
+            color: var(--color-primary-700);
 
             svg {
-                fill: var(--color-primary-600);
+                fill: var(--color-primary-700);
             }
         }
 
         &.loading {
             >span {
-                color: var(--color-primary-500);
+                color: var(--color-primary-700);
             }
         }
     }
