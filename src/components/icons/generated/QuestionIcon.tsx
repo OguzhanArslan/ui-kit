@@ -1,3 +1,23 @@
-import type { SVGProps } from "react";
-const QuestionIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M11.786 8C10.8 8 10 8.8 10 9.786v.441a1 1 0 1 1-2 0v-.441A3.786 3.786 0 0 1 11.786 6h.148a3.6 3.6 0 0 1 1.136 7.014l-.102.034a.36.36 0 0 0-.246.341V14a1 1 0 1 1-2 0v-.61a2.36 2.36 0 0 1 1.614-2.24l.103-.033A1.6 1.6 0 0 0 11.934 8zM11.75 16a1 1 0 1 1 0 2 1 1 0 0 1 0-2" /><path fill="currentColor" fillRule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10m0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16" clipRule="evenodd" /></svg>;
+import type { SVGProps } from 'react';
+const QuestionIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M11.786 8C10.8 8 10 8.8 10 9.786v.441a1 1 0 1 1-2 0v-.441A3.786 3.786 0 0 1 11.786 6h.148a3.6 3.6 0 0 1 1.136 7.014l-.102.034a.36.36 0 0 0-.246.341V14a1 1 0 1 1-2 0v-.61a2.36 2.36 0 0 1 1.614-2.24l.103-.033A1.6 1.6 0 0 0 11.934 8zM11.75 16a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+    />
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10m0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 export default QuestionIcon;

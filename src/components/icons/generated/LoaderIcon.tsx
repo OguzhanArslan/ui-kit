@@ -1,3 +1,17 @@
-import type { SVGProps } from "react";
-const LoaderIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M22.25 12.25a1 1 0 0 0-1-1h-4.5a1 1 0 1 0 0 2h4.5a1 1 0 0 0 1-1M19.248 5.002a1 1 0 0 0-1.414 0l-3.182 3.182a1 1 0 1 0 1.414 1.414l3.182-3.182a1 1 0 0 0 0-1.414M16.066 14.902a1 1 0 0 0-1.414 1.414l3.182 3.182a1 1 0 0 0 1.414-1.414zM13 17a1 1 0 1 0-2 0v4.5a1 1 0 0 0 2 0zM13 3a1 1 0 1 0-2 0v4.5a1 1 0 1 0 2 0zM4.752 5.002a1 1 0 0 1 1.414 0l3.182 3.182a1 1 0 1 1-1.414 1.414L4.752 6.416a1 1 0 0 1 0-1.414M7.934 14.902a1 1 0 0 1 1.414 1.414l-3.182 3.182a1 1 0 0 1-1.414-1.414zM7.25 11.25a1 1 0 1 1 0 2h-4.5a1 1 0 0 1 0-2z" /></svg>;
+import type { SVGProps } from 'react';
+const LoaderIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M22.25 12.25a1 1 0 0 0-1-1h-4.5a1 1 0 1 0 0 2h4.5a1 1 0 0 0 1-1M19.248 5.002a1 1 0 0 0-1.414 0l-3.182 3.182a1 1 0 1 0 1.414 1.414l3.182-3.182a1 1 0 0 0 0-1.414M16.066 14.902a1 1 0 0 0-1.414 1.414l3.182 3.182a1 1 0 0 0 1.414-1.414zM13 17a1 1 0 1 0-2 0v4.5a1 1 0 0 0 2 0zM13 3a1 1 0 1 0-2 0v4.5a1 1 0 1 0 2 0zM4.752 5.002a1 1 0 0 1 1.414 0l3.182 3.182a1 1 0 1 1-1.414 1.414L4.752 6.416a1 1 0 0 1 0-1.414M7.934 14.902a1 1 0 0 1 1.414 1.414l-3.182 3.182a1 1 0 0 1-1.414-1.414zM7.25 11.25a1 1 0 1 1 0 2h-4.5a1 1 0 0 1 0-2z"
+    />
+  </svg>
+);
 export default LoaderIcon;

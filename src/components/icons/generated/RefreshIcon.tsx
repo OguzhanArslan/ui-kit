@@ -1,3 +1,17 @@
-import type { SVGProps } from "react";
-const RefreshIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M5.936 8.5a7.001 7.001 0 0 1 13.004 2.574l-.733-.731a1 1 0 1 0-1.414 1.414l2.853 2.854a.5.5 0 0 0 .708 0l2.853-2.854a1 1 0 0 0-1.414-1.414l-.83.83A9.001 9.001 0 0 0 4.204 7.5a1 1 0 0 0 1.73 1.002M5.793 14.257a1 1 0 0 0 1.414-1.414L4.354 9.989a.5.5 0 0 0-.708 0L.793 12.843a1 1 0 1 0 1.414 1.414l.895-.895a9.002 9.002 0 0 0 15.924 4.263 1 1 0 1 0-1.56-1.25A7.003 7.003 0 0 1 5.2 13.663z" /></svg>;
+import type { SVGProps } from 'react';
+const RefreshIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M5.936 8.5a7.001 7.001 0 0 1 13.004 2.574l-.733-.731a1 1 0 1 0-1.414 1.414l2.853 2.854a.5.5 0 0 0 .708 0l2.853-2.854a1 1 0 0 0-1.414-1.414l-.83.83A9.001 9.001 0 0 0 4.204 7.5a1 1 0 0 0 1.73 1.002M5.793 14.257a1 1 0 0 0 1.414-1.414L4.354 9.989a.5.5 0 0 0-.708 0L.793 12.843a1 1 0 1 0 1.414 1.414l.895-.895a9.002 9.002 0 0 0 15.924 4.263 1 1 0 1 0-1.56-1.25A7.003 7.003 0 0 1 5.2 13.663z"
+    />
+  </svg>
+);
 export default RefreshIcon;

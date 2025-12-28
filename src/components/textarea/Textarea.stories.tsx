@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Textarea } from "./Textarea";
+import { Textarea } from './Textarea';
 
 const meta = {
-    title: 'Forms & Fields/Textarea',
-    component: Textarea,
-    parameters: {
-        layout: 'centered',
-    },
-    tags: ['autodocs'],
+  title: 'Forms & Fields/Textarea',
+  component: Textarea,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
 } satisfies Meta<typeof Textarea>;
 
 export default meta;
@@ -16,21 +16,21 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {
-        name: 'name',
-    },
+  args: {
+    name: 'name',
+  },
 };
 
 export const Error: Story = {
-    args: {
-        name: 'name',
-        isError: true,
-    },
+  args: {
+    name: 'name',
+    isError: true,
+  },
 };
 
 export const Disabled: Story = {
-    args: {
-        name: 'name',
-        disabled: true,
-    },
+  args: {
+    name: 'name',
+    disabled: true,
+  },
 };

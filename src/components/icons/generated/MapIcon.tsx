@@ -1,3 +1,19 @@
-import type { SVGProps } from "react";
-const MapIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="M9 3c.16 0 .31.038.445.104a2 2 0 0 1 .187.053L15 4.946l4.368-1.456A2 2 0 0 1 22 5.387V17.28a2 2 0 0 1-1.367 1.898l-5 1.666q-.093.03-.188.053a1 1 0 0 1-.89 0 2 2 0 0 1-.187-.053L9 19.054 4.632 20.51A2 2 0 0 1 2 18.613V6.72a2 2 0 0 1 1.368-1.898l5-1.666a2 2 0 0 1 .187-.053A1 1 0 0 1 9 3m7 15.613 4-1.334V5.387l-4 1.334zM14 6.72v11.892l-4-1.334V5.387zm-10 0 4-1.334V17.28l-4 1.334z" clipRule="evenodd" /></svg>;
+import type { SVGProps } from 'react';
+const MapIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M9 3c.16 0 .31.038.445.104a2 2 0 0 1 .187.053L15 4.946l4.368-1.456A2 2 0 0 1 22 5.387V17.28a2 2 0 0 1-1.367 1.898l-5 1.666q-.093.03-.188.053a1 1 0 0 1-.89 0 2 2 0 0 1-.187-.053L9 19.054 4.632 20.51A2 2 0 0 1 2 18.613V6.72a2 2 0 0 1 1.368-1.898l5-1.666a2 2 0 0 1 .187-.053A1 1 0 0 1 9 3m7 15.613 4-1.334V5.387l-4 1.334zM14 6.72v11.892l-4-1.334V5.387zm-10 0 4-1.334V17.28l-4 1.334z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 export default MapIcon;

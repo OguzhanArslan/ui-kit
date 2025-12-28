@@ -1,3 +1,19 @@
-import type { SVGProps } from "react";
-const ActivityIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="m9 6.505-1.94 5.494A1.5 1.5 0 0 1 5.647 13H3a1 1 0 1 1 0-2h2.292l2.53-7.165c.392-1.112 1.964-1.112 2.357 0L15 17.495l1.94-5.494c.21-.6.778-1.001 1.414-1.001H21a1 1 0 1 1 0 2h-2.293l-2.528 7.165c-.393 1.112-1.965 1.112-2.358 0z" clipRule="evenodd" /></svg>;
+import type { SVGProps } from 'react';
+const ActivityIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="m9 6.505-1.94 5.494A1.5 1.5 0 0 1 5.647 13H3a1 1 0 1 1 0-2h2.292l2.53-7.165c.392-1.112 1.964-1.112 2.357 0L15 17.495l1.94-5.494c.21-.6.778-1.001 1.414-1.001H21a1 1 0 1 1 0 2h-2.293l-2.528 7.165c-.393 1.112-1.965 1.112-2.358 0z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 export default ActivityIcon;

@@ -1,3 +1,25 @@
-import type { SVGProps } from "react";
-const TargetLockIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-2 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" clipRule="evenodd" /><path fill="currentColor" fillRule="evenodd" d="M12 2a1 1 0 0 1 1 1v.558A8.504 8.504 0 0 1 20.442 11H21a1 1 0 1 1 0 2h-.558A8.504 8.504 0 0 1 13 20.442V21a1 1 0 1 1-2 0v-.558A8.504 8.504 0 0 1 3.558 13H3a1 1 0 1 1 0-2h.558A8.504 8.504 0 0 1 11 3.558V3a1 1 0 0 1 1-1m6.424 9H18a1 1 0 1 0 0 2h.424A6.505 6.505 0 0 1 13 18.424V18a1 1 0 1 0-2 0v.424A6.505 6.505 0 0 1 5.576 13H6a1 1 0 1 0 0-2h-.424A6.505 6.505 0 0 1 11 5.576V6a1 1 0 1 0 2 0v-.424A6.505 6.505 0 0 1 18.424 11" clipRule="evenodd" /></svg>;
+import type { SVGProps } from 'react';
+const TargetLockIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-2 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"
+      clipRule="evenodd"
+    />
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M12 2a1 1 0 0 1 1 1v.558A8.504 8.504 0 0 1 20.442 11H21a1 1 0 1 1 0 2h-.558A8.504 8.504 0 0 1 13 20.442V21a1 1 0 1 1-2 0v-.558A8.504 8.504 0 0 1 3.558 13H3a1 1 0 1 1 0-2h.558A8.504 8.504 0 0 1 11 3.558V3a1 1 0 0 1 1-1m6.424 9H18a1 1 0 1 0 0 2h.424A6.505 6.505 0 0 1 13 18.424V18a1 1 0 1 0-2 0v.424A6.505 6.505 0 0 1 5.576 13H6a1 1 0 1 0 0-2h-.424A6.505 6.505 0 0 1 11 5.576V6a1 1 0 1 0 2 0v-.424A6.505 6.505 0 0 1 18.424 11"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 export default TargetLockIcon;

@@ -1,3 +1,17 @@
-import type { SVGProps } from "react";
-const SliderAltIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M12 3a1 1 0 0 0-1 1v1.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V4a1 1 0 0 0-1-1M14 10h-1v10a1 1 0 1 1-2 0V10h-1a1 1 0 0 1 0-2h4a1 1 0 1 1 0 2M7 15h1a1 1 0 1 0 0-2H4a1 1 0 1 0 0 2h1v5a1 1 0 1 0 2 0zM6 3a1 1 0 0 0-1 1v6.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V4a1 1 0 0 0-1-1M19 17h1a1 1 0 1 0 0-2h-4a1 1 0 1 0 0 2h1v3a1 1 0 1 0 2 0zM18 3a1 1 0 0 0-1 1v8.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V4a1 1 0 0 0-1-1" /></svg>;
+import type { SVGProps } from 'react';
+const SliderAltIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M12 3a1 1 0 0 0-1 1v1.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V4a1 1 0 0 0-1-1M14 10h-1v10a1 1 0 1 1-2 0V10h-1a1 1 0 0 1 0-2h4a1 1 0 1 1 0 2M7 15h1a1 1 0 1 0 0-2H4a1 1 0 1 0 0 2h1v5a1 1 0 1 0 2 0zM6 3a1 1 0 0 0-1 1v6.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V4a1 1 0 0 0-1-1M19 17h1a1 1 0 1 0 0-2h-4a1 1 0 1 0 0 2h1v3a1 1 0 1 0 2 0zM18 3a1 1 0 0 0-1 1v8.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V4a1 1 0 0 0-1-1"
+    />
+  </svg>
+);
 export default SliderAltIcon;
