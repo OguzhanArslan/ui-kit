@@ -8,7 +8,7 @@ import { TYPE } from "@/foundation/types";
 import { Button } from "./Button";
 
 const meta = {
-    title: 'Components/Button',
+    title: 'Forms & Fields/Button',
     component: Button,
     argTypes: {
         type: {
