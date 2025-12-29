@@ -1,11 +1,7 @@
-import './App.css'
+import './App.css';
 
 function App() {
-  return (
-    <>
-      Oğuzhan Arslan - UI Kit
-    </>
-  )
+  return <>Oğuzhan Arslan - UI Kit</>;
 }
 
-export default App
+export default App;

@@ -1,3 +1,21 @@
-import type { SVGProps } from "react";
-const ChevronsLeftIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M12.207 6.707a1 1 0 0 0-1.414-1.414l-6.354 6.353a.5.5 0 0 0 0 .708l6.354 6.353a1 1 0 0 0 1.414-1.414L6.914 12z" /><path fill="currentColor" d="M18.207 6.707a1 1 0 0 0-1.414-1.414l-6.354 6.353a.5.5 0 0 0 0 .708l6.354 6.353a1 1 0 0 0 1.414-1.414L12.914 12z" /></svg>;
+import type { SVGProps } from 'react';
+const ChevronsLeftIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M12.207 6.707a1 1 0 0 0-1.414-1.414l-6.354 6.353a.5.5 0 0 0 0 .708l6.354 6.353a1 1 0 0 0 1.414-1.414L6.914 12z"
+    />
+    <path
+      fill="currentColor"
+      d="M18.207 6.707a1 1 0 0 0-1.414-1.414l-6.354 6.353a.5.5 0 0 0 0 .708l6.354 6.353a1 1 0 0 0 1.414-1.414L12.914 12z"
+    />
+  </svg>
+);
 export default ChevronsLeftIcon;

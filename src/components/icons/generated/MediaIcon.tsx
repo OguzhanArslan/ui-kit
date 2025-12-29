@@ -1,3 +1,19 @@
-import type { SVGProps } from "react";
-const MediaIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="M3 5v14a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3m14-1h1a1 1 0 0 1 1 1v1.5h-2zm-2 0H9v7h6zM7 4v2.5H5V5a1 1 0 0 1 1-1zm0 7V8.5H5V11zm-2 6.5V19a1 1 0 0 0 1 1h1v-2.5zm2-2H5V13h2zM9 20h6v-7H9zM19 8.5V11h-2V8.5zM17 13v2.5h2V13zm2 6v-1.5h-2V20h1a1 1 0 0 0 1-1" clipRule="evenodd" /></svg>;
+import type { SVGProps } from 'react';
+const MediaIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M3 5v14a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3m14-1h1a1 1 0 0 1 1 1v1.5h-2zm-2 0H9v7h6zM7 4v2.5H5V5a1 1 0 0 1 1-1zm0 7V8.5H5V11zm-2 6.5V19a1 1 0 0 0 1 1h1v-2.5zm2-2H5V13h2zM9 20h6v-7H9zM19 8.5V11h-2V8.5zM17 13v2.5h2V13zm2 6v-1.5h-2V20h1a1 1 0 0 0 1-1"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 export default MediaIcon;

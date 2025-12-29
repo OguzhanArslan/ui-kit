@@ -1,3 +1,20 @@
-import type { SVGProps } from "react";
-const BoxIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M10 10.5a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2z" /><path fill="currentColor" fillRule="evenodd" d="M2 7a2 2 0 0 0 1.5 1.937V19a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V8.937A2 2 0 0 0 22 7V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zm18-2H4v2h16zM5.5 19V9h13v10z" clipRule="evenodd" /></svg>;
+import type { SVGProps } from 'react';
+const BoxIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path fill="currentColor" d="M10 10.5a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2z" />
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M2 7a2 2 0 0 0 1.5 1.937V19a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V8.937A2 2 0 0 0 22 7V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zm18-2H4v2h16zM5.5 19V9h13v10z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 export default BoxIcon;

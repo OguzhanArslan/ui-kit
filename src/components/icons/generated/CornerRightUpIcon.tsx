@@ -1,3 +1,17 @@
-import type { SVGProps } from "react";
-const CornerRightUpIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M18.293 10.707a1 1 0 0 0 1.414-1.414l-4.995-4.996-.01-.009-.348-.349a.5.5 0 0 0-.708 0l-.349.35-.009.008-4.995 4.996a1 1 0 1 0 1.414 1.414L13 7.414V16a2 2 0 0 1-2 2H5a1 1 0 1 0 0 2h6a4 4 0 0 0 4-4V7.414z" /></svg>;
+import type { SVGProps } from 'react';
+const CornerRightUpIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M18.293 10.707a1 1 0 0 0 1.414-1.414l-4.995-4.996-.01-.009-.348-.349a.5.5 0 0 0-.708 0l-.349.35-.009.008-4.995 4.996a1 1 0 1 0 1.414 1.414L13 7.414V16a2 2 0 0 1-2 2H5a1 1 0 1 0 0 2h6a4 4 0 0 0 4-4V7.414z"
+    />
+  </svg>
+);
 export default CornerRightUpIcon;

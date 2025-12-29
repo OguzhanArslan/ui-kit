@@ -1,3 +1,19 @@
-import type { SVGProps } from "react";
-const OctagonIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="M14.9 4H9.1a1 1 0 0 0-.707.293l-4.1 4.1A1 1 0 0 0 4 9.101v5.798a1 1 0 0 0 .293.708l4.1 4.1a1 1 0 0 0 .708.293h5.798a1 1 0 0 0 .708-.293l4.1-4.1A1 1 0 0 0 20 14.9V9.1a1 1 0 0 0-.293-.707l-4.1-4.1A1 1 0 0 0 14.9 4M9.1 2a3 3 0 0 0-2.12.879l-4.101 4.1A3 3 0 0 0 2 9.101v5.798a3 3 0 0 0 .879 2.122l4.1 4.1A3 3 0 0 0 9.101 22h5.798a3 3 0 0 0 2.122-.879l4.1-4.1A3 3 0 0 0 22 14.899V9.102a3 3 0 0 0-.879-2.122l-4.1-4.1A3 3 0 0 0 14.899 2z" clipRule="evenodd" /></svg>;
+import type { SVGProps } from 'react';
+const OctagonIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M14.9 4H9.1a1 1 0 0 0-.707.293l-4.1 4.1A1 1 0 0 0 4 9.101v5.798a1 1 0 0 0 .293.708l4.1 4.1a1 1 0 0 0 .708.293h5.798a1 1 0 0 0 .708-.293l4.1-4.1A1 1 0 0 0 20 14.9V9.1a1 1 0 0 0-.293-.707l-4.1-4.1A1 1 0 0 0 14.9 4M9.1 2a3 3 0 0 0-2.12.879l-4.101 4.1A3 3 0 0 0 2 9.101v5.798a3 3 0 0 0 .879 2.122l4.1 4.1A3 3 0 0 0 9.101 22h5.798a3 3 0 0 0 2.122-.879l4.1-4.1A3 3 0 0 0 22 14.899V9.102a3 3 0 0 0-.879-2.122l-4.1-4.1A3 3 0 0 0 14.899 2z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 export default OctagonIcon;

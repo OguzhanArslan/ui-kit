@@ -1,3 +1,17 @@
-import type { SVGProps } from "react";
-const ArrowDownRightIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M17.95 17.45a.5.5 0 0 1-.5.5H8.465a1 1 0 1 1 0-2h6.07L6.344 7.757a1 1 0 1 1 1.414-1.414l8.193 8.193V8.464a1 1 0 1 1 2 0z" /></svg>;
+import type { SVGProps } from 'react';
+const ArrowDownRightIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M17.95 17.45a.5.5 0 0 1-.5.5H8.465a1 1 0 1 1 0-2h6.07L6.344 7.757a1 1 0 1 1 1.414-1.414l8.193 8.193V8.464a1 1 0 1 1 2 0z"
+    />
+  </svg>
+);
 export default ArrowDownRightIcon;

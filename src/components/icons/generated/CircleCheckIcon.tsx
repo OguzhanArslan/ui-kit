@@ -1,3 +1,23 @@
-import type { SVGProps } from "react";
-const CircleCheckIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M16.771 9.136a1 1 0 0 0-1.542-1.272l-4.292 5.202L9.162 11.5A1 1 0 0 0 7.838 13l2.938 2.592a.5.5 0 0 0 .716-.057z" /><path fill="currentColor" fillRule="evenodd" d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10m-2 0a8 8 0 1 1-16 0 8 8 0 0 1 16 0" clipRule="evenodd" /></svg>;
+import type { SVGProps } from 'react';
+const CircleCheckIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M16.771 9.136a1 1 0 0 0-1.542-1.272l-4.292 5.202L9.162 11.5A1 1 0 0 0 7.838 13l2.938 2.592a.5.5 0 0 0 .716-.057z"
+    />
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10m-2 0a8 8 0 1 1-16 0 8 8 0 0 1 16 0"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 export default CircleCheckIcon;

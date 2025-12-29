@@ -1,3 +1,19 @@
-import type { SVGProps } from "react";
-const CameraVideoOffIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="M3.707 2.293a1 1 0 0 0-1.414 1.414L3.825 5.24A3 3 0 0 0 2 8v8a3 3 0 0 0 3 3h9c.978 0 1.846-.468 2.394-1.192l3.899 3.9a1 1 0 0 0 1.414-1.415zm11.23 14.058L5.586 7H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9a1 1 0 0 0 .937-.65M15 11.586l5.775 5.774c.136.137.342.188.507.089.417-.252.718-.703.718-1.281V7.466c0-1.314-1.569-1.993-2.527-1.094L17 8.694V8a3 3 0 0 0-3-3H9.621a.5.5 0 0 0-.353.854l1 1A.5.5 0 0 0 10.62 7H14a1 1 0 0 1 1 1zm2 .06 3 3.245V8.62l-3 2.816z" clipRule="evenodd" /></svg>;
+import type { SVGProps } from 'react';
+const CameraVideoOffIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M3.707 2.293a1 1 0 0 0-1.414 1.414L3.825 5.24A3 3 0 0 0 2 8v8a3 3 0 0 0 3 3h9c.978 0 1.846-.468 2.394-1.192l3.899 3.9a1 1 0 0 0 1.414-1.415zm11.23 14.058L5.586 7H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9a1 1 0 0 0 .937-.65M15 11.586l5.775 5.774c.136.137.342.188.507.089.417-.252.718-.703.718-1.281V7.466c0-1.314-1.569-1.993-2.527-1.094L17 8.694V8a3 3 0 0 0-3-3H9.621a.5.5 0 0 0-.353.854l1 1A.5.5 0 0 0 10.62 7H14a1 1 0 0 1 1 1zm2 .06 3 3.245V8.62l-3 2.816z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 export default CameraVideoOffIcon;

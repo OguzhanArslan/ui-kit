@@ -1,3 +1,17 @@
-import type { SVGProps } from "react";
-const ArrowLeftIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M11.707 6.707a1 1 0 0 0-1.414-1.414l-5.995 5.995-.01.01-.349.348a.5.5 0 0 0 0 .708l.35.349.009.009 5.995 5.995a1 1 0 0 0 1.414-1.414L7.414 13H19a1 1 0 1 0 0-2H7.414z" /></svg>;
+import type { SVGProps } from 'react';
+const ArrowLeftIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M11.707 6.707a1 1 0 0 0-1.414-1.414l-5.995 5.995-.01.01-.349.348a.5.5 0 0 0 0 .708l.35.349.009.009 5.995 5.995a1 1 0 0 0 1.414-1.414L7.414 13H19a1 1 0 1 0 0-2H7.414z"
+    />
+  </svg>
+);
 export default ArrowLeftIcon;

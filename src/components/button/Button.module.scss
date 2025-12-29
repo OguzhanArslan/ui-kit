@@ -1,106 +1,106 @@
-@use "../../styles/colors.scss";
+@use '../../styles/colors.scss';
 
 .button {
-    appearance: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px;
-    transition: all 0.3s ease-in-out;
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
 
-    &.sm {
-        padding: 8px;
+  &.sm {
+    padding: 8px;
+  }
+
+  &.lg {
+    padding: 12px;
+  }
+
+  &.loading {
+    > span {
+      margin-left: 10px;
+      margin-right: 5px;
+    }
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
+  &.primary {
+    border-color: var(--color-primary-500);
+    background-color: var(--color-primary-500);
+    color: var(--color-white);
+
+    svg {
+      fill: var(--color-white);
     }
 
-    &.lg {
-        padding: 12px;
+    &:not(:disabled):hover {
+      border-color: var(--color-primary-600);
+      background-color: var(--color-primary-600);
     }
 
     &.loading {
-        >span {
-            margin-left: 10px;
-            margin-right: 5px;
-        }
+      > span {
+        color: var(--color-white);
+      }
     }
+  }
+
+  &.secondary {
+    border-color: var(--color-primary-200);
+    background-color: var(--color-primary-200);
+    color: var(--color-primary-700);
 
     svg {
-        width: 18px;
-        height: 18px;
+      fill: var(--color-primary-700);
     }
 
-    &:disabled {
-        opacity: 0.65;
-        cursor: not-allowed;
+    &:not(:disabled):hover {
+      border-color: var(--color-primary-200);
+      background-color: var(--color-primary-200);
+      color: var(--color-primary-700);
+
+      svg {
+        fill: var(--color-primary-700);
+      }
     }
 
-    &.primary {
-        border-color: var(--color-primary-500);
-        background-color: var(--color-primary-500);
-        color: var(--color-white);
-
-        svg {
-            fill: var(--color-white);
-        }
-
-        &:not(:disabled):hover {
-            border-color: var(--color-primary-600);
-            background-color: var(--color-primary-600);
-        }
-
-        &.loading {
-            >span {
-                color: var(--color-white);
-            }
-        }
-    }
-
-    &.secondary {
-        border-color: var(--color-primary-200);
-        background-color: var(--color-primary-200);
+    &.loading {
+      > span {
         color: var(--color-primary-700);
+      }
+    }
+  }
 
-        svg {
-            fill: var(--color-primary-700);
-        }
+  &.tertiary {
+    border-color: var(--color-primary-500);
+    background-color: var(--color-white);
+    color: var(--color-primary-500);
 
-        &:not(:disabled):hover {
-            border-color: var(--color-primary-200);
-            background-color: var(--color-primary-200);
-            color: var(--color-primary-700);
-
-            svg {
-                fill: var(--color-primary-700);
-            }
-        }
-
-        &.loading {
-            >span {
-                color: var(--color-primary-700);
-            }
-        }
+    &:not(:disabled):hover {
+      border-color: var(--color-primary-600);
+      background-color: var(--color-primary-100);
     }
 
-    &.tertiary {
-        border-color: var(--color-primary-500);
-        background-color: var(--color-white);
+    &.loading {
+      > span {
         color: var(--color-primary-500);
-
-        &:not(:disabled):hover {
-            border-color: var(--color-primary-600);
-            background-color: var(--color-primary-100);
-        }
-
-        &.loading {
-            >span {
-                color: var(--color-primary-500);
-            }
-        }
+      }
     }
+  }
 }

@@ -1,3 +1,19 @@
-import type { SVGProps } from "react";
-const TruckIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" fillRule="evenodd" d="M5 5h8a1 1 0 0 1 1 1v9H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1m9 12h-3.67a3 3 0 1 1-5.652-.017A3 3 0 0 1 1.999 14V6a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v2h1.646a3 3 0 0 1 2.683 1.658l1.46 2.92a2 2 0 0 1 .211.894V15a2 2 0 0 1-1.23 1.846 3 3 0 1 1-5.6.154zm4-2h2v-1.528l-1.46-2.92a1 1 0 0 0-.894-.552H16v5zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2M6.5 18a1 1 0 1 1 2 0 1 1 0 0 1-2 0" clipRule="evenodd" /></svg>;
+import type { SVGProps } from 'react';
+const TruckIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M5 5h8a1 1 0 0 1 1 1v9H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1m9 12h-3.67a3 3 0 1 1-5.652-.017A3 3 0 0 1 1.999 14V6a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v2h1.646a3 3 0 0 1 2.683 1.658l1.46 2.92a2 2 0 0 1 .211.894V15a2 2 0 0 1-1.23 1.846 3 3 0 1 1-5.6.154zm4-2h2v-1.528l-1.46-2.92a1 1 0 0 0-.894-.552H16v5zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2M6.5 18a1 1 0 1 1 2 0 1 1 0 0 1-2 0"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 export default TruckIcon;

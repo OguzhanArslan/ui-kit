@@ -1,3 +1,23 @@
-import type { SVGProps } from "react";
-const LockOpenIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M13.5 15.25c0 .444-.193.843-.5 1.118v.882a1 1 0 1 1-2 0v-.882a1.5 1.5 0 1 1 2.5-1.118" /><path fill="currentColor" fillRule="evenodd" d="M16 10V8a4 4 0 0 0-7.97-.499C7.998 7.775 7.777 8 7.5 8h-1a.47.47 0 0 1-.48-.5A6 6 0 0 1 18 8v2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-6a3 3 0 0 1 3-3zm2 2H6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1" clipRule="evenodd" /></svg>;
+import type { SVGProps } from 'react';
+const LockOpenIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M13.5 15.25c0 .444-.193.843-.5 1.118v.882a1 1 0 1 1-2 0v-.882a1.5 1.5 0 1 1 2.5-1.118"
+    />
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M16 10V8a4 4 0 0 0-7.97-.499C7.998 7.775 7.777 8 7.5 8h-1a.47.47 0 0 1-.48-.5A6 6 0 0 1 18 8v2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-6a3 3 0 0 1 3-3zm2 2H6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 export default LockOpenIcon;
