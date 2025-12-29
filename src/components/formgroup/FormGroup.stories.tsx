@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Input } from '../input';
 import { Label } from '../label';
+import { Select } from '../select';
 import { Textarea } from '../textarea';
 import { FormGroup } from './FormGroup';
 
@@ -35,6 +36,26 @@ export const FormGroupTextarea: Story = {
       <>
         <Label htmlFor="textareaForInput" text="Label" />
         <Textarea id="textareaForInput" name="labelTest" />
+      </>
+    ),
+  },
+};
+
+export const FormGroupSelect: Story = {
+  args: {
+    children: (
+      <>
+        <Label htmlFor="selectForInput" text="Label" />
+        <Select
+          id="selectForInput"
+          name="labelTest"
+          isError
+          options={[
+            { value: 'chocolate', label: 'Chocolate' },
+            { value: 'strawberry', label: 'Strawberry' },
+            { value: 'vanilla', label: 'Vanilla' },
+          ]}
+        />
       </>
     ),
   },

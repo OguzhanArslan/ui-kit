@@ -24,3 +24,25 @@ export const Default: Story = {
     ],
   },
 };
+
+export const Multi: Story = {
+  args: {
+    isMulti: true,
+    options: [
+      { value: 'chocolate', label: 'Chocolate' },
+      { value: 'strawberry', label: 'Strawberry' },
+      { value: 'vanilla', label: 'Vanilla' },
+    ],
+  },
+};
+
+export const Error: Story = {
+  args: {
+    isError: true,
+    options: [
+      { value: 'chocolate', label: 'Chocolate' },
+      { value: 'strawberry', label: 'Strawberry' },
+      { value: 'vanilla', label: 'Vanilla' },
+    ],
+  },
+};
