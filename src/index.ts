@@ -11,6 +11,7 @@ export * from './components/textarea/Textarea';
 // foundation
 export * from './foundation/sizes';
 export * from './foundation/types';
+export * from './foundation/weight';
 
 // icons
 export * from './components/icons';

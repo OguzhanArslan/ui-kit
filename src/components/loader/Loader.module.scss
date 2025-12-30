@@ -1,8 +1,10 @@
+@use "../../styles/colors.scss";
+
 .loader {
   display: block;
   position: relative;
   background: currentColor;
-  color: #000;
+  color: var(--color-black-800);
   box-sizing: border-box;
   animation: animLoaderLG 0.3s 0.3s linear infinite alternate;
 

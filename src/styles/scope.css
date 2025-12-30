@@ -17,3 +17,9 @@
 .scope select {
   font-family: inherit;
 }
+
+[data-theme="dark"] {
+  body {
+    background-color: #0a0b0d;
+  }
+}
