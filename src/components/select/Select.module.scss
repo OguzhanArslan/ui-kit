@@ -1,7 +1,6 @@
 @use '../../styles/colors.scss';
 
 .root {
-
     &.error {
         :global(.uiSelect__control) {
             background-color: var(--color-red-50);
@@ -11,10 +10,10 @@
 
     :global(.uiSelect__control) {
         width: 100%;
+        min-height: 40px;
         background-color: var(--color-white);
         border: 1px solid var(--color-gray-100);
         border-radius: 8px;
-        min-height: auto;
 
         &:hover {
             border-color: var(--color-gray-100);
@@ -38,6 +37,10 @@
     :global(.uiSelect__value-container) {
         padding: 8px 12px;
     }
+
+    :global(.uiSelect__value-container--is-multi) {
+        padding: 5.6px 12px;
+    }  
 
     :global(.uiSelect__input-container) {
         padding: 0;
@@ -68,6 +71,7 @@
         border: 0;
         border-radius: 4px;
         margin: 0 2px;
+        padding: 2px;
 
         :global(.uiSelect__multi-value__label) {
             font-weight: 500;
