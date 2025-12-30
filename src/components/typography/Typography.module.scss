@@ -1,0 +1,88 @@
+@use '../../styles/colors.scss';
+
+.typography {
+  margin: 0;
+  color: var(--color-black-900);
+  line-height: 1.2;
+}
+
+.h1 {
+  font-size: 68px;
+}
+
+.h2 {
+  font-size: 56px;
+}
+
+.h3 {
+  font-size: 46px;
+}
+
+.h4 {
+  font-size: 38px;
+}
+
+.h5 {
+  font-size: 32px;
+}
+
+.h6 {
+  font-size: 26px;
+}
+
+.paragraph {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.small {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.caption {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+// Weights
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+// Colors
+.primary {
+  color: var(--color-primary-500);
+}
+
+.secondary {
+  color: var(--color-primary-300);
+}
+
+.tertiary {
+  color: var(--color-primary-200);
+}
+
+.success {
+  color: var(--color-green-500);
+}
+
+.warning {
+  color: var(--color-yellow-500);
+}
+
+.error {
+  color: var(--color-red-500);
+}

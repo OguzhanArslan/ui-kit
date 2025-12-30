@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 
 import { Loader } from '@/components/loader/Loader';
+import { COLOR, type COLORS } from '@/foundation/colors';
 import { SIZE, type SIZES } from '@/foundation/sizes';
-import { TYPE, type TYPES } from '@/foundation/types';
 
 import styles from './Button.module.scss';
 
@@ -10,7 +10,7 @@ export interface IButtonProps {
   label?: string;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
-  type?: TYPES;
+  color?: COLORS;
   disabled?: boolean;
   isLoading?: boolean;
   onClick?: () => void;
@@ -24,7 +24,7 @@ export const Button = (props: IButtonProps) => {
     label,
     prefix,
     suffix,
-    type = TYPE.primary,
+    color = COLOR.primary,
     size = SIZE.md,
     disabled,
     isLoading,
@@ -37,7 +37,7 @@ export const Button = (props: IButtonProps) => {
   return (
     <button
       role="button"
-      className={classNames(styles.button, styles[type], styles[size], {
+      className={classNames(styles.button, styles[color], styles[size], {
         [styles.loading]: isLoading,
         [styles.fullWidth]: isFullWidth,
       })}
