@@ -1,25 +1,67 @@
 @use '../../styles/colors.scss';
 
-.input {
-  color: var(--color-black-700);
-  font-size: 14px;
-  font-weight: 400;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-100);
-  border-radius: 8px;
-  padding: 8px 12px;
+.wrap {
+  position: relative;
+  
+  .input {
+    color: var(--color-black-700);
+    font-size: 14px;
+    font-weight: 400;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 8px;
+    padding: 8px 12px;
 
-  &:focus-visible {
-    border-color: var(--color-primary-500);
+    &:focus-visible {
+      border-color: var(--color-primary-500);
+    }
+
+    &.error {
+      background-color: var(--color-red-50);
+      border-color: var(--color-red-100);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      background-color: var(--color-gray-100);
+      border-color: var(--color-gray-100);
+    }
   }
 
-  &.error {
-    background-color: var(--color-red-50);
-    border-color: var(--color-red-100);
+  &.suffixWrap {
+    .input {
+      padding-right: 40px;
+    }
   }
 
-  &:disabled {
-    background-color: var(--color-gray-100);
-    border-color: var(--color-gray-100);
+  &.prefixWrap {
+    .input {
+      padding-left: 40px;
+    }
+  }
+
+  .suffix, .prefix {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .suffix {
+    right: 12px;
+  }
+
+  .prefix {
+    left: 12px;
+  }
+
+  .loader {
+    margin-right: 12px;
   }
 }

@@ -2,19 +2,24 @@ import classNames from 'classnames';
 import ReactSelect, { components, type Props } from 'react-select';
 
 import { ChevronDownIcon, CrossIcon } from '../icons';
+import { Loader } from '../loader';
 
 import styles from './Select.module.scss';
 
 export interface ISelectProps extends Props {
   isError?: boolean;
+  isLoading?: boolean;
   isMulti?: boolean;
+  disabled?: boolean;
 }
 
 export const Select = (props: ISelectProps) => {
-  const { isError, ...rest } = props;
+  const { isError, isLoading, disabled, ...rest } = props;
 
   return (
     <ReactSelect
+      isLoading={isLoading}
+      isDisabled={disabled}
       className={classNames(styles.root, {
         [styles.error]: isError,
       })}
@@ -42,6 +47,13 @@ export const Select = (props: ISelectProps) => {
             <CrossIcon width={16} height={16} />
           </components.MultiValueRemove>
         ),
+        IndicatorsContainer: (p) => (
+          <components.IndicatorsContainer {...p}>
+            {p.selectProps.isLoading ? <Loader /> : null}
+            {p.children}
+          </components.IndicatorsContainer>
+        ),
+        LoadingIndicator: () => null,
       }}
       {...rest}
     />

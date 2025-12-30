@@ -46,3 +46,25 @@ export const Error: Story = {
     ],
   },
 };
+
+export const Loading: Story = {
+  args: {
+    isLoading: true,
+    options: [
+      { value: 'chocolate', label: 'Chocolate' },
+      { value: 'strawberry', label: 'Strawberry' },
+      { value: 'vanilla', label: 'Vanilla' },
+    ],
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    options: [
+      { value: 'chocolate', label: 'Chocolate' },
+      { value: 'strawberry', label: 'Strawberry' },
+      { value: 'vanilla', label: 'Vanilla' },
+    ],
+  },
+};

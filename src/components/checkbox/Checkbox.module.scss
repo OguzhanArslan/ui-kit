@@ -1,0 +1,64 @@
+@use '../../styles/colors.scss';
+
+.wrap {
+  position: relative;
+
+  input[type=checkbox] {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    vertical-align: middle;
+    opacity: 0;
+    cursor: pointer;
+    visibility: hidden;
+
+    &:checked + label .checkbox {
+      color: var(--color-white);
+      background-color: var(--color-primary-500);
+      border-color: var(--color-primary-500);
+
+      svg {
+        display: block;
+      }
+    }
+
+    &:disabled + label {
+      pointer-events: none;
+
+      .checkbox {
+        background-color: var(--color-gray-100);
+        border-color: var(--color-gray-100);
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 2px solid var(--color-gray-400);
+    width: 20px;
+    height: 20px;
+
+    svg {
+      display: none;
+    }
+  }
+
+  &.error {
+    .checkbox {
+      background-color: var(--color-red-50);
+      border-color: var(--color-red-100);
+    }
+  }
+}

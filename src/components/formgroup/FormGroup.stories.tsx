@@ -23,8 +23,8 @@ export const FormGroupInput: Story = {
   args: {
     children: (
       <>
-        <Label htmlFor="inputForInput" text="Label" />
-        <Input id="inputForInput" name="labelTest" />
+        <Label htmlFor="inputForInput">Label</Label>
+        <Input name="inputForInput" />
       </>
     ),
   },
@@ -34,8 +34,8 @@ export const FormGroupTextarea: Story = {
   args: {
     children: (
       <>
-        <Label htmlFor="textareaForInput" text="Label" />
-        <Textarea id="textareaForInput" name="labelTest" />
+        <Label htmlFor="textareaForInput">Label</Label>
+        <Textarea name="textareaForInput" />
       </>
     ),
   },
@@ -45,11 +45,9 @@ export const FormGroupSelect: Story = {
   args: {
     children: (
       <>
-        <Label htmlFor="selectForInput" text="Label" />
+        <Label htmlFor="selectForInput">Label</Label>
         <Select
-          id="selectForInput"
-          name="labelTest"
-          isError
+          name="selectForInput"
           options={[
             { value: 'chocolate', label: 'Chocolate' },
             { value: 'strawberry', label: 'Strawberry' },
