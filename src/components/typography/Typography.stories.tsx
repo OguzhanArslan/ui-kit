@@ -7,7 +7,7 @@ import { WEIGHT } from '@/foundation/weight';
 import { Typography } from './Typography';
 
 const meta: Meta<typeof Typography> = {
-  title: 'Components/Typography',
+  title: 'Configuration/Typography',
   component: Typography,
   argTypes: {
     color: {
