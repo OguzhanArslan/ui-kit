@@ -1,6 +1,8 @@
 @use '../../styles/colors.scss';
 
 .button {
+  outline: none;
+  box-sizing: border-box;
   appearance: none;
   display: flex;
   align-items: center;
@@ -102,5 +104,9 @@
         color: var(--color-primary-500);
       }
     }
+  }
+
+  &.fullWidth {
+    width: 100%;
   }
 }

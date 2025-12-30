@@ -1,6 +1,8 @@
 @use '../../styles/colors.scss';
 
 .textarea {
+  outline: none;
+  box-sizing: border-box;
   color: var(--color-black-700);
   font-size: 14px;
   font-weight: 400;
@@ -10,6 +12,7 @@
   padding: 8px 12px;
   resize: none;
   min-height: 156px;
+  width: 100%;
 
   &:focus-visible {
     border-color: var(--color-primary-500);

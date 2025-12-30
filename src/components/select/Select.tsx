@@ -7,6 +7,7 @@ import { Loader } from '../loader';
 import styles from './Select.module.scss';
 
 export interface ISelectProps extends Props {
+  name: string;
   isError?: boolean;
   isLoading?: boolean;
   isMulti?: boolean;
@@ -14,10 +15,11 @@ export interface ISelectProps extends Props {
 }
 
 export const Select = (props: ISelectProps) => {
-  const { isError, isLoading, disabled, ...rest } = props;
+  const { name, isError, isLoading, disabled, ...rest } = props;
 
   return (
     <ReactSelect
+      name={name}
       isLoading={isLoading}
       isDisabled={disabled}
       className={classNames(styles.root, {
