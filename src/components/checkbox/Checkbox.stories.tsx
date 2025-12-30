@@ -1,16 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { UserIcon } from '../icons';
-import { Input } from './Input';
+import { Checkbox } from './Checkbox';
 
 const meta = {
-  title: 'Forms & Fields/Input',
-  component: Input,
+  title: 'Forms & Fields/Checkbox',
+  component: Checkbox,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof Checkbox>;
 
 export default meta;
 
@@ -19,40 +18,22 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     name: 'name',
+    label: 'Checkbox',
   },
 };
 
 export const Error: Story = {
   args: {
     name: 'name',
+    label: 'Checkbox',
     isError: true,
-  },
-};
-
-export const Loading: Story = {
-  args: {
-    name: 'name',
-    isLoading: true,
-  },
-};
-
-export const Prefix: Story = {
-  args: {
-    name: 'name',
-    prefix: <UserIcon />,
-  },
-};
-
-export const Suffix: Story = {
-  args: {
-    name: 'name',
-    suffix: <UserIcon />,
   },
 };
 
 export const Disabled: Story = {
   args: {
     name: 'name',
+    label: 'Checkbox',
     disabled: true,
   },
 };

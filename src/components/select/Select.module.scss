@@ -21,6 +21,11 @@
         }
     }
 
+    :global(.uiSelect__control--is-disabled) {
+        background-color: var(--color-gray-100);
+        border-color: var(--color-gray-100);
+    }
+
     :global(.uiSelect__control--is-focused) {
         box-shadow: none;
         border: 1px solid var(--color-primary-500);

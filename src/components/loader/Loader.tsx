@@ -9,7 +9,7 @@ export interface ILoaderProps {
 }
 
 export const Loader = (props: ILoaderProps) => {
-  const { size = SIZE.md } = props;
+  const { size = SIZE.sm } = props;
 
   return <span className={classNames(styles.loader, styles[size])}></span>;
 };
