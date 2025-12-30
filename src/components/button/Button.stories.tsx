@@ -34,7 +34,6 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     label: 'Button',
-    disabled: false,
   },
 };
 
@@ -42,7 +41,6 @@ export const Secondary: Story = {
   args: {
     type: TYPE.secondary,
     label: 'Button',
-    disabled: false,
   },
 };
 
@@ -50,7 +48,6 @@ export const Tertiary: Story = {
   args: {
     type: TYPE.tertiary,
     label: 'Button',
-    disabled: false,
   },
 };
 
@@ -58,7 +55,6 @@ export const Loading: Story = {
   args: {
     type: TYPE.tertiary,
     label: 'Button',
-    disabled: false,
     isLoading: true,
   },
 };
@@ -77,8 +73,6 @@ export const IconPrefix: Story = {
     type: TYPE.primary,
     label: 'Button',
     prefix: <ArrowUpIcon aria-hidden="true" focusable="false" />,
-    disabled: false,
-    isLoading: false,
   },
 };
 
@@ -87,6 +81,5 @@ export const IconSuffix: Story = {
     type: TYPE.primary,
     label: 'Button',
     suffix: <ArrowUpIcon aria-hidden="true" focusable="false" />,
-    isLoading: false,
   },
 };

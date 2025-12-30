@@ -16,6 +16,7 @@ export interface IButtonProps {
   onClick?: () => void;
   ariaLabel?: string;
   size?: SIZES;
+  isFullWidth?: boolean;
 }
 
 export const Button = (props: IButtonProps) => {
@@ -29,6 +30,7 @@ export const Button = (props: IButtonProps) => {
     isLoading,
     onClick,
     ariaLabel,
+    isFullWidth,
     ...restProps
   } = props;
 
@@ -37,6 +39,7 @@ export const Button = (props: IButtonProps) => {
       role="button"
       className={classNames(styles.button, styles[type], styles[size], {
         [styles.loading]: isLoading,
+        [styles.fullWidth]: isFullWidth,
       })}
       onClick={onClick}
       disabled={isLoading || disabled}

@@ -17,6 +17,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    name: 'defaultSelect',
     options: [
       { value: 'chocolate', label: 'Chocolate' },
       { value: 'strawberry', label: 'Strawberry' },
@@ -27,6 +28,7 @@ export const Default: Story = {
 
 export const Multi: Story = {
   args: {
+    name: 'multiSelect',
     isMulti: true,
     options: [
       { value: 'chocolate', label: 'Chocolate' },
@@ -38,6 +40,7 @@ export const Multi: Story = {
 
 export const Error: Story = {
   args: {
+    name: 'errorSelect',
     isError: true,
     options: [
       { value: 'chocolate', label: 'Chocolate' },
@@ -49,6 +52,7 @@ export const Error: Story = {
 
 export const Loading: Story = {
   args: {
+    name: 'loadingSelect',
     isLoading: true,
     options: [
       { value: 'chocolate', label: 'Chocolate' },
@@ -60,6 +64,7 @@ export const Loading: Story = {
 
 export const Disabled: Story = {
   args: {
+    name: 'disabledSelect',
     disabled: true,
     options: [
       { value: 'chocolate', label: 'Chocolate' },
