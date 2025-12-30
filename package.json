@@ -1,7 +1,7 @@
 {
   "name": "cari-ui-kit",
   "private": false,
-  "version": "0.1.12",
+  "version": "0.1.13",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -51,6 +51,7 @@
     "@storybook/addon-a11y": "^10.1.10",
     "@storybook/addon-docs": "^10.1.10",
     "@storybook/addon-onboarding": "^10.1.10",
+    "@storybook/addon-themes": "^10.1.11",
     "@storybook/addon-vitest": "^10.1.10",
     "@storybook/react-vite": "^10.1.10",
     "@svgr/core": "^8.1.0",

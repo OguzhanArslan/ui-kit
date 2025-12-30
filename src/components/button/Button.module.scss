@@ -16,6 +16,7 @@
   font-weight: 500;
   padding: 10px;
   transition: all 0.3s ease-in-out;
+  min-height: 40px;
 
   &.sm {
     padding: 8px;
@@ -66,15 +67,15 @@
   &.secondary {
     border-color: var(--color-primary-200);
     background-color: var(--color-primary-200);
-    color: var(--color-primary-700);
+    color: var(--color-primary-600);
 
     svg {
-      fill: var(--color-primary-700);
+      fill: var(--color-primary-600);
     }
 
     &:not(:disabled):hover {
-      border-color: var(--color-primary-200);
-      background-color: var(--color-primary-200);
+      border-color: var(--color-primary-300);
+      background-color: var(--color-primary-300);
       color: var(--color-primary-700);
 
       svg {
@@ -102,6 +103,69 @@
     &.loading {
       > span {
         color: var(--color-primary-500);
+      }
+    }
+  }
+
+  &.success {
+    border-color: var(--color-green-500);
+    background-color: var(--color-green-500);
+    color: var(--color-white);
+
+    svg {
+      fill: var(--color-white);
+    }
+
+    &:not(:disabled):hover {
+      border-color: var(--color-green-600);
+      background-color: var(--color-green-600);
+    }
+
+    &.loading {
+      > span {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &.warning {
+    border-color: var(--color-yellow-500);
+    background-color: var(--color-yellow-500);
+    color: var(--color-white);
+
+    svg {
+      fill: var(--color-white);
+    }
+
+    &:not(:disabled):hover {
+      border-color: var(--color-yellow-600);
+      background-color: var(--color-yellow-600);
+    }
+
+    &.loading {
+      > span {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &.error {
+    border-color: var(--color-red-500);
+    background-color: var(--color-red-500);
+    color: var(--color-white);
+
+    svg {
+      fill: var(--color-white);
+    }
+
+    &:not(:disabled):hover {
+      border-color: var(--color-red-600);
+      background-color: var(--color-red-600);
+    }
+
+    &.loading {
+      > span {
+        color: var(--color-white);
       }
     }
   }

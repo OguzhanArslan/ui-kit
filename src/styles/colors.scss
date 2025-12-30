@@ -77,3 +77,83 @@
   /* Neutral - White */
   --color-white: #ffffff;
 }
+
+[data-theme="dark"] {
+  /* Primary - Dark Mode */
+  --color-primary-50: #090917;
+  --color-primary-100: #17163a;
+  --color-primary-200: #2e2d74;
+  --color-primary-300: #4543ae;
+  --color-primary-400: #5c59e8;
+  --color-primary-500: #7d7aed;
+  --color-primary-600: #9d9bf1;
+  --color-primary-700: #bebdf6;
+  --color-primary-800: #dedefa;
+  --color-primary-900: #efeffd;
+
+  /* Green - Dark Mode */
+  --color-green-50: #010e08;
+  --color-green-100: #032214;
+  --color-green-200: #074528;
+  --color-green-300: #0a673b;
+  --color-green-400: #0d894f;
+  --color-green-500: #3da172;
+  --color-green-600: #6ebb95;
+  --color-green-700: #9ed0b9;
+  --color-green-800: #cfe7dc;
+  --color-green-900: #e7f4ee;
+
+  /* Yellow - Dark Mode */
+  --color-yellow-50: #170b02;
+  --color-yellow-100: #391b04;
+  --color-yellow-200: #723509;
+  --color-yellow-300: #ab500d;
+  --color-yellow-400: #e46a11;
+  --color-yellow-500: #e98841;
+  --color-yellow-600: #efa670;
+  --color-yellow-700: #f4c3a0;
+  --color-yellow-800: #fae1cf;
+  --color-yellow-900: #fdf1e8;
+
+  /* Red - Dark Mode */
+  --color-red-50: #180706;
+  --color-red-100: #3c110e;
+  --color-red-200: #78221c;
+  --color-red-300: #b4332a;
+  --color-red-400: #f04438;
+  --color-red-500: #f36960;
+  --color-red-600: #f68f88;
+  --color-red-700: #f9b4af;
+  --color-red-800: #fcdad7;
+  --color-red-900: #feedec;
+
+  /* Blue - Dark Mode */
+  --color-blue-50: #021217;
+  --color-blue-100: #052d39;
+  --color-blue-200: #0a5972;
+  --color-blue-300: #0e86ab;
+  --color-blue-400: #13b2e4;
+  --color-blue-500: #42c1e9;
+  --color-blue-600: #71d1ef;
+  --color-blue-700: #a1e0f4;
+  --color-blue-800: #d0f0fa;
+  --color-blue-900: #e8f8fd;
+
+  /* Neutral - Black (inverted for dark mode) */
+  --color-black-500: #667085;
+  --color-black-600: #858d9d;
+  --color-black-700: #a3a9b6;
+  --color-black-800: #c2c6ce;
+  --color-black-900: #e0e2e7;
+
+  /* Neutral - Gray (inverted for dark mode) */
+  --color-gray-25: #0a0b0d;
+  --color-gray-50: #1a1c21;
+  --color-gray-100: #333843;
+  --color-gray-200: #4d5464;
+  --color-gray-300: #667085;
+  --color-gray-400: #858d9d;
+
+  /* Neutral - White becomes dark background */
+  --color-white: #1a1c21;
+}

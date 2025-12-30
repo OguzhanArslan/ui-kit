@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
 
 import { ArrowUpIcon } from '@/components/icons';
+import { COLOR } from '@/foundation/colors';
 import { SIZE } from '@/foundation/sizes';
-import { TYPE } from '@/foundation/types';
 
 import { Button } from './Button';
 
@@ -11,9 +11,16 @@ const meta = {
   title: 'Forms & Fields/Button',
   component: Button,
   argTypes: {
-    type: {
+    color: {
       control: 'radio',
-      options: [TYPE.primary, TYPE.secondary, TYPE.tertiary],
+      options: [
+        COLOR.primary,
+        COLOR.secondary,
+        COLOR.tertiary,
+        COLOR.success,
+        COLOR.warning,
+        COLOR.error,
+      ],
     },
     size: {
       control: 'radio',
@@ -34,26 +41,40 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     label: 'Button',
+    color: COLOR.primary,
   },
 };
 
 export const Secondary: Story = {
   args: {
-    type: TYPE.secondary,
+    color: COLOR.secondary,
     label: 'Button',
   },
 };
 
 export const Tertiary: Story = {
   args: {
-    type: TYPE.tertiary,
+    color: COLOR.tertiary,
     label: 'Button',
   },
 };
 
+export const Colors: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+      <Button color="primary" label="Primary" />
+      <Button color="secondary" label="Secondary" />
+      <Button color="tertiary" label="Tertiary" />
+      <Button color="success" label="Success" />
+      <Button color="warning" label="Warning" />
+      <Button color="error" label="Error" />
+    </div>
+  ),
+};
+
 export const Loading: Story = {
   args: {
-    type: TYPE.tertiary,
+    color: COLOR.tertiary,
     label: 'Button',
     isLoading: true,
   },
@@ -61,7 +82,7 @@ export const Loading: Story = {
 
 export const Icon: Story = {
   args: {
-    type: TYPE.primary,
+    color: COLOR.primary,
     ariaLabel: 'Button',
     prefix: <ArrowUpIcon aria-hidden="true" focusable="false" />,
     isLoading: true,
@@ -70,7 +91,7 @@ export const Icon: Story = {
 
 export const IconPrefix: Story = {
   args: {
-    type: TYPE.primary,
+    color: COLOR.primary,
     label: 'Button',
     prefix: <ArrowUpIcon aria-hidden="true" focusable="false" />,
   },
@@ -78,7 +99,7 @@ export const IconPrefix: Story = {
 
 export const IconSuffix: Story = {
   args: {
-    type: TYPE.primary,
+    color: COLOR.primary,
     label: 'Button',
     suffix: <ArrowUpIcon aria-hidden="true" focusable="false" />,
   },

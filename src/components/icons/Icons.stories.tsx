@@ -1,6 +1,6 @@
 import * as Icons from './index';
 
-export default { title: 'Media/Icons' };
+export default { title: 'Configuration/Icons' };
 
 export const Catalog = () => {
   const entries = Object.entries(Icons);

@@ -13,6 +13,7 @@
     border: 1px solid var(--color-gray-100);
     border-radius: 8px;
     padding: 8px 12px;
+    min-height: 40px;
     width: 100%;
 
     &:focus-visible {
@@ -44,6 +45,7 @@
   }
 
   .suffix, .prefix {
+    color: var(--color-black-500);
     display: flex;
     align-items: center;
     position: absolute;
