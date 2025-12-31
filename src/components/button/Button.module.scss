@@ -6,7 +6,6 @@
   appearance: none;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 4px;
   border-width: 1px;
   border-style: solid;
@@ -16,7 +15,10 @@
   font-weight: 500;
   padding: 10px;
   transition: all 0.3s ease-in-out;
-  min-height: 40px;
+
+  &.xs {
+    padding: 4px;
+  }
 
   &.sm {
     padding: 8px;
@@ -24,6 +26,10 @@
 
   &.lg {
     padding: 12px;
+  }
+
+  &.textCenter {
+    justify-content: center;
   }
 
   &.loading {
@@ -107,6 +113,33 @@
     }
   }
 
+  &.menu {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--color-gray-400);
+    gap: 12px;
+    padding: 12px 16px;
+
+    &.circle {
+      padding: 12px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--color-gray-400);
+    }
+
+    &:not(:disabled):hover, &.active {
+      background-color: var(--color-primary-200);
+      color: var(--color-primary-700);
+
+      svg {
+        fill: var(--color-primary-700);
+      }
+    }
+  }
+
   &.success {
     border-color: var(--color-green-500);
     background-color: var(--color-green-500);
@@ -172,5 +205,9 @@
 
   &.fullWidth {
     width: 100%;
+  }
+
+  &.circle {
+    border-radius: 50%;
   }
 }

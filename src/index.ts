@@ -1,13 +1,14 @@
 // components
-export * from './components/button/Button';
-export * from './components/checkbox/Checkbox';
-export * from './components/formgroup/FormGroup';
-export * from './components/input/Input';
-export * from './components/label/Label';
-export * from './components/loader/Loader';
-export * from './components/select/Select';
-export * from './components/textarea/Textarea';
-export * from './components/typography/Typography';
+export * from './components/button';
+export * from './components/checkbox';
+export * from './components/formgroup';
+export * from './components/input';
+export * from './components/label';
+export * from './components/loader';
+export * from './components/select';
+export * from './components/sidebar';
+export * from './components/textarea';
+export * from './components/typography';
 
 // foundation
 export * from './foundation/colors';

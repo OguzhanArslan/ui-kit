@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
 
-import { ArrowUpIcon } from '@/components/icons';
+import { ArrowUpIcon, HomeIcon } from '@/components/icons';
 import { COLOR } from '@/foundation/colors';
 import { SIZE } from '@/foundation/sizes';
 
@@ -56,6 +56,14 @@ export const Tertiary: Story = {
   args: {
     color: COLOR.tertiary,
     label: 'Button',
+  },
+};
+
+export const Menu: Story = {
+  args: {
+    color: COLOR.menu,
+    label: 'Dashboard',
+    prefix: <HomeIcon aria-hidden="true" focusable="false" />,
   },
 };
 

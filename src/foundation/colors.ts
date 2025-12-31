@@ -2,6 +2,7 @@ export const COLOR = {
   primary: 'primary',
   secondary: 'secondary',
   tertiary: 'tertiary',
+  menu: 'menu',
   success: 'success',
   warning: 'warning',
   error: 'error',

@@ -1,0 +1,7 @@
+@use '../../../styles/colors.scss';
+
+.footer {
+  border-top: 1px solid var(--color-gray-50);
+  margin-top: auto;
+  padding: 24px;
+}
