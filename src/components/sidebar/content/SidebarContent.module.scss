@@ -9,10 +9,10 @@
   flex-direction: column;
   gap: 24px;
   height: 100vh;
-  min-width: 280px;
+  width: 280px;
   transition: width, left, right, 0.3s;
 
   &.closed {
-    min-width: 76px;
+    width: 100px;
   }
 }
