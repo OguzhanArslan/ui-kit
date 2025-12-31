@@ -1,0 +1,10 @@
+@use '../../../styles/colors.scss';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 24px;
+  height: 100%;
+  overflow-y: scroll;
+}

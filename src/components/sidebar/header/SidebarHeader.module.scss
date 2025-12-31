@@ -1,0 +1,14 @@
+@use '../../../styles/colors.scss';
+
+.header {
+  position: relative;
+  padding: 26px 24px;
+
+  .backButton {
+    height: auto;
+    position: absolute;
+    top: 50%;
+    right: -14px;
+    transform: translateY(-50%);
+  }
+}

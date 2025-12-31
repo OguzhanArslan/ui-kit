@@ -7,6 +7,7 @@ import { SIZE, type SIZES } from '@/foundation/sizes';
 import styles from './Button.module.scss';
 
 export interface IButtonProps {
+  className?: string;
   label?: string;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
@@ -17,10 +18,14 @@ export interface IButtonProps {
   ariaLabel?: string;
   size?: SIZES;
   isFullWidth?: boolean;
+  isActive?: boolean;
+  isCircle?: boolean;
+  isHiddenLabel?: boolean;
 }
 
 export const Button = (props: IButtonProps) => {
   const {
+    className,
     label,
     prefix,
     suffix,
@@ -31,23 +36,35 @@ export const Button = (props: IButtonProps) => {
     onClick,
     ariaLabel,
     isFullWidth,
+    isActive,
+    isCircle,
+    isHiddenLabel,
     ...restProps
   } = props;
 
   return (
     <button
       role="button"
-      className={classNames(styles.button, styles[color], styles[size], {
-        [styles.loading]: isLoading,
-        [styles.fullWidth]: isFullWidth,
-      })}
+      className={classNames(
+        styles.button,
+        styles[color],
+        styles[size],
+        className,
+        {
+          [styles.loading]: isLoading,
+          [styles.fullWidth]: isFullWidth,
+          [styles.active]: isActive,
+          [styles.circle]: isCircle,
+          [styles.textCenter]: !prefix && !suffix,
+        },
+      )}
       onClick={onClick}
       disabled={isLoading || disabled}
       aria-label={label || ariaLabel}
       {...restProps}
     >
       {prefix}
-      {label}
+      {!isHiddenLabel && label}
       {suffix}
       {isLoading && <Loader size={SIZE.sm} />}
     </button>
