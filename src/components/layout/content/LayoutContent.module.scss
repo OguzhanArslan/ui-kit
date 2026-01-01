@@ -1,0 +1,7 @@
+@use '../../../styles/colors.scss';
+
+.content {
+  background-color: var(--color-gray-25);
+  flex: 1;
+  padding: 24px;
+}
