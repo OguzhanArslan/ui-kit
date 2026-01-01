@@ -39,9 +39,7 @@ function Render(args: React.ComponentProps<typeof SidebarContent>) {
 
   return (
     <SidebarContent {...args} isOpen={isOpen}>
-      <SidebarHeader isOpen={isOpen} onClick={toggle}>
-        Logo
-      </SidebarHeader>
+      <SidebarHeader title="CARİ PUSULA" isOpen={isOpen} onClick={toggle} />
       <SidebarMenu>
         <Button
           prefix={<HomeIcon />}
