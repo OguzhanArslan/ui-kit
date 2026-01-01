@@ -4,6 +4,7 @@ export * from './components/checkbox';
 export * from './components/formgroup';
 export * from './components/input';
 export * from './components/label';
+export * from './components/layout';
 export * from './components/loader';
 export * from './components/select';
 export * from './components/sidebar';
