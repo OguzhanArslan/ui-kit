@@ -10,14 +10,14 @@ import {
 } from '@/components/icons';
 import { COLOR } from '@/foundation/colors';
 
-import { SidebarFooter } from '../footer/SidebarFooter';
-import { SidebarHeader } from '../header/SidebarHeader';
-import { SidebarMenu } from '../menu/SidebarMenu';
-import { SidebarContent } from './SidebarContent';
+import { SidebarFooter } from './footer/SidebarFooter';
+import { SidebarHeader } from './header/SidebarHeader';
+import { SidebarMenu } from './menu/SidebarMenu';
+import { Sidebar } from './Sidebar';
 
 const meta = {
-  title: 'Sidebar/Content',
-  component: SidebarContent,
+  title: 'Sidebar',
+  component: Sidebar,
   parameters: {
     layout: 'centered',
   },
@@ -26,19 +26,19 @@ const meta = {
     isOpen: true,
     children: null,
   },
-} satisfies Meta<typeof SidebarContent>;
+} satisfies Meta<typeof Sidebar>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-function Render(args: React.ComponentProps<typeof SidebarContent>) {
+function Render(args: React.ComponentProps<typeof Sidebar>) {
   const [{ isOpen }, updateArgs] = useArgs();
 
   const toggle = () => updateArgs({ isOpen: !isOpen });
 
   return (
-    <SidebarContent {...args} isOpen={isOpen}>
+    <Sidebar {...args} isOpen={isOpen}>
       <SidebarHeader title="CARİ PUSULA" isOpen={isOpen} onClick={toggle} />
       <SidebarMenu>
         <Button
@@ -72,7 +72,7 @@ function Render(args: React.ComponentProps<typeof SidebarContent>) {
         />
       </SidebarMenu>
       <SidebarFooter>Footer</SidebarFooter>
-    </SidebarContent>
+    </Sidebar>
   );
 }
 
