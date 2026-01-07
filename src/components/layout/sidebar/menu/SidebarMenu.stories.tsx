@@ -7,7 +7,7 @@ import { COLOR } from '@/foundation/colors';
 import { SidebarMenu } from './SidebarMenu';
 
 const meta = {
-  title: 'Sidebar/Menu',
+  title: 'Layout/Sidebar/Menu',
   component: SidebarMenu,
   parameters: {
     layout: 'centered',

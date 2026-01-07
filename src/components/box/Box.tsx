@@ -17,7 +17,11 @@ export const Box = (props: IBoxProps) => {
   return (
     <div className={styles.box}>
       <div className={styles.header}>
-        {title && <Typography variant="h5">{title}</Typography>}
+        {title && (
+          <Typography variant="h2" weight="bold">
+            {title}
+          </Typography>
+        )}
         <div className={styles.actions}>{actions}</div>
       </div>
 
