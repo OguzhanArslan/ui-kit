@@ -6,9 +6,12 @@ import { COLOR } from '@/foundation/colors';
 
 import { Button } from '../button';
 import { CalendarIcon, GearIcon, HomeIcon, ShopingBagIcon } from '../icons';
-import { Sidebar, SidebarFooter, SidebarHeader, SidebarMenu } from '../sidebar';
 import { LayoutContent } from './content/LayoutContent';
 import { Layout } from './Layout';
+import { SidebarFooter } from './sidebar/footer/SidebarFooter';
+import { SidebarHeader } from './sidebar/header/SidebarHeader';
+import { SidebarMenu } from './sidebar/menu/SidebarMenu';
+import { Sidebar } from './sidebar/Sidebar';
 
 const meta = {
   title: 'Layout',

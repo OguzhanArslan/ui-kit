@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SidebarFooter } from './SidebarFooter';
 
 const meta = {
-  title: 'Sidebar/Footer',
+  title: 'Layout/Sidebar/Footer',
   component: SidebarFooter,
   parameters: {
     layout: 'centered',

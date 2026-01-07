@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SidebarHeader } from './SidebarHeader';
 
 const meta = {
-  title: 'Sidebar/Header',
+  title: 'Layout/Sidebar/Header',
   component: SidebarHeader,
   parameters: {
     layout: 'centered',

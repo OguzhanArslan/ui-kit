@@ -16,7 +16,7 @@ import { SidebarMenu } from './menu/SidebarMenu';
 import { Sidebar } from './Sidebar';
 
 const meta = {
-  title: 'Sidebar',
+  title: 'Layout/Sidebar',
   component: Sidebar,
   parameters: {
     layout: 'centered',
