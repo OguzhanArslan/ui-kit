@@ -1,12 +1,12 @@
 import type { ReactNode } from 'react';
 
-import styles from './LayoutContent.module.scss';
+import styles from './Content.module.scss';
 
-export interface ILayoutContentProps {
+export interface IContentProps {
   children: ReactNode;
 }
 
-export const LayoutContent = (props: ILayoutContentProps) => {
+export const Content = (props: IContentProps) => {
   const { children } = props;
 
   return <div className={styles.content}>{children}</div>;

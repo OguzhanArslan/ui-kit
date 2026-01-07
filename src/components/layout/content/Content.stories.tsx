@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { LayoutContent } from './LayoutContent';
+import { Content } from './Content';
 
 const meta = {
   title: 'Layout/Content',
-  component: LayoutContent,
+  component: Content,
   parameters: {
     layout: 'centered',
   },
@@ -12,14 +12,14 @@ const meta = {
   args: {
     children: null,
   },
-} satisfies Meta<typeof LayoutContent>;
+} satisfies Meta<typeof Content>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-function Render(args: React.ComponentProps<typeof LayoutContent>) {
-  return <LayoutContent {...args}>deneme</LayoutContent>;
+function Render(args: React.ComponentProps<typeof Content>) {
+  return <Content {...args}>deneme</Content>;
 }
 
 export const Default: Story = {

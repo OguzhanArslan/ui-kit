@@ -6,7 +6,7 @@ import { COLOR } from '@/foundation/colors';
 
 import { Button } from '../button';
 import { CalendarIcon, GearIcon, HomeIcon, ShopingBagIcon } from '../icons';
-import { LayoutContent } from './content/LayoutContent';
+import { Content } from './content/Content';
 import { Layout } from './Layout';
 import { SidebarFooter } from './sidebar/footer/SidebarFooter';
 import { SidebarHeader } from './sidebar/header/SidebarHeader';
@@ -67,7 +67,7 @@ function Render(args: React.ComponentProps<typeof Layout>) {
         </SidebarMenu>
         <SidebarFooter>Footer</SidebarFooter>
       </Sidebar>
-      <LayoutContent>Content</LayoutContent>
+      <Content>Content</Content>
     </Layout>
   );
 }
