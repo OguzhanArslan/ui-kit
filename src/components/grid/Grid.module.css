@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(var(--grid-cols, 12), minmax(0, 1fr));
+  gap: var(--grid-gap, 12px);
+  align-items: var(--grid-align-items, stretch);
+  justify-items: var(--grid-justify-items, stretch);
+}
+
+.item {
+  min-width: 0;
+  grid-column: span var(--grid-span, 1) / span var(--grid-span, 1);
+}
