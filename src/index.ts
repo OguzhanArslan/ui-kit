@@ -4,6 +4,7 @@ export * from './components/button';
 export * from './components/charts';
 export * from './components/checkbox';
 export * from './components/formgroup';
+export * from './components/grid';
 export * from './components/input';
 export * from './components/label';
 export * from './components/layout';
