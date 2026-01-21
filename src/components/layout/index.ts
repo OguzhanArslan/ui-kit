@@ -1,3 +1,4 @@
+export { AuthLayout } from './authLayout/AuthLayout';
 export { Content } from './content/Content';
 export { Layout } from './Layout';
 export { SidebarFooter } from './sidebar/footer/SidebarFooter';

@@ -1,0 +1,23 @@
+.brandContent {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.title {
+  font-size: 32px !important;
+  letter-spacing: 6px;
+  color: var(--color-primary-700) !important;
+  margin-bottom: 8px;
+  font-weight: 700 !important;
+}
+
+.subtitle {
+  font-size: 14px !important;
+  letter-spacing: 2px;
+  color: var(--color-primary-500) !important;
+  font-weight: 400 !important;
+}

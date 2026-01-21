@@ -13,6 +13,10 @@ export * from './components/select';
 export * from './components/textarea';
 export * from './components/typography';
 
+// decorative
+export * from './components/decorative/brandContent';
+export * from './components/decorative/compassAnimation';
+
 // foundation
 export * from './foundation/colors';
 export * from './foundation/sizes';
