@@ -1,6 +1,8 @@
 // components
 export * from './components/box';
+export * from './components/badge';
 export * from './components/button';
+export * from './components/card';
 export * from './components/charts';
 export * from './components/checkbox';
 export * from './components/formgroup';
@@ -10,7 +12,10 @@ export * from './components/label';
 export * from './components/layout';
 export * from './components/loader';
 export * from './components/select';
+export * from './components/stat-card';
+export * from './components/table';
 export * from './components/textarea';
+export * from './components/tooltip';
 export * from './components/typography';
 
 // decorative

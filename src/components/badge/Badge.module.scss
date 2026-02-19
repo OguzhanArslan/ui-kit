@@ -1,0 +1,78 @@
+@use '../../styles/colors.scss';
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cuk-spacing-1);
+  border-radius: var(--cuk-radius-full);
+  font-weight: var(--cuk-font-weight-medium);
+  white-space: nowrap;
+  line-height: 1;
+
+  &.sm {
+    font-size: var(--cuk-font-size-xs);
+    padding: 2px var(--cuk-spacing-2);
+    height: 20px;
+  }
+
+  &.md {
+    font-size: var(--cuk-font-size-sm);
+    padding: var(--cuk-spacing-0-5) var(--cuk-spacing-2-5);
+    height: 24px;
+  }
+
+  &.default {
+    background-color: var(--cuk-color-neutral-100);
+    color: var(--cuk-color-neutral-700);
+  }
+
+  &.success {
+    background-color: var(--cuk-color-success-subtle);
+    color: var(--cuk-color-success-text);
+  }
+
+  &.warning {
+    background-color: var(--cuk-color-warning-subtle);
+    color: var(--cuk-color-warning-text);
+  }
+
+  &.danger {
+    background-color: var(--cuk-color-danger-subtle);
+    color: var(--cuk-color-danger-text);
+  }
+
+  &.info {
+    background-color: var(--cuk-color-info-subtle);
+    color: var(--cuk-color-info-text);
+  }
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--cuk-radius-full);
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+.removeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: currentColor;
+  cursor: pointer;
+  padding: 0;
+  margin-left: var(--cuk-spacing-0-5);
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}

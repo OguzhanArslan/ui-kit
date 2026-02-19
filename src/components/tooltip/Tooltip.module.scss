@@ -1,0 +1,22 @@
+@use '../../styles/colors.scss';
+
+.trigger {
+  display: inline-flex;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 9999;
+  max-width: 250px;
+  padding: var(--cuk-spacing-1-5) var(--cuk-spacing-2-5);
+  font-size: var(--cuk-font-size-xs);
+  font-weight: var(--cuk-font-weight-medium);
+  line-height: var(--cuk-line-height-normal);
+  color: var(--cuk-color-white);
+  background-color: var(--cuk-color-neutral-800);
+  border-radius: var(--cuk-radius-md);
+  box-shadow: var(--cuk-shadow-md);
+  pointer-events: none;
+  white-space: normal;
+  word-wrap: break-word;
+}
