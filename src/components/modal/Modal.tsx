@@ -20,6 +20,7 @@ export interface ModalSectionProps extends React.HTMLAttributes<HTMLDivElement> 
 
 export interface ModalHeaderProps extends ModalSectionProps {
   title?: string;
+  description?: string;
   onClose?: () => void;
 }
 
@@ -34,9 +35,14 @@ const CloseIcon: React.FC = () => (
 // ─── Sub-components ──────────────────────────────────────
 
 const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
-  ({ title, onClose, className, children, ...rest }, ref) => (
+  ({ title, description, onClose, className, children, ...rest }, ref) => (
     <div ref={ref} className={classNames(styles.header, className)} {...rest}>
-      {title ? <h2 className={styles.headerTitle}>{title}</h2> : children}
+      {title ? (
+        <div className={styles.headerContent}>
+          <h2 className={styles.headerTitle}>{title}</h2>
+          {description && <p className={styles.headerDescription}>{description}</p>}
+        </div>
+      ) : children}
       {onClose && (
         <button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close">
           <CloseIcon />

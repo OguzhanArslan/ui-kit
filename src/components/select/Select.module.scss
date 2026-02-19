@@ -3,31 +3,34 @@
 .root {
     &.error {
         :global(.uiSelect__control) {
-            background-color: var(--cuk-color-danger-subtle);
-            border-color: var(--cuk-color-danger-100);
+            border-color: var(--cuk-color-danger);
         }
     }
 
     :global(.uiSelect__control) {
         width: 100%;
-        min-height: 40px;
-        background-color: var(--cuk-color-input-bg);
+        min-height: 36px;
+        background-color: transparent;
         border: 1px solid var(--cuk-color-input-border);
-        border-radius: var(--cuk-radius-lg);
+        border-radius: var(--cuk-radius-md);
+        font-size: var(--cuk-font-size-sm);
+        transition: border-color 150ms ease;
 
         &:hover {
-            border-color: var(--cuk-color-input-border);
+            border-color: var(--cuk-color-neutral-300);
         }
     }
 
     :global(.uiSelect__control--is-disabled) {
-        background-color: var(--cuk-color-disabled-bg);
-        border-color: var(--cuk-color-disabled-border);
+        opacity: 0.5;
+        pointer-events: none;
     }
 
     :global(.uiSelect__control--is-focused) {
         box-shadow: none;
         border: 1px solid var(--cuk-color-input-focus-border);
+        outline: 2px solid var(--cuk-color-focus);
+        outline-offset: -1px;
 
         &:hover {
             border-color: var(--cuk-color-input-focus-border);
@@ -35,16 +38,20 @@
     }
 
     :global(.uiSelect__value-container) {
-        padding: var(--cuk-spacing-2) var(--cuk-spacing-3);
+        padding: var(--cuk-spacing-1-5) var(--cuk-spacing-3);
     }
 
     :global(.uiSelect__value-container--is-multi) {
-        padding: 5.6px var(--cuk-spacing-3);
+        padding: var(--cuk-spacing-1) var(--cuk-spacing-3);
     }
 
     :global(.uiSelect__input-container) {
         padding: 0;
         margin: 0;
+    }
+
+    :global(.uiSelect__placeholder) {
+        color: var(--cuk-color-input-placeholder);
     }
 
     :global(.uiSelect__indicator) {
@@ -61,33 +68,61 @@
     }
 
     :global(.uiSelect__menu) {
-        border-radius: var(--cuk-radius-lg);
+        border-radius: var(--cuk-radius-md);
         border: 1px solid var(--cuk-color-border);
         box-shadow: var(--cuk-shadow-lg);
+        background-color: var(--cuk-color-surface);
+        overflow: hidden;
+    }
+
+    :global(.uiSelect__option) {
+        font-size: var(--cuk-font-size-sm);
+        padding: var(--cuk-spacing-2) var(--cuk-spacing-3);
+        cursor: pointer;
+        transition: background-color 100ms ease;
+
+        &:hover {
+            background-color: var(--cuk-color-background-muted);
+        }
+    }
+
+    :global(.uiSelect__option--is-focused) {
+        background-color: var(--cuk-color-background-muted);
+    }
+
+    :global(.uiSelect__option--is-selected) {
+        background-color: var(--cuk-color-primary-50);
+        color: var(--cuk-color-text-primary);
+        font-weight: var(--cuk-font-weight-medium);
     }
 
     :global(.uiSelect__multi-value) {
-        background-color: var(--cuk-color-primary-subtle);
-        border: 0;
+        background-color: var(--cuk-color-background-muted);
+        border: 1px solid var(--cuk-color-border);
         border-radius: var(--cuk-radius-sm);
         margin: 0 2px;
-        padding: 2px;
 
         :global(.uiSelect__multi-value__label) {
             font-weight: var(--cuk-font-weight-medium);
             font-size: var(--cuk-font-size-xs);
-            color: var(--cuk-color-primary);
+            color: var(--cuk-color-text-primary);
+            padding: 2px var(--cuk-spacing-1);
         }
 
         :global(.uiSelect__multi-value__remove) {
-            color: var(--cuk-color-primary);
+            color: var(--cuk-color-text-muted);
             border-radius: 0 var(--cuk-radius-sm) var(--cuk-radius-sm) 0;
+
+            &:hover {
+                background-color: var(--cuk-color-danger-subtle);
+                color: var(--cuk-color-danger);
+            }
         }
     }
 
     .menuOpen, .menuClose {
         display: inline-flex;
-        transform: transform 150ms ease;
+        transition: transform 150ms ease;
     }
 
     .menuOpen {
