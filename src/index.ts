@@ -1,3 +1,6 @@
+// design tokens
+import './styles/tokens.scss';
+
 // components
 export * from './components/alert';
 export * from './components/box';

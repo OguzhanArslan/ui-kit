@@ -6,6 +6,7 @@ import '@fontsource/dm-sans/500.css';
 import '@fontsource/dm-sans/700.css';
 import '../src/styles/scope.css';
 import '../src/styles/colors.scss';
+import '../src/styles/tokens.scss';
 
 const preview: Preview = {
   parameters: {
