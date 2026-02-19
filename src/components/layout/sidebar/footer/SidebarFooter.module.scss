@@ -2,7 +2,7 @@
 @use '../../../../styles/colors.scss';
 
 .footer {
-  border-top: 1px solid var(--color-gray-50);
+  border-top: 1px solid var(--cuk-color-border);
   margin-top: auto;
-  padding: 24px;
+  padding: var(--cuk-spacing-6);
 }

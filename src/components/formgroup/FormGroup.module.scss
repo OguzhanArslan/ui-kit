@@ -3,6 +3,6 @@
 .formGroup {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--cuk-spacing-2);
   width: 100%;
 }

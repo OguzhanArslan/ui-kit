@@ -2,7 +2,7 @@
 
 .header {
   position: relative;
-  padding: 26px 24px;
+  padding: var(--cuk-spacing-6) var(--cuk-spacing-6);
 
   .backButton {
     height: auto;
@@ -15,17 +15,17 @@
   .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: var(--cuk-spacing-3);
 
     .logoIcon {
-      background-color: var(--color-primary-700);
+      background-color: var(--cuk-color-primary-700);
       display: flex;
       align-items: center;
       justify-content: center;
       width: 52px;
       height: 46px;
-      border-radius: 8px;
-      color: var(--color-white);
+      border-radius: var(--cuk-radius-lg);
+      color: var(--cuk-color-white);
 
       svg {
         width: 18px;
@@ -34,9 +34,9 @@
     }
 
     .logoText {
-      font-size: 24px;
-      font-weight: 600;
-      color: var(--color-black-900);
+      font-size: var(--cuk-font-size-2xl);
+      font-weight: var(--cuk-font-weight-semibold);
+      color: var(--cuk-color-text-primary);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

@@ -2,39 +2,39 @@
 
 .typography {
   margin: 0;
-  color: var(--color-black-900);
-  line-height: 1.2;
+  color: var(--cuk-color-text-primary);
+  line-height: var(--cuk-line-height-tight);
 }
 
 .h1 {
-  font-size: 24px;
+  font-size: var(--cuk-font-size-2xl);
 }
 
 .h2 {
-  font-size: 22px;
+  font-size: var(--cuk-font-size-xl);
 }
 
 .h3 {
-  font-size: 20px;
+  font-size: var(--cuk-font-size-lg);
 }
 
 .h4 {
-  font-size: 18px;
+  font-size: var(--cuk-font-size-base);
 }
 
 .paragraph {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: var(--cuk-font-size-base);
+  line-height: var(--cuk-line-height-normal);
 }
 
 .small {
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: var(--cuk-font-size-sm);
+  line-height: var(--cuk-line-height-normal);
 }
 
 .caption {
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: var(--cuk-font-size-xs);
+  line-height: var(--cuk-line-height-normal);
 }
 
 // Weights
@@ -43,38 +43,38 @@
 }
 
 .regular {
-  font-weight: 400;
+  font-weight: var(--cuk-font-weight-regular);
 }
 
 .medium {
-  font-weight: 500;
+  font-weight: var(--cuk-font-weight-medium);
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: var(--cuk-font-weight-bold);
 }
 
 // Colors
 .primary {
-  color: var(--color-primary-500);
+  color: var(--cuk-color-primary);
 }
 
 .secondary {
-  color: var(--color-primary-300);
+  color: var(--cuk-color-primary-300);
 }
 
 .tertiary {
-  color: var(--color-primary-200);
+  color: var(--cuk-color-primary-200);
 }
 
 .success {
-  color: var(--color-green-500);
+  color: var(--cuk-color-success);
 }
 
 .warning {
-  color: var(--color-yellow-500);
+  color: var(--cuk-color-warning);
 }
 
 .error {
-  color: var(--color-red-500);
+  color: var(--cuk-color-danger);
 }
