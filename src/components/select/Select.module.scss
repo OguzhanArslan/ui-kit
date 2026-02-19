@@ -3,44 +3,44 @@
 .root {
     &.error {
         :global(.uiSelect__control) {
-            background-color: var(--color-red-50);
-            border-color: var(--color-red-100);
+            background-color: var(--cuk-color-danger-subtle);
+            border-color: var(--cuk-color-danger-100);
         }
     }
 
     :global(.uiSelect__control) {
         width: 100%;
         min-height: 40px;
-        background-color: var(--color-white);
-        border: 1px solid var(--color-gray-100);
-        border-radius: 8px;
+        background-color: var(--cuk-color-input-bg);
+        border: 1px solid var(--cuk-color-input-border);
+        border-radius: var(--cuk-radius-lg);
 
         &:hover {
-            border-color: var(--color-gray-100);
+            border-color: var(--cuk-color-input-border);
         }
     }
 
     :global(.uiSelect__control--is-disabled) {
-        background-color: var(--color-gray-100);
-        border-color: var(--color-gray-100);
+        background-color: var(--cuk-color-disabled-bg);
+        border-color: var(--cuk-color-disabled-border);
     }
 
     :global(.uiSelect__control--is-focused) {
         box-shadow: none;
-        border: 1px solid var(--color-primary-500);
+        border: 1px solid var(--cuk-color-input-focus-border);
 
         &:hover {
-            border-color: var(--color-primary-500);
+            border-color: var(--cuk-color-input-focus-border);
         }
     }
 
     :global(.uiSelect__value-container) {
-        padding: 8px 12px;
+        padding: var(--cuk-spacing-2) var(--cuk-spacing-3);
     }
 
     :global(.uiSelect__value-container--is-multi) {
-        padding: 5.6px 12px;
-    }  
+        padding: 5.6px var(--cuk-spacing-3);
+    }
 
     :global(.uiSelect__input-container) {
         padding: 0;
@@ -48,8 +48,8 @@
     }
 
     :global(.uiSelect__indicator) {
-        color: var(--color-gray-400);
-        padding-right: 12px;
+        color: var(--cuk-color-text-muted);
+        padding-right: var(--cuk-spacing-3);
     }
 
     :global(.uiSelect__clear-indicator) {
@@ -61,27 +61,27 @@
     }
 
     :global(.uiSelect__menu) {
-        border-radius: 8px;
-        border: 1px solid var(--color-gray-100);
-        box-shadow: 0 4px 30px 0 rgba(46, 45, 116, 0.1);
+        border-radius: var(--cuk-radius-lg);
+        border: 1px solid var(--cuk-color-border);
+        box-shadow: var(--cuk-shadow-lg);
     }
 
     :global(.uiSelect__multi-value) {
-        background-color: var(--color-primary-100);
+        background-color: var(--cuk-color-primary-subtle);
         border: 0;
-        border-radius: 4px;
+        border-radius: var(--cuk-radius-sm);
         margin: 0 2px;
         padding: 2px;
 
         :global(.uiSelect__multi-value__label) {
-            font-weight: 500;
-            font-size: 12px;
-            color: var(--color-primary-500);
+            font-weight: var(--cuk-font-weight-medium);
+            font-size: var(--cuk-font-size-xs);
+            color: var(--cuk-color-primary);
         }
 
         :global(.uiSelect__multi-value__remove) {
-            color: var(--color-primary-500);
-            border-radius: 0 4px 4px 0;
+            color: var(--cuk-color-primary);
+            border-radius: 0 var(--cuk-radius-sm) var(--cuk-radius-sm) 0;
         }
     }
 

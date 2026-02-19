@@ -3,29 +3,32 @@
 .textarea {
   outline: none;
   box-sizing: border-box;
-  color: var(--color-black-700);
-  font-size: 14px;
-  font-weight: 400;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-100);
-  border-radius: 8px;
-  padding: 8px 12px;
+  color: var(--cuk-color-text-primary);
+  font-size: var(--cuk-font-size-sm);
+  font-weight: var(--cuk-font-weight-regular);
+  background-color: var(--cuk-color-input-bg);
+  border: 1px solid var(--cuk-color-input-border);
+  border-radius: var(--cuk-radius-lg);
+  padding: var(--cuk-spacing-2) var(--cuk-spacing-3);
   resize: none;
   min-height: 156px;
   width: 100%;
 
   &:focus-visible {
-    border-color: var(--color-primary-500);
+    border-color: var(--cuk-color-input-focus-border);
+    outline: 2px solid var(--cuk-color-focus);
+    outline-offset: -1px;
+    box-shadow: 0 0 0 4px var(--cuk-color-focus-ring);
   }
 
   &.error {
-    background-color: var(--color-red-50);
-    border-color: var(--color-red-100);
+    background-color: var(--cuk-color-danger-subtle);
+    border-color: var(--cuk-color-danger-100);
   }
 
   &:disabled {
     pointer-events: none;
-    background-color: var(--color-gray-100);
-    border-color: var(--color-gray-100);
+    background-color: var(--cuk-color-disabled-bg);
+    border-color: var(--cuk-color-disabled-border);
   }
 }

@@ -6,26 +6,26 @@
   appearance: none;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--cuk-spacing-1);
   border-width: 1px;
   border-style: solid;
-  border-radius: 8px;
+  border-radius: var(--cuk-radius-lg);
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 10px;
-  transition: all 0.3s ease-in-out;
+  font-size: var(--cuk-font-size-sm);
+  font-weight: var(--cuk-font-weight-medium);
+  padding: var(--cuk-spacing-2-5);
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
 
   &.xs {
-    padding: 4px;
+    padding: var(--cuk-spacing-1);
   }
 
   &.sm {
-    padding: 8px;
+    padding: var(--cuk-spacing-2);
   }
 
   &.lg {
-    padding: 12px;
+    padding: var(--cuk-spacing-3);
   }
 
   &.textCenter {
@@ -34,8 +34,8 @@
 
   &.loading {
     > span {
-      margin-left: 10px;
-      margin-right: 5px;
+      margin-left: var(--cuk-spacing-2-5);
+      margin-right: var(--cuk-spacing-1);
     }
   }
 
@@ -44,71 +44,77 @@
     height: 18px;
   }
 
+  &:focus-visible {
+    outline: 2px solid var(--cuk-color-focus);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--cuk-color-focus-ring);
+  }
+
   &:disabled {
     opacity: 0.65;
     cursor: not-allowed;
   }
 
   &.primary {
-    border-color: var(--color-primary-500);
-    background-color: var(--color-primary-500);
-    color: var(--color-white);
+    border-color: var(--cuk-color-primary);
+    background-color: var(--cuk-color-primary);
+    color: var(--cuk-color-white);
 
     svg {
-      fill: var(--color-white);
+      fill: var(--cuk-color-white);
     }
 
     &:not(:disabled):hover {
-      border-color: var(--color-primary-600);
-      background-color: var(--color-primary-600);
+      border-color: var(--cuk-color-primary-hover);
+      background-color: var(--cuk-color-primary-hover);
     }
 
     &.loading {
       > span {
-        color: var(--color-white);
+        color: var(--cuk-color-white);
       }
     }
   }
 
   &.secondary {
-    border-color: var(--color-primary-200);
-    background-color: var(--color-primary-200);
-    color: var(--color-primary-600);
+    border-color: var(--cuk-color-primary-200);
+    background-color: var(--cuk-color-primary-200);
+    color: var(--cuk-color-primary-600);
 
     svg {
-      fill: var(--color-primary-600);
+      fill: var(--cuk-color-primary-600);
     }
 
     &:not(:disabled):hover {
-      border-color: var(--color-primary-300);
-      background-color: var(--color-primary-300);
-      color: var(--color-primary-700);
+      border-color: var(--cuk-color-primary-300);
+      background-color: var(--cuk-color-primary-300);
+      color: var(--cuk-color-primary-700);
 
       svg {
-        fill: var(--color-primary-700);
+        fill: var(--cuk-color-primary-700);
       }
     }
 
     &.loading {
       > span {
-        color: var(--color-primary-700);
+        color: var(--cuk-color-primary-700);
       }
     }
   }
 
   &.tertiary {
-    border-color: var(--color-primary-500);
-    background-color: var(--color-white);
-    color: var(--color-primary-500);
+    border-color: var(--cuk-color-primary);
+    background-color: var(--cuk-color-white);
+    color: var(--cuk-color-primary);
 
     &:not(:disabled):hover {
-      border-color: var(--color-primary-600);
-      background-color: var(--color-primary-100);
+      border-color: var(--cuk-color-primary-hover);
+      background-color: var(--cuk-color-primary-subtle);
     }
 
     &.loading {
       > span {
-        color: var(--color-primary-500);
+        color: var(--cuk-color-primary);
       }
     }
   }
@@ -116,89 +122,89 @@
   &.menu {
     background-color: transparent;
     border-color: transparent;
-    color: var(--color-gray-400);
-    gap: 12px;
-    padding: 12px 16px;
+    color: var(--cuk-color-text-muted);
+    gap: var(--cuk-spacing-3);
+    padding: var(--cuk-spacing-3) var(--cuk-spacing-4);
 
     &.circle {
-      padding: 12px;
+      padding: var(--cuk-spacing-3);
     }
 
     svg {
       width: 20px;
       height: 20px;
-      fill: var(--color-gray-400);
+      fill: var(--cuk-color-text-muted);
     }
 
     &:not(:disabled):hover, &.active {
-      background-color: var(--color-primary-200);
-      color: var(--color-primary-700);
+      background-color: var(--cuk-color-primary-200);
+      color: var(--cuk-color-primary-700);
 
       svg {
-        fill: var(--color-primary-700);
+        fill: var(--cuk-color-primary-700);
       }
     }
   }
 
   &.success {
-    border-color: var(--color-green-500);
-    background-color: var(--color-green-500);
-    color: var(--color-white);
+    border-color: var(--cuk-color-success);
+    background-color: var(--cuk-color-success);
+    color: var(--cuk-color-white);
 
     svg {
-      fill: var(--color-white);
+      fill: var(--cuk-color-white);
     }
 
     &:not(:disabled):hover {
-      border-color: var(--color-green-600);
-      background-color: var(--color-green-600);
+      border-color: var(--cuk-color-success-600);
+      background-color: var(--cuk-color-success-600);
     }
 
     &.loading {
       > span {
-        color: var(--color-white);
+        color: var(--cuk-color-white);
       }
     }
   }
 
   &.warning {
-    border-color: var(--color-yellow-500);
-    background-color: var(--color-yellow-500);
-    color: var(--color-white);
+    border-color: var(--cuk-color-warning);
+    background-color: var(--cuk-color-warning);
+    color: var(--cuk-color-white);
 
     svg {
-      fill: var(--color-white);
+      fill: var(--cuk-color-white);
     }
 
     &:not(:disabled):hover {
-      border-color: var(--color-yellow-600);
-      background-color: var(--color-yellow-600);
+      border-color: var(--cuk-color-warning-600);
+      background-color: var(--cuk-color-warning-600);
     }
 
     &.loading {
       > span {
-        color: var(--color-white);
+        color: var(--cuk-color-white);
       }
     }
   }
 
   &.error {
-    border-color: var(--color-red-500);
-    background-color: var(--color-red-500);
-    color: var(--color-white);
+    border-color: var(--cuk-color-danger);
+    background-color: var(--cuk-color-danger);
+    color: var(--cuk-color-white);
 
     svg {
-      fill: var(--color-white);
+      fill: var(--cuk-color-white);
     }
 
     &:not(:disabled):hover {
-      border-color: var(--color-red-600);
-      background-color: var(--color-red-600);
+      border-color: var(--cuk-color-danger-600);
+      background-color: var(--cuk-color-danger-600);
     }
 
     &.loading {
       > span {
-        color: var(--color-white);
+        color: var(--cuk-color-white);
       }
     }
   }

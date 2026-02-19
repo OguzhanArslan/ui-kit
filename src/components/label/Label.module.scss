@@ -1,7 +1,7 @@
 @use '../../styles/colors.scss';
 
 .label {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-black-900);
+  font-size: var(--cuk-font-size-sm);
+  font-weight: var(--cuk-font-weight-medium);
+  color: var(--cuk-color-text-primary);
 }

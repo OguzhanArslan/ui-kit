@@ -13,9 +13,9 @@
     visibility: hidden;
 
     &:checked + label .checkbox {
-      color: var(--color-white);
-      background-color: var(--color-primary-500);
-      border-color: var(--color-primary-500);
+      color: var(--cuk-color-white);
+      background-color: var(--cuk-color-primary);
+      border-color: var(--cuk-color-primary);
 
       svg {
         display: block;
@@ -26,19 +26,19 @@
       pointer-events: none;
 
       .checkbox {
-        background-color: var(--color-gray-100);
-        border-color: var(--color-gray-100);
+        background-color: var(--cuk-color-disabled-bg);
+        border-color: var(--cuk-color-disabled-border);
       }
     }
   }
 
   label {
-    color: var(--color-black-500);
-    font-weight: 500;
-    font-size: 14px;
+    color: var(--cuk-color-text-secondary);
+    font-weight: var(--cuk-font-weight-medium);
+    font-size: var(--cuk-font-size-sm);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--cuk-spacing-2);
     cursor: pointer;
     user-select: none;
   }
@@ -48,8 +48,8 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    border-radius: 6px;
-    border: 2px solid var(--color-gray-400);
+    border-radius: var(--cuk-radius-md);
+    border: 2px solid var(--cuk-color-neutral-400);
     width: 20px;
     height: 20px;
 
@@ -60,8 +60,8 @@
 
   &.error {
     .checkbox {
-      background-color: var(--color-red-50);
-      border-color: var(--color-red-100);
+      background-color: var(--cuk-color-danger-subtle);
+      border-color: var(--cuk-color-danger-100);
     }
   }
 }
