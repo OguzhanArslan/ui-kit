@@ -17,6 +17,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@tokens': path.resolve(__dirname, 'src/styles/tokens'),
+      '@mixins': path.resolve(__dirname, 'src/styles/mixins'),
     },
   },
   plugins: [react()],

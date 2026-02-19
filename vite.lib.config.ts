@@ -12,7 +12,11 @@ export default defineConfig({
     'process.env.NODE_ENV': '"production"',
   },
   resolve: {
-    alias: { '@': path.resolve(__dirname, 'src') },
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@tokens': path.resolve(__dirname, 'src/styles/tokens'),
+      '@mixins': path.resolve(__dirname, 'src/styles/mixins'),
+    },
   },
   plugins: [
     react(),
