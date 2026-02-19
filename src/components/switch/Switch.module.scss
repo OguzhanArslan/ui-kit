@@ -1,0 +1,63 @@
+@use '../../styles/colors.scss';
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cuk-spacing-2);
+  cursor: pointer;
+  user-select: none;
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.track {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  border-radius: var(--cuk-radius-full);
+  background-color: var(--cuk-color-neutral-200);
+  transition: background-color 150ms ease;
+  flex-shrink: 0;
+
+  &.checked {
+    background-color: var(--cuk-color-primary);
+  }
+}
+
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--cuk-radius-full);
+  background-color: var(--cuk-color-white);
+  box-shadow: var(--cuk-shadow-sm);
+  transition: transform 150ms ease;
+
+  .checked & {
+    transform: translateX(16px);
+  }
+}
+
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+
+  &:focus-visible + .track {
+    outline: 2px solid var(--cuk-color-focus);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--cuk-color-focus-ring);
+  }
+}
+
+.label {
+  font-size: var(--cuk-font-size-sm);
+  color: var(--cuk-color-text-primary);
+}

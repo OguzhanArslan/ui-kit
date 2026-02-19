@@ -1,0 +1,39 @@
+@use '../../styles/colors.scss';
+
+.tabList {
+  display: flex;
+  border-bottom: 1px solid var(--cuk-color-border);
+  gap: 0;
+}
+
+.tab {
+  padding: var(--cuk-spacing-2-5) var(--cuk-spacing-4);
+  font-size: var(--cuk-font-size-sm);
+  font-weight: var(--cuk-font-weight-medium);
+  color: var(--cuk-color-text-secondary);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease;
+  margin-bottom: -1px;
+
+  &:hover {
+    color: var(--cuk-color-text-primary);
+  }
+
+  &.active {
+    color: var(--cuk-color-primary);
+    border-bottom-color: var(--cuk-color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--cuk-color-focus);
+    outline-offset: -2px;
+    border-radius: var(--cuk-radius-sm) var(--cuk-radius-sm) 0 0;
+  }
+}
+
+.panel {
+  padding: var(--cuk-spacing-4) 0;
+}

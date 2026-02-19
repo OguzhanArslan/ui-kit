@@ -1,0 +1,66 @@
+@use '../../styles/colors.scss';
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  left: var(--cuk-spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cuk-color-text-muted);
+  display: flex;
+  pointer-events: none;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: var(--cuk-spacing-2) var(--cuk-spacing-3) var(--cuk-spacing-2) var(--cuk-spacing-9);
+  font-size: var(--cuk-font-size-sm);
+  background-color: var(--cuk-color-input-bg);
+  border: 1px solid var(--cuk-color-input-border);
+  border-radius: var(--cuk-radius-lg);
+  color: var(--cuk-color-text-primary);
+  outline: none;
+  min-height: 40px;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: var(--cuk-color-input-placeholder);
+  }
+
+  &:focus-visible {
+    border-color: var(--cuk-color-input-focus-border);
+    box-shadow: 0 0 0 4px var(--cuk-color-focus-ring);
+  }
+}
+
+.clear {
+  position: absolute;
+  right: var(--cuk-spacing-2);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--cuk-spacing-1);
+  color: var(--cuk-color-text-muted);
+  border-radius: var(--cuk-radius-sm);
+  display: flex;
+
+  &:hover {
+    color: var(--cuk-color-text-primary);
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
