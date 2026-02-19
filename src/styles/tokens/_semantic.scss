@@ -1,1 +1,148 @@
-// Token'lar Story 1.3'te eklenecek
+// Semantic Token Layer
+// Component'ler SADECE bu token'lari kullanir, primitive'lere direkt erismez
+
+:root {
+  // Background
+  --cuk-color-background: var(--cuk-color-white);
+  --cuk-color-background-subtle: var(--cuk-color-neutral-25);
+  --cuk-color-background-muted: var(--cuk-color-neutral-50);
+
+  // Surface (cards, panels, modals)
+  --cuk-color-surface: var(--cuk-color-white);
+  --cuk-color-surface-raised: var(--cuk-color-white);
+  --cuk-color-surface-overlay: var(--cuk-color-white);
+
+  // Text
+  --cuk-color-text-primary: var(--cuk-color-neutral-800);
+  --cuk-color-text-secondary: var(--cuk-color-neutral-500);
+  --cuk-color-text-muted: var(--cuk-color-neutral-400);
+  --cuk-color-text-inverse: var(--cuk-color-white);
+  --cuk-color-text-link: var(--cuk-color-primary-500);
+
+  // Border
+  --cuk-color-border: var(--cuk-color-neutral-100);
+  --cuk-color-border-strong: var(--cuk-color-neutral-200);
+  --cuk-color-border-focus: var(--cuk-color-primary-500);
+
+  // Primary action
+  --cuk-color-primary: var(--cuk-color-primary-500);
+  --cuk-color-primary-hover: var(--cuk-color-primary-600);
+  --cuk-color-primary-active: var(--cuk-color-primary-700);
+  --cuk-color-primary-subtle: var(--cuk-color-primary-50);
+
+  // Success
+  --cuk-color-success: var(--cuk-color-success-500);
+  --cuk-color-success-subtle: var(--cuk-color-success-50);
+  --cuk-color-success-text: var(--cuk-color-success-700);
+
+  // Warning
+  --cuk-color-warning: var(--cuk-color-warning-500);
+  --cuk-color-warning-subtle: var(--cuk-color-warning-50);
+  --cuk-color-warning-text: var(--cuk-color-warning-700);
+
+  // Danger
+  --cuk-color-danger: var(--cuk-color-danger-500);
+  --cuk-color-danger-subtle: var(--cuk-color-danger-50);
+  --cuk-color-danger-text: var(--cuk-color-danger-700);
+
+  // Info
+  --cuk-color-info: var(--cuk-color-info-500);
+  --cuk-color-info-subtle: var(--cuk-color-info-50);
+  --cuk-color-info-text: var(--cuk-color-info-700);
+
+  // Focus
+  --cuk-color-focus: var(--cuk-color-primary-500);
+  --cuk-color-focus-ring: var(--cuk-color-primary-200);
+
+  // Disabled
+  --cuk-color-disabled-bg: var(--cuk-color-neutral-50);
+  --cuk-color-disabled-text: var(--cuk-color-neutral-300);
+  --cuk-color-disabled-border: var(--cuk-color-neutral-100);
+
+  // Input
+  --cuk-color-input-bg: var(--cuk-color-white);
+  --cuk-color-input-border: var(--cuk-color-neutral-200);
+  --cuk-color-input-placeholder: var(--cuk-color-neutral-400);
+  --cuk-color-input-focus-border: var(--cuk-color-primary-500);
+
+  // Chart series
+  --cuk-color-chart-1: var(--cuk-color-primary-500);
+  --cuk-color-chart-2: var(--cuk-color-success-500);
+  --cuk-color-chart-3: var(--cuk-color-warning-500);
+  --cuk-color-chart-4: var(--cuk-color-danger-500);
+  --cuk-color-chart-5: var(--cuk-color-info-500);
+  --cuk-color-chart-6: var(--cuk-color-primary-300);
+}
+
+[data-theme='dark'] {
+  // Background
+  --cuk-color-background: var(--cuk-color-neutral-800);
+  --cuk-color-background-subtle: var(--cuk-color-neutral-900);
+  --cuk-color-background-muted: var(--cuk-color-neutral-700);
+
+  // Surface
+  --cuk-color-surface: var(--cuk-color-neutral-800);
+  --cuk-color-surface-raised: var(--cuk-color-neutral-700);
+  --cuk-color-surface-overlay: var(--cuk-color-neutral-700);
+
+  // Text
+  --cuk-color-text-primary: var(--cuk-color-neutral-50);
+  --cuk-color-text-secondary: var(--cuk-color-neutral-400);
+  --cuk-color-text-muted: var(--cuk-color-neutral-500);
+  --cuk-color-text-inverse: var(--cuk-color-neutral-800);
+  --cuk-color-text-link: var(--cuk-color-primary-400);
+
+  // Border
+  --cuk-color-border: var(--cuk-color-neutral-600);
+  --cuk-color-border-strong: var(--cuk-color-neutral-500);
+  --cuk-color-border-focus: var(--cuk-color-primary-400);
+
+  // Primary action
+  --cuk-color-primary: var(--cuk-color-primary-400);
+  --cuk-color-primary-hover: var(--cuk-color-primary-300);
+  --cuk-color-primary-active: var(--cuk-color-primary-200);
+  --cuk-color-primary-subtle: var(--cuk-color-primary-900);
+
+  // Success
+  --cuk-color-success: var(--cuk-color-success-400);
+  --cuk-color-success-subtle: var(--cuk-color-success-900);
+  --cuk-color-success-text: var(--cuk-color-success-300);
+
+  // Warning
+  --cuk-color-warning: var(--cuk-color-warning-400);
+  --cuk-color-warning-subtle: var(--cuk-color-warning-900);
+  --cuk-color-warning-text: var(--cuk-color-warning-300);
+
+  // Danger
+  --cuk-color-danger: var(--cuk-color-danger-400);
+  --cuk-color-danger-subtle: var(--cuk-color-danger-900);
+  --cuk-color-danger-text: var(--cuk-color-danger-300);
+
+  // Info
+  --cuk-color-info: var(--cuk-color-info-400);
+  --cuk-color-info-subtle: var(--cuk-color-info-900);
+  --cuk-color-info-text: var(--cuk-color-info-300);
+
+  // Focus
+  --cuk-color-focus: var(--cuk-color-primary-400);
+  --cuk-color-focus-ring: var(--cuk-color-primary-700);
+
+  // Disabled
+  --cuk-color-disabled-bg: var(--cuk-color-neutral-700);
+  --cuk-color-disabled-text: var(--cuk-color-neutral-500);
+  --cuk-color-disabled-border: var(--cuk-color-neutral-600);
+
+  // Input
+  --cuk-color-input-bg: var(--cuk-color-neutral-800);
+  --cuk-color-input-border: var(--cuk-color-neutral-600);
+  --cuk-color-input-placeholder: var(--cuk-color-neutral-500);
+  --cuk-color-input-focus-border: var(--cuk-color-primary-400);
+
+  // Chart series
+  --cuk-color-chart-1: var(--cuk-color-primary-400);
+  --cuk-color-chart-2: var(--cuk-color-success-400);
+  --cuk-color-chart-3: var(--cuk-color-warning-400);
+  --cuk-color-chart-4: var(--cuk-color-danger-400);
+  --cuk-color-chart-5: var(--cuk-color-info-400);
+  --cuk-color-chart-6: var(--cuk-color-primary-300);
+}
