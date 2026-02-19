@@ -1,0 +1,86 @@
+@use '../../styles/colors.scss';
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cuk-spacing-3);
+  padding: var(--cuk-spacing-4);
+  border-radius: var(--cuk-radius-lg);
+  border: 1px solid;
+  font-size: var(--cuk-font-size-sm);
+  line-height: var(--cuk-line-height-normal);
+
+  &.info {
+    background-color: var(--cuk-color-info-subtle);
+    border-color: var(--cuk-color-info-200);
+    color: var(--cuk-color-info-text);
+  }
+
+  &.success {
+    background-color: var(--cuk-color-success-subtle);
+    border-color: var(--cuk-color-success-200);
+    color: var(--cuk-color-success-text);
+  }
+
+  &.warning {
+    background-color: var(--cuk-color-warning-subtle);
+    border-color: var(--cuk-color-warning-200);
+    color: var(--cuk-color-warning-text);
+  }
+
+  &.danger {
+    background-color: var(--cuk-color-danger-subtle);
+    border-color: var(--cuk-color-danger-200);
+    color: var(--cuk-color-danger-text);
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-weight: var(--cuk-font-weight-semibold);
+  margin: 0 0 var(--cuk-spacing-1) 0;
+}
+
+.message {
+  margin: 0;
+}
+
+.actions {
+  margin-top: var(--cuk-spacing-3);
+}
+
+.dismiss {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--cuk-spacing-1);
+  color: inherit;
+  opacity: 0.7;
+  border-radius: var(--cuk-radius-sm);
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--cuk-color-focus);
+    outline-offset: 2px;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
