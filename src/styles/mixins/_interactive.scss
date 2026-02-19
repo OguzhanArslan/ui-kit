@@ -1,1 +1,37 @@
-// Mixin'ler Story 1.4'te eklenecek
+// Interactive State Mixins — hover, active, disabled
+
+@mixin interactive($include-focus: true) {
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+
+  &:hover:not(:disabled) {
+    @content;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+    opacity: 1;
+    background-color: var(--cuk-color-disabled-bg);
+    color: var(--cuk-color-disabled-text);
+    border-color: var(--cuk-color-disabled-border);
+  }
+
+  @if $include-focus {
+    &:focus-visible {
+      outline: 2px solid var(--cuk-color-focus);
+      outline-offset: 2px;
+      box-shadow: 0 0 0 4px var(--cuk-color-focus-ring);
+    }
+  }
+}
+
+@mixin interactive-ghost() {
+  @include interactive {
+    background-color: var(--cuk-color-background-muted);
+  }
+}

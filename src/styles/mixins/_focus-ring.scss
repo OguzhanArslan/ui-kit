@@ -1,1 +1,18 @@
-// Mixin'ler Story 1.4'te eklenecek
+// Focus Ring Mixin — tutarli focus gostergesi
+
+@mixin focus-ring($offset: 2px, $color: var(--cuk-color-focus-ring)) {
+  outline: 2px solid var(--cuk-color-focus);
+  outline-offset: $offset;
+  box-shadow: 0 0 0 4px $color;
+}
+
+@mixin focus-ring-inset($color: var(--cuk-color-focus-ring)) {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--cuk-color-focus), 0 0 0 2px $color;
+}
+
+@mixin focus-visible-ring($offset: 2px) {
+  &:focus-visible {
+    @include focus-ring($offset);
+  }
+}

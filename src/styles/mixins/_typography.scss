@@ -1,1 +1,45 @@
-// Mixin'ler Story 1.4'te eklenecek
+// Typography Preset Mixins
+
+@mixin typography($preset) {
+  @if $preset == 'heading-xl' {
+    font-size: var(--cuk-font-size-3xl);
+    font-weight: var(--cuk-font-weight-bold);
+    line-height: var(--cuk-line-height-tight);
+    letter-spacing: var(--cuk-letter-spacing-tight);
+  } @else if $preset == 'heading-lg' {
+    font-size: var(--cuk-font-size-2xl);
+    font-weight: var(--cuk-font-weight-semibold);
+    line-height: var(--cuk-line-height-tight);
+    letter-spacing: var(--cuk-letter-spacing-tight);
+  } @else if $preset == 'heading-md' {
+    font-size: var(--cuk-font-size-xl);
+    font-weight: var(--cuk-font-weight-semibold);
+    line-height: var(--cuk-line-height-snug);
+  } @else if $preset == 'heading-sm' {
+    font-size: var(--cuk-font-size-lg);
+    font-weight: var(--cuk-font-weight-medium);
+    line-height: var(--cuk-line-height-snug);
+  } @else if $preset == 'body-lg' {
+    font-size: var(--cuk-font-size-lg);
+    font-weight: var(--cuk-font-weight-regular);
+    line-height: var(--cuk-line-height-normal);
+  } @else if $preset == 'body-md' {
+    font-size: var(--cuk-font-size-base);
+    font-weight: var(--cuk-font-weight-regular);
+    line-height: var(--cuk-line-height-normal);
+  } @else if $preset == 'body-sm' {
+    font-size: var(--cuk-font-size-sm);
+    font-weight: var(--cuk-font-weight-regular);
+    line-height: var(--cuk-line-height-normal);
+  } @else if $preset == 'caption' {
+    font-size: var(--cuk-font-size-xs);
+    font-weight: var(--cuk-font-weight-regular);
+    line-height: var(--cuk-line-height-normal);
+  } @else if $preset == 'label' {
+    font-size: var(--cuk-font-size-sm);
+    font-weight: var(--cuk-font-weight-medium);
+    line-height: var(--cuk-line-height-normal);
+  } @else {
+    @warn "Unknown typography preset: #{$preset}";
+  }
+}
