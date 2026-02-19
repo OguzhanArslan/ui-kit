@@ -1,1 +1,34 @@
-// Token'lar Story 1.2'de eklenecek
+// Primitive Typography Tokens
+
+:root {
+  // Font Family
+  --cuk-font-family-sans: 'DM Sans', sans-serif;
+  --cuk-font-family-mono: 'DM Mono', monospace;
+
+  // Font Size
+  --cuk-font-size-xs: 0.75rem; // 12px
+  --cuk-font-size-sm: 0.875rem; // 14px
+  --cuk-font-size-base: 1rem; // 16px
+  --cuk-font-size-lg: 1.125rem; // 18px
+  --cuk-font-size-xl: 1.25rem; // 20px
+  --cuk-font-size-2xl: 1.5rem; // 24px
+  --cuk-font-size-3xl: 1.875rem; // 30px
+  --cuk-font-size-4xl: 2.25rem; // 36px
+
+  // Font Weight
+  --cuk-font-weight-regular: 400;
+  --cuk-font-weight-medium: 500;
+  --cuk-font-weight-semibold: 600;
+  --cuk-font-weight-bold: 700;
+
+  // Line Height
+  --cuk-line-height-tight: 1.25;
+  --cuk-line-height-snug: 1.375;
+  --cuk-line-height-normal: 1.5;
+  --cuk-line-height-relaxed: 1.625;
+
+  // Letter Spacing
+  --cuk-letter-spacing-tight: -0.025em;
+  --cuk-letter-spacing-normal: 0;
+  --cuk-letter-spacing-wide: 0.025em;
+}

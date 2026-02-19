@@ -1,1 +1,23 @@
-// Token'lar Story 1.2'de eklenecek
+// Primitive Spacing Tokens (4px base grid)
+
+:root {
+  --cuk-spacing-0: 0;
+  --cuk-spacing-0-5: 0.125rem; // 2px
+  --cuk-spacing-1: 0.25rem; // 4px
+  --cuk-spacing-1-5: 0.375rem; // 6px
+  --cuk-spacing-2: 0.5rem; // 8px
+  --cuk-spacing-2-5: 0.625rem; // 10px
+  --cuk-spacing-3: 0.75rem; // 12px
+  --cuk-spacing-3-5: 0.875rem; // 14px
+  --cuk-spacing-4: 1rem; // 16px
+  --cuk-spacing-5: 1.25rem; // 20px
+  --cuk-spacing-6: 1.5rem; // 24px
+  --cuk-spacing-7: 1.75rem; // 28px
+  --cuk-spacing-8: 2rem; // 32px
+  --cuk-spacing-9: 2.25rem; // 36px
+  --cuk-spacing-10: 2.5rem; // 40px
+  --cuk-spacing-11: 2.75rem; // 44px
+  --cuk-spacing-12: 3rem; // 48px
+  --cuk-spacing-14: 3.5rem; // 56px
+  --cuk-spacing-16: 4rem; // 64px
+}
