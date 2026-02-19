@@ -23,5 +23,8 @@ export * from './foundation/sizes';
 export * from './foundation/typography-variant';
 export * from './foundation/weight';
 
+// hooks
+export * from './hooks';
+
 // icons
 export * from './components/icons';
