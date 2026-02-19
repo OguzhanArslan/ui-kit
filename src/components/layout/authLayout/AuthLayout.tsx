@@ -44,12 +44,12 @@ const AuthLayoutHeader = ({ title, subtitle }: IAuthLayoutHeaderProps) => {
     <div className={styles.header}>
       <div className={styles.headerContent}>
         {title && (
-          <Typography variant="h2" weight="bold">
+          <Typography variant="h3" weight="semibold">
             {title}
           </Typography>
         )}
         {subtitle && (
-          <Typography variant="paragraph" color="secondary">
+          <Typography variant="small" color="muted">
             {subtitle}
           </Typography>
         )}

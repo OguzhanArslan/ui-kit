@@ -1,8 +1,7 @@
-
 @use '../../../../styles/colors.scss';
 
 .footer {
   border-top: 1px solid var(--cuk-color-border);
   margin-top: auto;
-  padding: var(--cuk-spacing-6);
+  padding: var(--cuk-spacing-3) var(--cuk-spacing-3);
 }

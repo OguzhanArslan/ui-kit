@@ -3,47 +3,54 @@
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: var(--cuk-spacing-1);
+  gap: var(--cuk-spacing-1-5);
+  border: 1px solid transparent;
   border-radius: var(--cuk-radius-full);
   font-weight: var(--cuk-font-weight-medium);
   white-space: nowrap;
   line-height: 1;
+  letter-spacing: 0.01em;
 
   &.sm {
-    font-size: var(--cuk-font-size-xs);
+    font-size: 11px;
     padding: 2px var(--cuk-spacing-2);
-    height: 20px;
+    height: 22px;
   }
 
   &.md {
-    font-size: var(--cuk-font-size-sm);
-    padding: var(--cuk-spacing-0-5) var(--cuk-spacing-2-5);
+    font-size: var(--cuk-font-size-xs);
+    padding: 3px var(--cuk-spacing-2-5);
     height: 24px;
   }
 
   &.default {
     background-color: var(--cuk-color-neutral-100);
-    color: var(--cuk-color-neutral-700);
+    color: var(--cuk-color-text-primary);
+    border-color: var(--cuk-color-neutral-200);
   }
 
   &.success {
-    background-color: var(--cuk-color-success-subtle);
-    color: var(--cuk-color-success-text);
+    background-color: var(--cuk-color-success-50);
+    color: var(--cuk-color-success-700);
+    border-color: var(--cuk-color-success-200);
   }
 
   &.warning {
-    background-color: var(--cuk-color-warning-subtle);
-    color: var(--cuk-color-warning-text);
+    background-color: var(--cuk-color-warning-50);
+    color: var(--cuk-color-warning-700);
+    border-color: var(--cuk-color-warning-200);
   }
 
   &.danger {
-    background-color: var(--cuk-color-danger-subtle);
-    color: var(--cuk-color-danger-text);
+    background-color: var(--cuk-color-danger-50);
+    color: var(--cuk-color-danger-700);
+    border-color: var(--cuk-color-danger-200);
   }
 
   &.info {
-    background-color: var(--cuk-color-info-subtle);
-    color: var(--cuk-color-info-text);
+    background-color: var(--cuk-color-info-50);
+    color: var(--cuk-color-info-700);
+    border-color: var(--cuk-color-info-200);
   }
 }
 
@@ -65,7 +72,8 @@
   cursor: pointer;
   padding: 0;
   margin-left: var(--cuk-spacing-0-5);
-  opacity: 0.7;
+  opacity: 0.6;
+  border-radius: var(--cuk-radius-sm);
 
   &:hover {
     opacity: 1;

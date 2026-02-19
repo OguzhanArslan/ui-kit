@@ -3,7 +3,7 @@
 .statCard {
   display: flex;
   flex-direction: column;
-  gap: var(--cuk-spacing-3);
+  gap: var(--cuk-spacing-2);
 }
 
 .header {
@@ -15,7 +15,7 @@
 .title {
   font-size: var(--cuk-font-size-sm);
   font-weight: var(--cuk-font-weight-medium);
-  color: var(--cuk-color-text-secondary);
+  color: var(--cuk-color-text-muted);
   margin: 0;
 }
 
@@ -23,39 +23,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--cuk-radius-lg);
-  background-color: var(--cuk-color-primary-subtle);
-  color: var(--cuk-color-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--cuk-radius-md);
+  background-color: var(--cuk-color-neutral-100);
+  color: var(--cuk-color-text-secondary);
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 }
 
 .value {
-  font-size: var(--cuk-font-size-2xl);
+  font-size: 1.875rem;
   font-weight: var(--cuk-font-weight-bold);
   color: var(--cuk-color-text-primary);
   margin: 0;
-  line-height: var(--cuk-line-height-tight);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
 }
 
 .trend {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--cuk-spacing-1);
-  font-size: var(--cuk-font-size-sm);
+  font-size: var(--cuk-font-size-xs);
   font-weight: var(--cuk-font-weight-medium);
 
   &.up {
-    color: var(--cuk-color-success-text);
+    color: var(--cuk-color-success-600);
   }
 
   &.down {
-    color: var(--cuk-color-danger-text);
+    color: var(--cuk-color-danger-600);
   }
 
   &.neutral {
@@ -65,6 +67,11 @@
 
 .trendIcon {
   display: inline-flex;
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
 
   &.down {
     transform: rotate(180deg);

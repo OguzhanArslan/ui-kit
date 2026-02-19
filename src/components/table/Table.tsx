@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useCallback, useMemo, useState } from 'react';
+import { SearchInput } from '../search-input/SearchInput';
 import styles from './Table.module.scss';
 
 // ─── Types ───────────────────────────────────────────────
@@ -31,7 +32,19 @@ export interface TableProps<T extends Record<string, unknown>> extends React.HTM
 
 const SortIcon: React.FC<{ direction: SortDirection }> = ({ direction }) => (
   <span className={classNames(styles.sortIcon, direction && styles.active)}>
-    {direction === 'asc' ? '↑' : direction === 'desc' ? '↓' : '↕'}
+    {direction === 'asc' ? (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m18 15-6-6-6 6" />
+      </svg>
+    ) : direction === 'desc' ? (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m6 9 6 6 6-6" />
+      </svg>
+    ) : (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m7 15 5 5 5-5" /><path d="m7 9 5-5 5 5" />
+      </svg>
+    )}
   </span>
 );
 
@@ -118,16 +131,6 @@ function TableInner<T extends Record<string, unknown>>(
     [sortKey, sortDir, onSort],
   );
 
-  const handleFilter = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const val = e.target.value;
-      setFilterValue(val);
-      setCurrentPage(1);
-      onFilter?.(val);
-    },
-    [onFilter],
-  );
-
   // Client-side filtering
   const filteredData = useMemo(() => {
     if (!filterable || !filterValue || onFilter) return data;
@@ -159,12 +162,14 @@ function TableInner<T extends Record<string, unknown>>(
     <div ref={ref} className={className} {...rest}>
       {filterable && (
         <div className={styles.filter}>
-          <input
-            type="text"
+          <SearchInput
             value={filterValue}
-            onChange={handleFilter}
+            onChange={(val) => {
+              setFilterValue(val);
+              setCurrentPage(1);
+              onFilter?.(val);
+            }}
             placeholder={filterPlaceholder}
-            aria-label={filterPlaceholder}
           />
         </div>
       )}

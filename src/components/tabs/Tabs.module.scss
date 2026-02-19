@@ -1,36 +1,39 @@
 @use '../../styles/colors.scss';
 
 .tabList {
-  display: flex;
-  border-bottom: 1px solid var(--cuk-color-border);
-  gap: 0;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--cuk-color-background-muted);
+  border-radius: var(--cuk-radius-lg);
+  padding: var(--cuk-spacing-0-5);
+  gap: var(--cuk-spacing-0-5);
 }
 
 .tab {
-  padding: var(--cuk-spacing-2-5) var(--cuk-spacing-4);
+  padding: var(--cuk-spacing-1-5) var(--cuk-spacing-3);
   font-size: var(--cuk-font-size-sm);
   font-weight: var(--cuk-font-weight-medium);
-  color: var(--cuk-color-text-secondary);
+  color: var(--cuk-color-text-muted);
   background: none;
   border: none;
-  border-bottom: 2px solid transparent;
+  border-radius: var(--cuk-radius-md);
   cursor: pointer;
-  transition: color 150ms ease, border-color 150ms ease;
-  margin-bottom: -1px;
+  transition: color 150ms ease, background-color 150ms ease;
+  white-space: nowrap;
 
   &:hover {
     color: var(--cuk-color-text-primary);
   }
 
   &.active {
-    color: var(--cuk-color-primary);
-    border-bottom-color: var(--cuk-color-primary);
+    background-color: var(--cuk-color-surface);
+    color: var(--cuk-color-text-primary);
+    box-shadow: var(--cuk-shadow-sm);
   }
 
   &:focus-visible {
     outline: 2px solid var(--cuk-color-focus);
-    outline-offset: -2px;
-    border-radius: var(--cuk-radius-sm) var(--cuk-radius-sm) 0 0;
+    outline-offset: 2px;
   }
 }
 

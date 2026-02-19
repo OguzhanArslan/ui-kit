@@ -1,9 +1,10 @@
 @use '../../styles/colors.scss';
 
 .box {
-  border-radius: 16px;
-  background-color: var(--color-white);
-  box-shadow: 0px 16px 44px 0px rgba(0, 0, 0, 0.07);
+  border-radius: var(--cuk-radius-lg);
+  border: 1px solid var(--cuk-color-border);
+  background-color: var(--cuk-color-surface);
+  box-shadow: var(--cuk-shadow-xs);
   display: flex;
   flex-direction: column;
 }
@@ -12,21 +13,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
-  padding: 24px 24px 0 24px;
+  gap: var(--cuk-spacing-4);
+  padding: var(--cuk-spacing-4) var(--cuk-spacing-5) 0;
 
   .actions {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: var(--cuk-spacing-1);
   }
 }
 
 .content {
-  padding: 24px;
+  padding: var(--cuk-spacing-4) var(--cuk-spacing-5);
 }
 
 .footer {
-  border-top: 1px var(--color-gray-25) solid;
-  padding: 24px;
+  border-top: 1px solid var(--cuk-color-border);
+  padding: var(--cuk-spacing-3) var(--cuk-spacing-5);
 }

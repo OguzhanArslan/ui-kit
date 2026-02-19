@@ -1,4 +1,3 @@
-import { Box } from '@/components/box';
 import { Button } from '@/components/button';
 import { Checkbox } from '@/components/checkbox';
 import { BrandContent } from '@/components/decorative/brandContent';
@@ -31,46 +30,44 @@ export function LoginPage({
       <AuthLayout.Left>
         <AuthLayout.Header title={title} subtitle={subtitle} />
 
-        <Box>
-          <Grid cols={1} gap="lg">
-            <FormGroup>
-              <Label htmlFor="email">E-Posta</Label>
-              <Input
-                type="email"
-                name="email"
-                onChange={() => {}}
-                disabled={isLoading}
-              />
-            </FormGroup>
+        <Grid cols={1} gap="lg">
+          <FormGroup>
+            <Label htmlFor="email">E-Posta</Label>
+            <Input
+              type="email"
+              name="email"
+              onChange={() => {}}
+              disabled={isLoading}
+            />
+          </FormGroup>
 
-            <FormGroup>
-              <Label htmlFor="password">Şifre</Label>
-              <Input
-                type="password"
-                name="password"
-                onChange={() => {}}
-                disabled={isLoading}
-              />
-            </FormGroup>
+          <FormGroup>
+            <Label htmlFor="password">Şifre</Label>
+            <Input
+              type="password"
+              name="password"
+              onChange={() => {}}
+              disabled={isLoading}
+            />
+          </FormGroup>
 
-            <Grid justifyItems="between" cols={2}>
-              <Checkbox
-                name="remember"
-                label="Beni Hatırla"
-                checked={false}
-                onChange={() => {}}
-                disabled={isLoading}
-              />
-            </Grid>
-
-            <Button
-              label="Giriş Yap"
-              isFullWidth
-              isLoading={isLoading}
-              onClick={() => {}}
+          <Grid justifyItems="between" cols={2}>
+            <Checkbox
+              name="remember"
+              label="Beni Hatırla"
+              checked={false}
+              onChange={() => {}}
+              disabled={isLoading}
             />
           </Grid>
-        </Box>
+
+          <Button
+            label="Giriş Yap"
+            isFullWidth
+            isLoading={isLoading}
+            onClick={() => {}}
+          />
+        </Grid>
 
         <AuthLayout.Footer>{footerText}</AuthLayout.Footer>
       </AuthLayout.Left>

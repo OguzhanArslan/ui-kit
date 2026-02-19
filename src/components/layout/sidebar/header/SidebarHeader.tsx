@@ -1,11 +1,9 @@
-import { Button } from '@/components/button';
+import classNames from 'classnames';
 import {
   BarChartIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
 } from '@/components/icons';
-import { COLOR } from '@/foundation/colors';
-import { SIZE } from '@/foundation/sizes';
 
 import styles from './SidebarHeader.module.scss';
 
@@ -19,21 +17,23 @@ export const SidebarHeader = (props: ISidebarHeaderProps) => {
   const { title, isOpen = true, onClick } = props;
 
   return (
-    <div className={styles.header}>
+    <div className={classNames(styles.header, { [styles.collapsed]: !isOpen })}>
       <div className={styles.logo}>
         <span className={styles.logoIcon}>
           <BarChartIcon />
         </span>
         {isOpen && <span className={styles.logoText}>{title}</span>}
       </div>
-      <Button
-        color={COLOR.tertiary}
-        prefix={isOpen ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-        size={SIZE.xs}
-        isCircle
-        className={styles.backButton}
-        onClick={onClick}
-      />
+      {onClick && (
+        <button
+          type="button"
+          className={styles.toggleButton}
+          onClick={onClick}
+          aria-label={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
+        >
+          {isOpen ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+        </button>
+      )}
     </div>
   );
 };

@@ -1,45 +1,100 @@
 @use '../../../../styles/colors.scss';
 
 .header {
-  position: relative;
-  padding: var(--cuk-spacing-6) var(--cuk-spacing-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--cuk-spacing-3) var(--cuk-spacing-3);
+  border-bottom: 1px solid var(--cuk-color-border);
+  min-height: 56px;
+  box-sizing: border-box;
+  gap: var(--cuk-spacing-2);
 
-  .backButton {
-    height: auto;
-    position: absolute;
-    top: 50%;
-    right: -14px;
-    transform: translateY(-50%);
+  &.collapsed {
+    justify-content: center;
+    padding: var(--cuk-spacing-3) var(--cuk-spacing-2);
+    flex-direction: column;
+    gap: var(--cuk-spacing-2);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--cuk-spacing-3);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.logoIcon {
+  background: linear-gradient(135deg, var(--cuk-color-primary-600), var(--cuk-color-primary-500));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--cuk-radius-md);
+  color: #ffffff;
+  flex-shrink: 0;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.logoText {
+  font-size: var(--cuk-font-size-sm);
+  font-weight: var(--cuk-font-weight-semibold);
+  color: var(--cuk-color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+}
+
+.toggleButton {
+  // Reset native button styles
+  appearance: none;
+  border: 1px solid var(--cuk-color-border);
+  background-color: var(--cuk-color-surface);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  outline: none;
+
+  // Visual styling
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--cuk-radius-md);
+  color: var(--cuk-color-text-muted);
+  box-shadow: var(--cuk-shadow-xs);
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+
+  svg {
+    width: 14px;
+    height: 14px;
   }
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: var(--cuk-spacing-3);
+  &:hover {
+    background-color: var(--cuk-color-background-muted);
+    color: var(--cuk-color-text-primary);
+    border-color: var(--cuk-color-border-strong);
+    box-shadow: var(--cuk-shadow-sm);
+  }
 
-    .logoIcon {
-      background-color: var(--cuk-color-primary-700);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 52px;
-      height: 46px;
-      border-radius: var(--cuk-radius-lg);
-      color: var(--cuk-color-white);
+  &:active {
+    background-color: var(--cuk-color-neutral-100);
+    box-shadow: none;
+  }
 
-      svg {
-        width: 18px;
-        height: 18px;
-      }
-    }
-
-    .logoText {
-      font-size: var(--cuk-font-size-2xl);
-      font-weight: var(--cuk-font-weight-semibold);
-      color: var(--cuk-color-text-primary);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+  &:focus-visible {
+    outline: 2px solid var(--cuk-color-focus);
+    outline-offset: 1px;
   }
 }
