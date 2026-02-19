@@ -1,7 +1,8 @@
 import React from 'react';
 
-// import ApexCharts from 'apexcharts';
 import ReactApexChart from 'react-apexcharts';
+import { useChartColors, useChartTheme } from './useChartTokens';
+import styles from './ChartTooltip.module.scss';
 
 export type MonthlyReportRow = {
   year: number;
@@ -37,9 +38,20 @@ function toChart(rows: MonthlyReportRow[]) {
   const sorted = [...rows].sort(sortAsc);
   const categories = sorted.map((r) => r.label);
   const revenue = sorted.map((r) => Number(r.total_revenue));
+  const orders = sorted.map((r) => r.total_orders);
   const trend = movingAverage(revenue, 3);
-  return { categories, revenue, trend };
+  return { categories, revenue, orders, trend };
 }
+
+const currencyFmt = (v: number) =>
+  new Intl.NumberFormat('tr-TR', {
+    style: 'currency',
+    currency: 'TRY',
+    maximumFractionDigits: 2,
+  }).format(v);
+
+const numberFmt = (v: number) =>
+  new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 }).format(v);
 
 export function LineChart({
   data,
@@ -48,7 +60,10 @@ export function LineChart({
   data: MonthlyReportRow[];
   height?: number;
 }) {
-  const { categories, revenue, trend } = React.useMemo(
+  const colors = useChartColors(2);
+  const theme = useChartTheme();
+
+  const { categories, revenue, orders, trend } = React.useMemo(
     () => toChart(data),
     [data],
   );
@@ -65,34 +80,72 @@ export function LineChart({
 
   const options = React.useMemo(
     () => ({
-      chart: { type: 'line' as const, toolbar: { show: false } },
+      chart: {
+        type: 'line' as const,
+        toolbar: { show: false },
+        fontFamily: 'inherit',
+      },
+      colors,
       stroke: { width: [0, 3], curve: 'smooth' as const },
       dataLabels: { enabled: false },
-      xaxis: { categories, labels: { rotate: -45 } },
-      plotOptions: { bar: { columnWidth: '55%' } },
+      xaxis: {
+        categories,
+        labels: {
+          rotate: -45,
+          style: { colors: theme.textSecondary, fontSize: '12px' },
+        },
+        axisBorder: { color: theme.border },
+        axisTicks: { color: theme.border },
+      },
+      plotOptions: { bar: { columnWidth: '55%', borderRadius: 4 } },
       yaxis: {
         labels: {
-          formatter: (v: number) =>
-            new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 }).format(
-              v,
-            ),
+          formatter: (v: number) => numberFmt(v),
+          style: { colors: theme.textSecondary, fontSize: '12px' },
         },
       },
       tooltip: {
         shared: true,
-        y: {
-          formatter: (v: number) =>
-            new Intl.NumberFormat('tr-TR', {
-              style: 'currency',
-              currency: 'TRY',
-              maximumFractionDigits: 2,
-            }).format(v),
+        intersect: false,
+        custom: ({ series: s, dataPointIndex: idx, w }: { series: number[][]; dataPointIndex: number; w: { globals: { labels: string[] } } }) => {
+          const label = w.globals.labels[idx] || categories[idx] || '';
+          const revenueVal = s[0]?.[idx] ?? 0;
+          const trendVal = s[1]?.[idx] ?? 0;
+          const orderVal = orders[idx] ?? 0;
+
+          return `
+            <div class="${styles.tooltip}">
+              <div class="${styles.tooltipHeader}">${label}</div>
+              <div class="${styles.tooltipBody}">
+                <div class="${styles.tooltipRow}">
+                  <span class="${styles.tooltipDot}" style="background:${colors[0]}"></span>
+                  <span class="${styles.tooltipLabel}">Ciro</span>
+                  <span class="${styles.tooltipValue}">${currencyFmt(revenueVal)}</span>
+                </div>
+                <div class="${styles.tooltipRow}">
+                  <span class="${styles.tooltipDot}" style="background:${colors[1]}"></span>
+                  <span class="${styles.tooltipLabel}">Trend</span>
+                  <span class="${styles.tooltipValue}">${currencyFmt(trendVal)}</span>
+                </div>
+                <div class="${styles.tooltipDetail}">
+                  <span class="${styles.tooltipDetailLabel}">Sipariş</span>
+                  <span class="${styles.tooltipDetailValue}">${numberFmt(orderVal)} adet</span>
+                </div>
+              </div>
+            </div>
+          `;
         },
       },
-      legend: { show: true },
-      grid: { strokeDashArray: 4 },
+      legend: {
+        show: true,
+        labels: { colors: theme.textSecondary },
+      },
+      grid: {
+        strokeDashArray: 4,
+        borderColor: theme.border,
+      },
     }),
-    [categories],
+    [categories, orders, colors, theme],
   );
 
   return (

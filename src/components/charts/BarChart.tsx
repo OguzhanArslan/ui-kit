@@ -2,6 +2,8 @@ import React from 'react';
 
 import type { ApexOptions } from 'apexcharts';
 import ReactApexChart from 'react-apexcharts';
+import { useChartColors, useChartTheme } from './useChartTokens';
+import styles from './ChartTooltip.module.scss';
 
 export interface IBarChartRow {
   rank: number;
@@ -56,6 +58,9 @@ export function BarChart({
   locale = 'tr-TR',
   valueField = 'total_sales',
 }: IBarChartProps) {
+  const colors = useChartColors(1);
+  const theme = useChartTheme();
+
   const rows = React.useMemo(
     () => [...data].sort((a, b) => a.rank - b.rank),
     [data],
@@ -81,7 +86,9 @@ export function BarChart({
       chart: {
         type: 'bar',
         toolbar: { show: false },
+        fontFamily: 'inherit',
       },
+      colors,
       plotOptions: {
         bar: {
           horizontal: true,
@@ -95,6 +102,7 @@ export function BarChart({
       xaxis: {
         categories,
         labels: {
+          style: { colors: theme.textSecondary, fontSize: '12px' },
           formatter: (v) => {
             const n = Number(v);
             if (Number.isNaN(n)) return String(v);
@@ -107,9 +115,12 @@ export function BarChart({
             });
           },
         },
+        axisBorder: { color: theme.border },
+        axisTicks: { color: theme.border },
       },
       yaxis: {
         labels: {
+          style: { colors: theme.textSecondary, fontSize: '12px' },
           formatter: (val) =>
             String(val).length > 28
               ? `${String(val).slice(0, 28)}…`
@@ -119,35 +130,45 @@ export function BarChart({
       tooltip: {
         shared: false,
         intersect: true,
-        y: {
-          formatter: (_value, opts) => {
-            const i = opts.dataPointIndex;
-            const r = rows[i];
-            if (!r) return '';
+        custom: ({ dataPointIndex }: { dataPointIndex: number }) => {
+          const r = rows[dataPointIndex];
+          if (!r) return '';
 
-            return [
-              `Ciro: ${money({ value: r.total_sales, locale, currency })}`,
-              `Fiyat: ${money({ value: r.min_price, locale, currency })} – ${money(
-                {
-                  value: r.max_price,
-                  locale,
-                  currency,
-                },
-              )}`,
-              `Sipariş: ${num({ value: r.order_count, locale })} adet`,
-              `Miktar: ${num({
-                value: r.total_quantity,
-                locale,
-                digits: 2,
-              })} ${r.unit_name}`,
-              `Tür: ${r.product_type}`,
-            ].join('\n');
-          },
+          return `
+            <div class="${styles.tooltip}">
+              <div class="${styles.tooltipHeader}">${r.product_name}</div>
+              <div class="${styles.tooltipBody}">
+                <div class="${styles.tooltipDetail}">
+                  <span class="${styles.tooltipDetailLabel}">Ciro</span>
+                  <span class="${styles.tooltipDetailValue}">${money({ value: r.total_sales, locale, currency })}</span>
+                </div>
+                <div class="${styles.tooltipDetail}">
+                  <span class="${styles.tooltipDetailLabel}">Fiyat</span>
+                  <span class="${styles.tooltipDetailValue}">${money({ value: r.min_price, locale, currency })} – ${money({ value: r.max_price, locale, currency })}</span>
+                </div>
+                <div class="${styles.tooltipDetail}">
+                  <span class="${styles.tooltipDetailLabel}">Sipariş</span>
+                  <span class="${styles.tooltipDetailValue}">${num({ value: r.order_count, locale })} adet</span>
+                </div>
+                <div class="${styles.tooltipDetail}">
+                  <span class="${styles.tooltipDetailLabel}">Miktar</span>
+                  <span class="${styles.tooltipDetailValue}">${num({ value: r.total_quantity, locale, digits: 2 })} ${r.unit_name}</span>
+                </div>
+                <div class="${styles.tooltipDetail}">
+                  <span class="${styles.tooltipDetailLabel}">Tür</span>
+                  <span class="${styles.tooltipDetailValue}">${r.product_type}</span>
+                </div>
+              </div>
+            </div>
+          `;
         },
       },
-      grid: { strokeDashArray: 4 },
+      grid: {
+        strokeDashArray: 4,
+        borderColor: theme.border,
+      },
     }),
-    [categories, rows, valueField, locale, currency],
+    [categories, rows, valueField, locale, currency, colors, theme],
   );
 
   return (
