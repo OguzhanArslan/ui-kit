@@ -1,25 +1,53 @@
 import classNames from 'classnames';
 import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+
+import AlertCircleIcon from '../icons/generated/AlertCircleIcon';
+import AlertOctagonIcon from '../icons/generated/AlertOctagonIcon';
+import CircleCheckIcon from '../icons/generated/CircleCheckIcon';
+import InfoIcon from '../icons/generated/InfoIcon';
+
 import styles from './Toast.module.scss';
 
 // ─── Types ───────────────────────────────────────────────
 
 export type ToastVariant = 'success' | 'error' | 'warning' | 'info';
 
+export interface ToastAction {
+  label: string;
+  onClick: () => void;
+}
+
 export interface ToastItem {
   id: string;
-  message: string;
+  title: string;
+  description?: string;
   variant: ToastVariant;
   duration: number;
+  action?: ToastAction;
+}
+
+export interface ToastOptions {
+  description?: string;
+  duration?: number;
+  action?: ToastAction;
 }
 
 export interface ToastAPI {
-  success: (message: string, duration?: number) => void;
-  error: (message: string, duration?: number) => void;
-  warning: (message: string, duration?: number) => void;
-  info: (message: string, duration?: number) => void;
+  success: (title: string, options?: ToastOptions) => void;
+  error: (title: string, options?: ToastOptions) => void;
+  warning: (title: string, options?: ToastOptions) => void;
+  info: (title: string, options?: ToastOptions) => void;
 }
+
+// ─── Variant Icons ───────────────────────────────────────
+
+const variantIcons: Record<ToastVariant, React.FC> = {
+  success: CircleCheckIcon,
+  error: AlertOctagonIcon,
+  warning: AlertCircleIcon,
+  info: InfoIcon,
+};
 
 // ─── Context ─────────────────────────────────────────────
 
@@ -52,6 +80,8 @@ const ToastEntry: React.FC<{ item: ToastItem; onRemove: (id: string) => void }> 
     return () => clearTimeout(timerRef.current);
   }, [startTimer]);
 
+  const Icon = variantIcons[item.variant];
+
   return (
     <div
       className={classNames(styles.toast, styles[item.variant])}
@@ -60,7 +90,27 @@ const ToastEntry: React.FC<{ item: ToastItem; onRemove: (id: string) => void }> 
       onMouseEnter={() => { hoveredRef.current = true; clearTimeout(timerRef.current); }}
       onMouseLeave={() => { hoveredRef.current = false; startTimer(); }}
     >
-      <div className={styles.content}>{item.message}</div>
+      <div className={styles.icon}>
+        <Icon />
+      </div>
+      <div className={styles.content}>
+        <div className={styles.title}>{item.title}</div>
+        {item.description && <div className={styles.description}>{item.description}</div>}
+        {item.action && (
+          <div className={styles.actions}>
+            <button
+              type="button"
+              className={styles.actionButton}
+              onClick={() => {
+                item.action?.onClick();
+                onRemove(item.id);
+              }}
+            >
+              {item.action.label}
+            </button>
+          </div>
+        )}
+      </div>
       <button type="button" className={styles.close} onClick={() => onRemove(item.id)} aria-label="Close">
         <CloseIcon />
       </button>
@@ -75,9 +125,16 @@ let idCounter = 0;
 export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [toasts, setToasts] = useState<ToastItem[]>([]);
 
-  const addToast = useCallback((message: string, variant: ToastVariant, duration = 5000) => {
+  const addToast = useCallback((title: string, variant: ToastVariant, options?: ToastOptions) => {
     const id = String(++idCounter);
-    setToasts((prev) => [...prev, { id, message, variant, duration }]);
+    setToasts((prev) => [...prev, {
+      id,
+      title,
+      description: options?.description,
+      variant,
+      duration: options?.duration ?? 5000,
+      action: options?.action,
+    }]);
   }, []);
 
   const removeToast = useCallback((id: string) => {
@@ -85,10 +142,10 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }, []);
 
   const api: ToastAPI = {
-    success: (msg, dur) => addToast(msg, 'success', dur),
-    error: (msg, dur) => addToast(msg, 'error', dur),
-    warning: (msg, dur) => addToast(msg, 'warning', dur),
-    info: (msg, dur) => addToast(msg, 'info', dur),
+    success: (title, opts) => addToast(title, 'success', opts),
+    error: (title, opts) => addToast(title, 'error', opts),
+    warning: (title, opts) => addToast(title, 'warning', opts),
+    info: (title, opts) => addToast(title, 'info', opts),
   };
 
   return (
