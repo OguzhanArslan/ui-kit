@@ -23,7 +23,7 @@ const BasicDemo: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({ size = 'md' }) => 
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Button label={`Open Modal (${size})`} variant="secondary" onClick={() => setOpen(true)} />
+      <Button label={`Open Modal (${size})`} color="secondary" onClick={() => setOpen(true)} />
       <Modal open={open} onClose={() => setOpen(false)} size={size}>
         <Modal.Header
           title="Delete Project"
@@ -36,8 +36,8 @@ const BasicDemo: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({ size = 'md' }) => 
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button label="Cancel" variant="secondary" size="sm" onClick={() => setOpen(false)} />
-          <Button label="Delete" variant="primary" color="error" size="sm" onClick={() => setOpen(false)} />
+          <Button label="Cancel" color="secondary" size="sm" onClick={() => setOpen(false)} />
+          <Button label="Delete" color="error" size="sm" onClick={() => setOpen(false)} />
         </Modal.Footer>
       </Modal>
     </>
@@ -84,7 +84,7 @@ const FormModalDemo: React.FC = () => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button label="Cancel" variant="tertiary" size="sm" onClick={() => setOpen(false)} />
+          <Button label="Cancel" color="tertiary" size="sm" onClick={() => setOpen(false)} />
           <Button label="Create" size="sm" onClick={() => setOpen(false)} />
         </Modal.Footer>
       </Modal>
@@ -98,7 +98,7 @@ const InfoModalDemo: React.FC = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Button label="View Details" variant="secondary" onClick={() => setOpen(true)} />
+      <Button label="View Details" color="secondary" onClick={() => setOpen(true)} />
       <Modal open={open} onClose={() => setOpen(false)} size="sm">
         <Modal.Header title="Payment Received" onClose={() => setOpen(false)} />
         <Modal.Body>
@@ -118,7 +118,7 @@ const InfoModalDemo: React.FC = () => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button label="Close" variant="secondary" size="sm" onClick={() => setOpen(false)} />
+          <Button label="Close" color="secondary" size="sm" onClick={() => setOpen(false)} />
         </Modal.Footer>
       </Modal>
     </>

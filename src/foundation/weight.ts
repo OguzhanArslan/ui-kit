@@ -2,6 +2,7 @@ export const WEIGHT = {
   light: 'light',
   regular: 'regular',
   medium: 'medium',
+  semibold: 'semibold',
   bold: 'bold',
 } as const;
 

@@ -50,6 +50,10 @@
   font-weight: var(--cuk-font-weight-medium);
 }
 
+.semibold {
+  font-weight: var(--cuk-font-weight-semibold);
+}
+
 .bold {
   font-weight: var(--cuk-font-weight-bold);
 }
@@ -77,4 +81,8 @@
 
 .error {
   color: var(--cuk-color-danger);
+}
+
+.muted {
+  color: var(--cuk-color-text-muted);
 }

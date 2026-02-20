@@ -29,7 +29,7 @@ export const InButton: Story = {
     <div style={{ display: 'flex', gap: 12 }}>
       <Button label="Saving..." isLoading size="sm" />
       <Button label="Processing..." isLoading />
-      <Button label="Loading..." isLoading variant="secondary" />
+      <Button label="Loading..." isLoading color="secondary" />
     </div>
   ),
 };

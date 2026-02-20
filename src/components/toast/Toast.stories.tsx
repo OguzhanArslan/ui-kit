@@ -32,27 +32,25 @@ const AllVariants: React.FC = () => {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <Button
             label="Success"
-            variant="primary"
+            color="primary"
             size="sm"
             onClick={() => toast.success('Changes saved successfully')}
           />
           <Button
             label="Error"
-            variant="primary"
             color="error"
             size="sm"
             onClick={() => toast.error('Failed to save changes')}
           />
           <Button
             label="Warning"
-            variant="primary"
             color="warning"
             size="sm"
             onClick={() => toast.warning('Your session is about to expire')}
           />
           <Button
             label="Info"
-            variant="secondary"
+            color="secondary"
             size="sm"
             onClick={() => toast.info('New version available')}
           />
@@ -71,7 +69,7 @@ const AllVariants: React.FC = () => {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <Button
             label="Success"
-            variant="secondary"
+            color="secondary"
             size="sm"
             onClick={() => toast.success('Payment completed', {
               description: 'Invoice #1234 has been paid successfully.',
@@ -79,7 +77,7 @@ const AllVariants: React.FC = () => {
           />
           <Button
             label="Error"
-            variant="secondary"
+            color="secondary"
             size="sm"
             onClick={() => toast.error('Connection lost', {
               description: 'Please check your internet connection and try again.',
@@ -100,7 +98,7 @@ const AllVariants: React.FC = () => {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <Button
             label="Delete Item"
-            variant="secondary"
+            color="secondary"
             size="sm"
             onClick={() => toast.success('Item deleted', {
               description: 'The item has been moved to trash.',
@@ -112,7 +110,7 @@ const AllVariants: React.FC = () => {
           />
           <Button
             label="Send Failed"
-            variant="secondary"
+            color="secondary"
             size="sm"
             onClick={() => toast.error('Message failed', {
               description: 'Could not deliver the message.',

@@ -1,11 +1,11 @@
-// Primitive Border Radius Tokens
+// Border Radius Tokens — Shadcn-inspired
 
 :root {
   --cuk-radius-none: 0;
-  --cuk-radius-sm: 0.25rem; // 4px
-  --cuk-radius-md: 0.375rem; // 6px
-  --cuk-radius-lg: 0.5rem; // 8px
-  --cuk-radius-xl: 0.75rem; // 12px
-  --cuk-radius-2xl: 1rem; // 16px
+  --cuk-radius-sm: 0.25rem;
+  --cuk-radius-md: calc(var(--cuk-radius-lg) - 2px);
+  --cuk-radius-lg: 0.5rem;
+  --cuk-radius-xl: 0.75rem;
+  --cuk-radius-2xl: 1rem;
   --cuk-radius-full: 9999px;
 }
