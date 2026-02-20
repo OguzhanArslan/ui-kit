@@ -78,6 +78,9 @@
 // so most semantic tokens inherit correct values automatically.
 // Only override where the inverted primitive doesn't produce ideal results.
 [data-theme='dark'] {
+  // Text inverse must stay white on colored backgrounds (buttons, badges)
+  --cuk-color-text-inverse: #ffffff;
+
   // Primary action buttons need tuning — inverted 600 is too pastel
   --cuk-color-primary: var(--cuk-color-primary-500);
   --cuk-color-primary-hover: var(--cuk-color-primary-400);
