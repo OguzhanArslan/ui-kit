@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Table } from './Table';
+
 import type { ColumnDef } from './Table';
+import { Table } from './Table';
 
 interface User {
   id: number;
@@ -47,11 +48,21 @@ export const Filterable: Story = {
 };
 
 export const WithPagination: Story = {
-  render: () => <Table columns={columns} data={sampleData} pagination pageSize={5} />,
+  render: () => (
+    <Table columns={columns} data={sampleData} pagination pageSize={5} />
+  ),
 };
 
 export const FullFeatures: Story = {
-  render: () => <Table columns={columns} data={sampleData} filterable pagination pageSize={5} />,
+  render: () => (
+    <Table
+      columns={columns}
+      data={sampleData}
+      filterable
+      pagination
+      pageSize={5}
+    />
+  ),
 };
 
 export const Empty: Story = {

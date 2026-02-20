@@ -1,5 +1,13 @@
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+
 import classNames from 'classnames';
-import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import AlertCircleIcon from '../icons/generated/AlertCircleIcon';
@@ -63,11 +71,19 @@ export function useToast(): ToastAPI {
 
 const CloseIcon: React.FC = () => (
   <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10.5 3.5L3.5 10.5M3.5 3.5L10.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path
+      d="M10.5 3.5L3.5 10.5M3.5 3.5L10.5 10.5"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
   </svg>
 );
 
-const ToastEntry: React.FC<{ item: ToastItem; onRemove: (id: string) => void }> = ({ item, onRemove }) => {
+const ToastEntry: React.FC<{
+  item: ToastItem;
+  onRemove: (id: string) => void;
+}> = ({ item, onRemove }) => {
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const hoveredRef = useRef(false);
 
@@ -87,15 +103,23 @@ const ToastEntry: React.FC<{ item: ToastItem; onRemove: (id: string) => void }> 
       className={classNames(styles.toast, styles[item.variant])}
       role="status"
       aria-live="polite"
-      onMouseEnter={() => { hoveredRef.current = true; clearTimeout(timerRef.current); }}
-      onMouseLeave={() => { hoveredRef.current = false; startTimer(); }}
+      onMouseEnter={() => {
+        hoveredRef.current = true;
+        clearTimeout(timerRef.current);
+      }}
+      onMouseLeave={() => {
+        hoveredRef.current = false;
+        startTimer();
+      }}
     >
       <div className={styles.icon}>
         <Icon />
       </div>
       <div className={styles.content}>
         <div className={styles.title}>{item.title}</div>
-        {item.description && <div className={styles.description}>{item.description}</div>}
+        {item.description && (
+          <div className={styles.description}>{item.description}</div>
+        )}
         {item.action && (
           <div className={styles.actions}>
             <button
@@ -111,7 +135,12 @@ const ToastEntry: React.FC<{ item: ToastItem; onRemove: (id: string) => void }> 
           </div>
         )}
       </div>
-      <button type="button" className={styles.close} onClick={() => onRemove(item.id)} aria-label="Close">
+      <button
+        type="button"
+        className={styles.close}
+        onClick={() => onRemove(item.id)}
+        aria-label="Close"
+      >
         <CloseIcon />
       </button>
     </div>
@@ -122,20 +151,28 @@ const ToastEntry: React.FC<{ item: ToastItem; onRemove: (id: string) => void }> 
 
 let idCounter = 0;
 
-export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [toasts, setToasts] = useState<ToastItem[]>([]);
 
-  const addToast = useCallback((title: string, variant: ToastVariant, options?: ToastOptions) => {
-    const id = String(++idCounter);
-    setToasts((prev) => [...prev, {
-      id,
-      title,
-      description: options?.description,
-      variant,
-      duration: options?.duration ?? 5000,
-      action: options?.action,
-    }]);
-  }, []);
+  const addToast = useCallback(
+    (title: string, variant: ToastVariant, options?: ToastOptions) => {
+      const id = String(++idCounter);
+      setToasts((prev) => [
+        ...prev,
+        {
+          id,
+          title,
+          description: options?.description,
+          variant,
+          duration: options?.duration ?? 5000,
+          action: options?.action,
+        },
+      ]);
+    },
+    [],
+  );
 
   const removeToast = useCallback((id: string) => {
     setToasts((prev) => prev.filter((t) => t.id !== id));

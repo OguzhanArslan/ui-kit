@@ -1,5 +1,7 @@
-import classNames from 'classnames';
 import React from 'react';
+
+import classNames from 'classnames';
+
 import styles from './Card.module.scss';
 
 export type CardVariant = 'default' | 'outlined' | 'elevated';
@@ -10,7 +12,11 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const CardRoot = React.forwardRef<HTMLDivElement, CardProps>(
   ({ variant = 'default', className, children, ...rest }, ref) => (
-    <div ref={ref} className={classNames(styles.card, styles[variant], className)} {...rest}>
+    <div
+      ref={ref}
+      className={classNames(styles.card, styles[variant], className)}
+      {...rest}
+    >
       {children}
     </div>
   ),

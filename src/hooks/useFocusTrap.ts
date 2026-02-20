@@ -43,7 +43,9 @@ export function useFocusTrap<T extends HTMLElement = HTMLElement>(
 
   const getFocusableElements = useCallback((): HTMLElement[] => {
     if (!trapRef.current) return [];
-    return Array.from(trapRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR));
+    return Array.from(
+      trapRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+    );
   }, []);
 
   useEffect(() => {
@@ -99,7 +101,14 @@ export function useFocusTrap<T extends HTMLElement = HTMLElement>(
         previousFocusRef.current.focus();
       }
     };
-  }, [active, escapeDeactivates, onEscape, initialFocusSelector, returnFocusOnDeactivate, getFocusableElements]);
+  }, [
+    active,
+    escapeDeactivates,
+    onEscape,
+    initialFocusSelector,
+    returnFocusOnDeactivate,
+    getFocusableElements,
+  ]);
 
   return { trapRef };
 }

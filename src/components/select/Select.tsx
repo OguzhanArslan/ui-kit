@@ -1,5 +1,9 @@
 import classNames from 'classnames';
-import ReactSelect, { components, type Props, type OptionProps } from 'react-select';
+import ReactSelect, {
+  components,
+  type OptionProps,
+  type Props,
+} from 'react-select';
 
 import { CheckIcon, ChevronDownIcon, CrossIcon } from '../icons';
 import { Loader } from '../loader';
@@ -29,9 +33,22 @@ export const Select = (props: ISelectProps) => {
       components={{
         Option: (p: OptionProps) => (
           <components.Option {...p}>
-            <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+            <span
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: 8,
+              }}
+            >
               <span>{p.children}</span>
-              {p.isSelected && <CheckIcon width={16} height={16} style={{ flexShrink: 0, opacity: 0.7 }} />}
+              {p.isSelected && (
+                <CheckIcon
+                  width={16}
+                  height={16}
+                  style={{ flexShrink: 0, opacity: 0.7 }}
+                />
+              )}
             </span>
           </components.Option>
         ),

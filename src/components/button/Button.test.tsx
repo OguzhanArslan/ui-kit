@@ -7,7 +7,9 @@ import { Button } from './Button';
 describe('Button', () => {
   it('renders with label', () => {
     render(<Button label="Click me" />);
-    expect(screen.getByRole('button', { name: 'Click me' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Click me' }),
+    ).toBeInTheDocument();
   });
 
   it('calls onClick when clicked', async () => {
@@ -57,6 +59,8 @@ describe('Button', () => {
 
   it('uses ariaLabel for accessibility', () => {
     render(<Button ariaLabel="Close dialog" />);
-    expect(screen.getByRole('button', { name: 'Close dialog' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Close dialog' }),
+    ).toBeInTheDocument();
   });
 });

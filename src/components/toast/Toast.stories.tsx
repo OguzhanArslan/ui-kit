@@ -1,12 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '../button';
 import { ToastProvider, useToast } from './Toast';
 
 const meta: Meta = {
   title: 'Components/Toast',
-  decorators: [(Story) => <ToastProvider><Story /></ToastProvider>],
+  decorators: [
+    (Story) => (
+      <ToastProvider>
+        <Story />
+      </ToastProvider>
+    ),
+  ],
   parameters: {
     layout: 'centered',
   },
@@ -19,14 +26,23 @@ const AllVariants: React.FC = () => {
   const toast = useToast();
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 480 }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 24,
+        maxWidth: 480,
+      }}
+    >
       <div>
-        <p style={{
-          fontSize: 'var(--cuk-font-size-sm)',
-          color: 'var(--cuk-color-text-muted)',
-          margin: '0 0 12px',
-          fontWeight: 500,
-        }}>
+        <p
+          style={{
+            fontSize: 'var(--cuk-font-size-sm)',
+            color: 'var(--cuk-color-text-muted)',
+            margin: '0 0 12px',
+            fontWeight: 500,
+          }}
+        >
           Basic - Title Only
         </p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -58,12 +74,14 @@ const AllVariants: React.FC = () => {
       </div>
 
       <div>
-        <p style={{
-          fontSize: 'var(--cuk-font-size-sm)',
-          color: 'var(--cuk-color-text-muted)',
-          margin: '0 0 12px',
-          fontWeight: 500,
-        }}>
+        <p
+          style={{
+            fontSize: 'var(--cuk-font-size-sm)',
+            color: 'var(--cuk-color-text-muted)',
+            margin: '0 0 12px',
+            fontWeight: 500,
+          }}
+        >
           With Description
         </p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -71,28 +89,35 @@ const AllVariants: React.FC = () => {
             label="Success"
             color="secondary"
             size="sm"
-            onClick={() => toast.success('Payment completed', {
-              description: 'Invoice #1234 has been paid successfully.',
-            })}
+            onClick={() =>
+              toast.success('Payment completed', {
+                description: 'Invoice #1234 has been paid successfully.',
+              })
+            }
           />
           <Button
             label="Error"
             color="secondary"
             size="sm"
-            onClick={() => toast.error('Connection lost', {
-              description: 'Please check your internet connection and try again.',
-            })}
+            onClick={() =>
+              toast.error('Connection lost', {
+                description:
+                  'Please check your internet connection and try again.',
+              })
+            }
           />
         </div>
       </div>
 
       <div>
-        <p style={{
-          fontSize: 'var(--cuk-font-size-sm)',
-          color: 'var(--cuk-color-text-muted)',
-          margin: '0 0 12px',
-          fontWeight: 500,
-        }}>
+        <p
+          style={{
+            fontSize: 'var(--cuk-font-size-sm)',
+            color: 'var(--cuk-color-text-muted)',
+            margin: '0 0 12px',
+            fontWeight: 500,
+          }}
+        >
           With Action Button
         </p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -100,25 +125,29 @@ const AllVariants: React.FC = () => {
             label="Delete Item"
             color="secondary"
             size="sm"
-            onClick={() => toast.success('Item deleted', {
-              description: 'The item has been moved to trash.',
-              action: {
-                label: 'Undo',
-                onClick: () => console.log('Undo clicked'),
-              },
-            })}
+            onClick={() =>
+              toast.success('Item deleted', {
+                description: 'The item has been moved to trash.',
+                action: {
+                  label: 'Undo',
+                  onClick: () => console.log('Undo clicked'),
+                },
+              })
+            }
           />
           <Button
             label="Send Failed"
             color="secondary"
             size="sm"
-            onClick={() => toast.error('Message failed', {
-              description: 'Could not deliver the message.',
-              action: {
-                label: 'Retry',
-                onClick: () => console.log('Retry clicked'),
-              },
-            })}
+            onClick={() =>
+              toast.error('Message failed', {
+                description: 'Could not deliver the message.',
+                action: {
+                  label: 'Retry',
+                  onClick: () => console.log('Retry clicked'),
+                },
+              })
+            }
           />
         </div>
       </div>

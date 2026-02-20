@@ -27,7 +27,11 @@ describe('Modal', () => {
   it('renders header with title and description', () => {
     render(
       <Modal open onClose={() => {}}>
-        <Modal.Header title="Delete" description="This cannot be undone" onClose={() => {}} />
+        <Modal.Header
+          title="Delete"
+          description="This cannot be undone"
+          onClose={() => {}}
+        />
         <Modal.Body>Content</Modal.Body>
       </Modal>,
     );

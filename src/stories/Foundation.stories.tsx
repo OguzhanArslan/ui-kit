@@ -41,8 +41,19 @@ const groupTitle: React.CSSProperties = {
 
 // ─── Helpers ─────────────────────────────────────────────
 
-const ColorSwatch: React.FC<{ name: string; token: string; wide?: boolean }> = ({ name, token, wide }) => (
-  <div style={{ display: 'flex', flexDirection: 'column', gap: 6, minWidth: wide ? 160 : undefined }}>
+const ColorSwatch: React.FC<{
+  name: string;
+  token: string;
+  wide?: boolean;
+}> = ({ name, token, wide }) => (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 6,
+      minWidth: wide ? 160 : undefined,
+    }}
+  >
     <div
       style={{
         width: '100%',
@@ -54,33 +65,76 @@ const ColorSwatch: React.FC<{ name: string; token: string; wide?: boolean }> = (
       }}
     />
     <div>
-      <div style={{ fontSize: 12, fontWeight: 500, color: 'var(--cuk-color-text-primary)' }}>{name}</div>
-      <div style={{ fontSize: 11, color: 'var(--cuk-color-text-muted)', fontFamily: 'var(--cuk-font-family-mono)' }}>{token}</div>
+      <div
+        style={{
+          fontSize: 12,
+          fontWeight: 500,
+          color: 'var(--cuk-color-text-primary)',
+        }}
+      >
+        {name}
+      </div>
+      <div
+        style={{
+          fontSize: 11,
+          color: 'var(--cuk-color-text-muted)',
+          fontFamily: 'var(--cuk-font-family-mono)',
+        }}
+      >
+        {token}
+      </div>
     </div>
   </div>
 );
 
-const colorScales = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900', '950'] as const;
+const colorScales = [
+  '50',
+  '100',
+  '200',
+  '300',
+  '400',
+  '500',
+  '600',
+  '700',
+  '800',
+  '900',
+  '950',
+] as const;
 
-const ColorScale: React.FC<{ palette: string; label: string }> = ({ palette, label }) => (
+const ColorScale: React.FC<{ palette: string; label: string }> = ({
+  palette,
+  label,
+}) => (
   <div style={{ marginBottom: 32 }}>
     <p style={groupTitle}>{label}</p>
-    <div style={{ display: 'flex', gap: 2, borderRadius: 'var(--cuk-radius-lg)', overflow: 'hidden' }}>
+    <div
+      style={{
+        display: 'flex',
+        gap: 2,
+        borderRadius: 'var(--cuk-radius-lg)',
+        overflow: 'hidden',
+      }}
+    >
       {colorScales.map((scale) => (
-        <div key={scale} style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <div
+          key={scale}
+          style={{ flex: 1, display: 'flex', flexDirection: 'column' }}
+        >
           <div
             style={{
               height: 56,
               backgroundColor: `var(--cuk-color-${palette}-${scale})`,
             }}
           />
-          <div style={{
-            padding: '6px 4px',
-            fontSize: 10,
-            textAlign: 'center',
-            color: 'var(--cuk-color-text-muted)',
-            fontFamily: 'var(--cuk-font-family-mono)',
-          }}>
+          <div
+            style={{
+              padding: '6px 4px',
+              fontSize: 10,
+              textAlign: 'center',
+              color: 'var(--cuk-color-text-muted)',
+              fontFamily: 'var(--cuk-font-family-mono)',
+            }}
+          >
             {scale}
           </div>
         </div>
@@ -95,7 +149,10 @@ export const Colors: Story = {
   render: () => (
     <div style={sectionStyle}>
       <h2 style={sectionTitle}>Colors</h2>
-      <p style={sectionDesc}>Token-based color system with semantic mappings for light and dark themes.</p>
+      <p style={sectionDesc}>
+        Token-based color system with semantic mappings for light and dark
+        themes.
+      </p>
 
       <ColorScale palette="neutral" label="Neutral (Zinc)" />
       <ColorScale palette="primary" label="Primary (Indigo)" />
@@ -106,7 +163,13 @@ export const Colors: Story = {
 
       <div style={{ marginTop: 40 }}>
         <p style={groupTitle}>Semantic Tokens</p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: 12 }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
+            gap: 12,
+          }}
+        >
           {[
             ['background', '--cuk-color-background'],
             ['bg-subtle', '--cuk-color-background-subtle'],
@@ -132,9 +195,24 @@ export const Colors: Story = {
 
       <div style={{ marginTop: 40 }}>
         <p style={groupTitle}>Chart Colors</p>
-        <div style={{ display: 'flex', gap: 2, borderRadius: 'var(--cuk-radius-lg)', overflow: 'hidden', maxWidth: 480 }}>
+        <div
+          style={{
+            display: 'flex',
+            gap: 2,
+            borderRadius: 'var(--cuk-radius-lg)',
+            overflow: 'hidden',
+            maxWidth: 480,
+          }}
+        >
           {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} style={{ flex: 1, height: 48, backgroundColor: `var(--cuk-color-chart-${i})` }} />
+            <div
+              key={i}
+              style={{
+                flex: 1,
+                height: 48,
+                backgroundColor: `var(--cuk-color-chart-${i})`,
+              }}
+            />
           ))}
         </div>
       </div>
@@ -145,25 +223,55 @@ export const Colors: Story = {
 // ─── Spacing Story ───────────────────────────────────────
 
 const spacingValues = [
-  '0', '0-5', '1', '1-5', '2', '2-5', '3', '3-5', '4',
-  '5', '6', '7', '8', '9', '10', '11', '12', '14', '16',
+  '0',
+  '0-5',
+  '1',
+  '1-5',
+  '2',
+  '2-5',
+  '3',
+  '3-5',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+  '14',
+  '16',
 ] as const;
 
 export const Spacing: Story = {
   render: () => (
     <div style={sectionStyle}>
       <h2 style={sectionTitle}>Spacing</h2>
-      <p style={sectionDesc}>Consistent spacing scale used for padding, margin, and gap throughout the system.</p>
+      <p style={sectionDesc}>
+        Consistent spacing scale used for padding, margin, and gap throughout
+        the system.
+      </p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
         {spacingValues.map((value) => (
-          <div key={value} style={{ display: 'flex', alignItems: 'center', gap: 12, height: 28 }}>
-            <code style={{
-              width: 160,
-              fontSize: 11,
-              flexShrink: 0,
-              color: 'var(--cuk-color-text-muted)',
-              fontFamily: 'var(--cuk-font-family-mono)',
-            }}>
+          <div
+            key={value}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              height: 28,
+            }}
+          >
+            <code
+              style={{
+                width: 160,
+                fontSize: 11,
+                flexShrink: 0,
+                color: 'var(--cuk-color-text-muted)',
+                fontFamily: 'var(--cuk-font-family-mono)',
+              }}
+            >
               --cuk-spacing-{value}
             </code>
             <div
@@ -186,72 +294,154 @@ export const Spacing: Story = {
 // ─── Typography Story ────────────────────────────────────
 
 const typographyPresets = [
-  { name: 'Heading XL', size: '3xl', weight: 'bold', lineHeight: 'tight', tracking: '-0.025em' },
-  { name: 'Heading LG', size: '2xl', weight: 'semibold', lineHeight: 'tight', tracking: '-0.02em' },
-  { name: 'Heading MD', size: 'xl', weight: 'semibold', lineHeight: 'snug', tracking: '-0.01em' },
-  { name: 'Heading SM', size: 'lg', weight: 'medium', lineHeight: 'snug', tracking: '-0.01em' },
-  { name: 'Body LG', size: 'lg', weight: 'regular', lineHeight: 'normal', tracking: '0' },
-  { name: 'Body MD', size: 'base', weight: 'regular', lineHeight: 'normal', tracking: '0' },
-  { name: 'Body SM', size: 'sm', weight: 'regular', lineHeight: 'normal', tracking: '0' },
-  { name: 'Caption', size: 'xs', weight: 'regular', lineHeight: 'normal', tracking: '0' },
+  {
+    name: 'Heading XL',
+    size: '3xl',
+    weight: 'bold',
+    lineHeight: 'tight',
+    tracking: '-0.025em',
+  },
+  {
+    name: 'Heading LG',
+    size: '2xl',
+    weight: 'semibold',
+    lineHeight: 'tight',
+    tracking: '-0.02em',
+  },
+  {
+    name: 'Heading MD',
+    size: 'xl',
+    weight: 'semibold',
+    lineHeight: 'snug',
+    tracking: '-0.01em',
+  },
+  {
+    name: 'Heading SM',
+    size: 'lg',
+    weight: 'medium',
+    lineHeight: 'snug',
+    tracking: '-0.01em',
+  },
+  {
+    name: 'Body LG',
+    size: 'lg',
+    weight: 'regular',
+    lineHeight: 'normal',
+    tracking: '0',
+  },
+  {
+    name: 'Body MD',
+    size: 'base',
+    weight: 'regular',
+    lineHeight: 'normal',
+    tracking: '0',
+  },
+  {
+    name: 'Body SM',
+    size: 'sm',
+    weight: 'regular',
+    lineHeight: 'normal',
+    tracking: '0',
+  },
+  {
+    name: 'Caption',
+    size: 'xs',
+    weight: 'regular',
+    lineHeight: 'normal',
+    tracking: '0',
+  },
 ] as const;
 
 export const Typography: Story = {
   render: () => (
     <div style={sectionStyle}>
       <h2 style={sectionTitle}>Typography</h2>
-      <p style={sectionDesc}>Inter font family with a refined type scale for headings, body text, and captions.</p>
+      <p style={sectionDesc}>
+        Inter font family with a refined type scale for headings, body text, and
+        captions.
+      </p>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 0, borderRadius: 'var(--cuk-radius-lg)', border: '1px solid var(--cuk-color-border)', overflow: 'hidden' }}>
-        {typographyPresets.map(({ name, size, weight, lineHeight, tracking }, idx) => (
-          <div key={name} style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '16px 20px',
-            borderBottom: idx < typographyPresets.length - 1 ? '1px solid var(--cuk-color-border)' : 'none',
-          }}>
-            <span
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 0,
+          borderRadius: 'var(--cuk-radius-lg)',
+          border: '1px solid var(--cuk-color-border)',
+          overflow: 'hidden',
+        }}
+      >
+        {typographyPresets.map(
+          ({ name, size, weight, lineHeight, tracking }, idx) => (
+            <div
+              key={name}
               style={{
-                fontSize: `var(--cuk-font-size-${size})`,
-                fontWeight: `var(--cuk-font-weight-${weight})`,
-                lineHeight: `var(--cuk-line-height-${lineHeight})`,
-                letterSpacing: tracking,
-                color: 'var(--cuk-color-text-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '16px 20px',
+                borderBottom:
+                  idx < typographyPresets.length - 1
+                    ? '1px solid var(--cuk-color-border)'
+                    : 'none',
               }}
             >
-              {name}
-            </span>
-            <code style={{
-              fontSize: 11,
-              color: 'var(--cuk-color-text-muted)',
-              fontFamily: 'var(--cuk-font-family-mono)',
-            }}>
-              {size} / {weight}
-            </code>
-          </div>
-        ))}
+              <span
+                style={{
+                  fontSize: `var(--cuk-font-size-${size})`,
+                  fontWeight: `var(--cuk-font-weight-${weight})`,
+                  lineHeight: `var(--cuk-line-height-${lineHeight})`,
+                  letterSpacing: tracking,
+                  color: 'var(--cuk-color-text-primary)',
+                }}
+              >
+                {name}
+              </span>
+              <code
+                style={{
+                  fontSize: 11,
+                  color: 'var(--cuk-color-text-muted)',
+                  fontFamily: 'var(--cuk-font-family-mono)',
+                }}
+              >
+                {size} / {weight}
+              </code>
+            </div>
+          ),
+        )}
       </div>
 
       <div style={{ marginTop: 40 }}>
         <p style={groupTitle}>Font Weights</p>
         <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
           {(['regular', 'medium', 'semibold', 'bold'] as const).map((w) => (
-            <div key={w} style={{
-              padding: '16px 24px',
-              border: '1px solid var(--cuk-color-border)',
-              borderRadius: 'var(--cuk-radius-lg)',
-              textAlign: 'center',
-            }}>
-              <div style={{
-                fontSize: 'var(--cuk-font-size-2xl)',
-                fontWeight: `var(--cuk-font-weight-${w})` as unknown as number,
-                color: 'var(--cuk-color-text-primary)',
-                marginBottom: 4,
-              }}>
+            <div
+              key={w}
+              style={{
+                padding: '16px 24px',
+                border: '1px solid var(--cuk-color-border)',
+                borderRadius: 'var(--cuk-radius-lg)',
+                textAlign: 'center',
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 'var(--cuk-font-size-2xl)',
+                  fontWeight:
+                    `var(--cuk-font-weight-${w})` as unknown as number,
+                  color: 'var(--cuk-color-text-primary)',
+                  marginBottom: 4,
+                }}
+              >
                 Ag
               </div>
-              <code style={{ fontSize: 11, color: 'var(--cuk-color-text-muted)', fontFamily: 'var(--cuk-font-family-mono)' }}>
+              <code
+                style={{
+                  fontSize: 11,
+                  color: 'var(--cuk-color-text-muted)',
+                  fontFamily: 'var(--cuk-font-family-mono)',
+                }}
+              >
                 {w}
               </code>
             </div>
@@ -268,34 +458,50 @@ export const Shadows: Story = {
   render: () => (
     <div style={sectionStyle}>
       <h2 style={sectionTitle}>Shadows</h2>
-      <p style={sectionDesc}>Elevation scale for depth hierarchy. Used on cards, dropdowns, modals, and tooltips.</p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+      <p style={sectionDesc}>
+        Elevation scale for depth hierarchy. Used on cards, dropdowns, modals,
+        and tooltips.
+      </p>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 24,
+        }}
+      >
         {(['xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const).map((level) => (
-          <div key={level} style={{
-            padding: 24,
-            borderRadius: 'var(--cuk-radius-lg)',
-            backgroundColor: 'var(--cuk-color-surface)',
-            boxShadow: `var(--cuk-shadow-${level})`,
-            border: '1px solid var(--cuk-color-border)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: 8,
-            minHeight: 100,
-          }}>
-            <span style={{
-              fontSize: 'var(--cuk-font-size-lg)',
-              fontWeight: 600,
-              color: 'var(--cuk-color-text-primary)',
-            }}>
+          <div
+            key={level}
+            style={{
+              padding: 24,
+              borderRadius: 'var(--cuk-radius-lg)',
+              backgroundColor: 'var(--cuk-color-surface)',
+              boxShadow: `var(--cuk-shadow-${level})`,
+              border: '1px solid var(--cuk-color-border)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 8,
+              minHeight: 100,
+            }}
+          >
+            <span
+              style={{
+                fontSize: 'var(--cuk-font-size-lg)',
+                fontWeight: 600,
+                color: 'var(--cuk-color-text-primary)',
+              }}
+            >
               {level}
             </span>
-            <code style={{
-              fontSize: 11,
-              color: 'var(--cuk-color-text-muted)',
-              fontFamily: 'var(--cuk-font-family-mono)',
-            }}>
+            <code
+              style={{
+                fontSize: 11,
+                color: 'var(--cuk-color-text-muted)',
+                fontFamily: 'var(--cuk-font-family-mono)',
+              }}
+            >
               --cuk-shadow-{level}
             </code>
           </div>
@@ -311,30 +517,37 @@ export const BorderRadius: Story = {
   render: () => (
     <div style={sectionStyle}>
       <h2 style={sectionTitle}>Border Radius</h2>
-      <p style={sectionDesc}>Radius tokens following Shadcn convention with calc-based md derived from lg.</p>
+      <p style={sectionDesc}>
+        Radius tokens following Shadcn convention with calc-based md derived
+        from lg.
+      </p>
       <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-        {(['none', 'sm', 'md', 'lg', 'xl', '2xl', 'full'] as const).map((size) => (
-          <div key={size} style={{ textAlign: 'center' }}>
-            <div
-              style={{
-                width: 72,
-                height: 72,
-                backgroundColor: 'var(--cuk-color-primary)',
-                borderRadius: `var(--cuk-radius-${size})`,
-                boxShadow: 'var(--cuk-shadow-sm)',
-              }}
-            />
-            <code style={{
-              fontSize: 11,
-              marginTop: 8,
-              display: 'block',
-              color: 'var(--cuk-color-text-muted)',
-              fontFamily: 'var(--cuk-font-family-mono)',
-            }}>
-              {size}
-            </code>
-          </div>
-        ))}
+        {(['none', 'sm', 'md', 'lg', 'xl', '2xl', 'full'] as const).map(
+          (size) => (
+            <div key={size} style={{ textAlign: 'center' }}>
+              <div
+                style={{
+                  width: 72,
+                  height: 72,
+                  backgroundColor: 'var(--cuk-color-primary)',
+                  borderRadius: `var(--cuk-radius-${size})`,
+                  boxShadow: 'var(--cuk-shadow-sm)',
+                }}
+              />
+              <code
+                style={{
+                  fontSize: 11,
+                  marginTop: 8,
+                  display: 'block',
+                  color: 'var(--cuk-color-text-muted)',
+                  fontFamily: 'var(--cuk-font-family-mono)',
+                }}
+              >
+                {size}
+              </code>
+            </div>
+          ),
+        )}
       </div>
     </div>
   ),

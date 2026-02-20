@@ -2,7 +2,9 @@ import React from 'react';
 
 import type { ApexOptions } from 'apexcharts';
 import ReactApexChart from 'react-apexcharts';
+
 import { useChartColors, useChartTheme } from './useChartTokens';
+
 import styles from './ChartTooltip.module.scss';
 
 export interface IBarChartRow {

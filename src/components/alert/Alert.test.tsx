@@ -22,14 +22,22 @@ describe('Alert', () => {
   });
 
   it('renders dismiss button when dismissible', () => {
-    render(<Alert dismissible onDismiss={() => {}}>Message</Alert>);
+    render(
+      <Alert dismissible onDismiss={() => {}}>
+        Message
+      </Alert>,
+    );
     expect(screen.getByRole('button', { name: 'Dismiss' })).toBeInTheDocument();
   });
 
   it('calls onDismiss when dismiss button clicked', async () => {
     const user = userEvent.setup();
     const onDismiss = vi.fn();
-    render(<Alert dismissible onDismiss={onDismiss}>Message</Alert>);
+    render(
+      <Alert dismissible onDismiss={onDismiss}>
+        Message
+      </Alert>,
+    );
 
     await user.click(screen.getByRole('button', { name: 'Dismiss' }));
     expect(onDismiss).toHaveBeenCalledOnce();

@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '../button';
 import { FormGroup } from '../formgroup';
@@ -19,11 +20,17 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
-const BasicDemo: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({ size = 'md' }) => {
+const BasicDemo: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({
+  size = 'md',
+}) => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Button label={`Open Modal (${size})`} color="secondary" onClick={() => setOpen(true)} />
+      <Button
+        label={`Open Modal (${size})`}
+        color="secondary"
+        onClick={() => setOpen(true)}
+      />
       <Modal open={open} onClose={() => setOpen(false)} size={size}>
         <Modal.Header
           title="Delete Project"
@@ -32,12 +39,23 @@ const BasicDemo: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({ size = 'md' }) => 
         />
         <Modal.Body>
           <p style={{ margin: 0 }}>
-            Are you sure you want to delete <strong>Cari Pusula</strong>? All team members will lose access immediately.
+            Are you sure you want to delete <strong>Cari Pusula</strong>? All
+            team members will lose access immediately.
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button label="Cancel" color="secondary" size="sm" onClick={() => setOpen(false)} />
-          <Button label="Delete" color="error" size="sm" onClick={() => setOpen(false)} />
+          <Button
+            label="Cancel"
+            color="secondary"
+            size="sm"
+            onClick={() => setOpen(false)}
+          />
+          <Button
+            label="Delete"
+            color="error"
+            size="sm"
+            onClick={() => setOpen(false)}
+          />
         </Modal.Footer>
       </Modal>
     </>
@@ -63,7 +81,11 @@ const FormModalDemo: React.FC = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <FormGroup>
               <Label htmlFor="item-name">Name</Label>
-              <Input name="item-name" onChange={() => {}} placeholder="Enter item name" />
+              <Input
+                name="item-name"
+                onChange={() => {}}
+                placeholder="Enter item name"
+              />
             </FormGroup>
             <FormGroup>
               <Label htmlFor="item-category">Category</Label>
@@ -79,12 +101,21 @@ const FormModalDemo: React.FC = () => {
             </FormGroup>
             <FormGroup>
               <Label htmlFor="item-desc">Description</Label>
-              <Textarea name="item-desc" onChange={() => {}} placeholder="Enter a description" />
+              <Textarea
+                name="item-desc"
+                onChange={() => {}}
+                placeholder="Enter a description"
+              />
             </FormGroup>
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button label="Cancel" color="tertiary" size="sm" onClick={() => setOpen(false)} />
+          <Button
+            label="Cancel"
+            color="tertiary"
+            size="sm"
+            onClick={() => setOpen(false)}
+          />
           <Button label="Create" size="sm" onClick={() => setOpen(false)} />
         </Modal.Footer>
       </Modal>
@@ -98,27 +129,51 @@ const InfoModalDemo: React.FC = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Button label="View Details" color="secondary" onClick={() => setOpen(true)} />
+      <Button
+        label="View Details"
+        color="secondary"
+        onClick={() => setOpen(true)}
+      />
       <Modal open={open} onClose={() => setOpen(false)} size="sm">
         <Modal.Header title="Payment Received" onClose={() => setOpen(false)} />
         <Modal.Body>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ color: 'var(--cuk-color-text-muted)' }}>Amount</span>
-              <span style={{ fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>$2,450.00</span>
+              <span style={{ color: 'var(--cuk-color-text-muted)' }}>
+                Amount
+              </span>
+              <span
+                style={{ fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}
+              >
+                $2,450.00
+              </span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span style={{ color: 'var(--cuk-color-text-muted)' }}>Date</span>
               <span>Feb 20, 2026</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ color: 'var(--cuk-color-text-muted)' }}>Status</span>
-              <span style={{ color: 'var(--cuk-color-success-600)', fontWeight: 500 }}>Completed</span>
+              <span style={{ color: 'var(--cuk-color-text-muted)' }}>
+                Status
+              </span>
+              <span
+                style={{
+                  color: 'var(--cuk-color-success-600)',
+                  fontWeight: 500,
+                }}
+              >
+                Completed
+              </span>
             </div>
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button label="Close" color="secondary" size="sm" onClick={() => setOpen(false)} />
+          <Button
+            label="Close"
+            color="secondary"
+            size="sm"
+            onClick={() => setOpen(false)}
+          />
         </Modal.Footer>
       </Modal>
     </>

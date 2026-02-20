@@ -3,14 +3,14 @@ import { useArgs } from 'storybook/internal/preview-api';
 
 import { Button } from '@/components/button';
 import {
+  BarChartAltIcon,
+  BuildingIcon,
   CalendarIcon,
+  ChevronRightIcon,
+  CreditCardIcon,
   GearIcon,
   HomeIcon,
   ShopingBagIcon,
-  BarChartAltIcon,
-  CreditCardIcon,
-  BuildingIcon,
-  ChevronRightIcon,
 } from '@/components/icons';
 import { COLOR } from '@/foundation/colors';
 
@@ -66,7 +66,8 @@ const UserAvatar = () => (
       width: 32,
       height: 32,
       borderRadius: 'var(--cuk-radius-full)',
-      background: 'linear-gradient(135deg, var(--cuk-color-primary-400), var(--cuk-color-primary-600))',
+      background:
+        'linear-gradient(135deg, var(--cuk-color-primary-400), var(--cuk-color-primary-600))',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -86,7 +87,13 @@ function Render(args: React.ComponentProps<typeof Sidebar>) {
   const toggle = () => updateArgs({ isOpen: !isOpen });
 
   return (
-    <div style={{ display: 'flex', height: '100vh', fontFamily: 'var(--cuk-font-family-sans)' }}>
+    <div
+      style={{
+        display: 'flex',
+        height: '100vh',
+        fontFamily: 'var(--cuk-font-family-sans)',
+      }}
+    >
       <Sidebar {...args} isOpen={isOpen}>
         <SidebarHeader title="Cari Pusula" isOpen={isOpen} onClick={toggle} />
         <SidebarMenu collapsed={!isOpen}>
@@ -169,7 +176,8 @@ function Render(args: React.ComponentProps<typeof Sidebar>) {
                 fontFamily: 'inherit',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--cuk-color-background-muted)';
+                e.currentTarget.style.backgroundColor =
+                  'var(--cuk-color-background-muted)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent';

@@ -7,7 +7,10 @@ const meta: Meta<typeof Card> = {
   title: 'Components/Card',
   component: Card,
   argTypes: {
-    variant: { control: 'select', options: ['default', 'outlined', 'elevated'] },
+    variant: {
+      control: 'select',
+      options: ['default', 'outlined', 'elevated'],
+    },
   },
 };
 
@@ -84,7 +87,14 @@ export const Elevated: Story = {
 
 export const Variants: Story = {
   render: () => (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, maxWidth: 900 }}>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: 16,
+        maxWidth: 900,
+      }}
+    >
       {(['default', 'outlined', 'elevated'] as const).map((variant) => (
         <Card key={variant} variant={variant}>
           <Card.Header>

@@ -29,7 +29,9 @@ export function useKeyboardNavigation<T extends HTMLElement = HTMLElement>(
 
   const getItems = useCallback((): HTMLElement[] => {
     if (!containerRef.current) return [];
-    return Array.from(containerRef.current.querySelectorAll<HTMLElement>(itemSelector));
+    return Array.from(
+      containerRef.current.querySelectorAll<HTMLElement>(itemSelector),
+    );
   }, [itemSelector]);
 
   const focusItem = useCallback(

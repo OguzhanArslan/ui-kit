@@ -1,6 +1,9 @@
-import classNames from 'classnames';
 import React, { useCallback, useMemo, useState } from 'react';
+
+import classNames from 'classnames';
+
 import { SearchInput } from '../search-input/SearchInput';
+
 import styles from './Table.module.scss';
 
 // ─── Types ───────────────────────────────────────────────
@@ -14,7 +17,9 @@ export interface ColumnDef<T> {
   render?: (value: T[keyof T], row: T, index: number) => React.ReactNode;
 }
 
-export interface TableProps<T extends Record<string, unknown>> extends React.HTMLAttributes<HTMLDivElement> {
+export interface TableProps<
+  T extends Record<string, unknown>,
+> extends React.HTMLAttributes<HTMLDivElement> {
   columns: ColumnDef<T>[];
   data: T[];
   loading?: boolean;
@@ -33,16 +38,44 @@ export interface TableProps<T extends Record<string, unknown>> extends React.HTM
 const SortIcon: React.FC<{ direction: SortDirection }> = ({ direction }) => (
   <span className={classNames(styles.sortIcon, direction && styles.active)}>
     {direction === 'asc' ? (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="m18 15-6-6-6 6" />
       </svg>
     ) : direction === 'desc' ? (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="m6 9 6 6 6-6" />
       </svg>
     ) : (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="m7 15 5 5 5-5" /><path d="m7 9 5-5 5 5" />
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="m7 15 5 5 5-5" />
+        <path d="m7 9 5-5 5 5" />
       </svg>
     )}
   </span>
@@ -57,37 +90,48 @@ export interface TableHeadCellProps extends React.ThHTMLAttributes<HTMLTableCell
 
 const TableHead = React.forwardRef<HTMLTableSectionElement, TableSectionProps>(
   ({ className, children, ...rest }, ref) => (
-    <thead ref={ref} className={classNames(styles.head, className)} {...rest}>{children}</thead>
+    <thead ref={ref} className={classNames(styles.head, className)} {...rest}>
+      {children}
+    </thead>
   ),
 );
 TableHead.displayName = 'Table.Head';
 
 const TableBody = React.forwardRef<HTMLTableSectionElement, TableSectionProps>(
   ({ className, children, ...rest }, ref) => (
-    <tbody ref={ref} className={classNames(styles.body, className)} {...rest}>{children}</tbody>
+    <tbody ref={ref} className={classNames(styles.body, className)} {...rest}>
+      {children}
+    </tbody>
   ),
 );
 TableBody.displayName = 'Table.Body';
 
 const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(
   ({ className, children, ...rest }, ref) => (
-    <tr ref={ref} className={className} {...rest}>{children}</tr>
+    <tr ref={ref} className={className} {...rest}>
+      {children}
+    </tr>
   ),
 );
 TableRow.displayName = 'Table.Row';
 
 const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
   ({ className, children, ...rest }, ref) => (
-    <td ref={ref} className={className} {...rest}>{children}</td>
+    <td ref={ref} className={className} {...rest}>
+      {children}
+    </td>
   ),
 );
 TableCell.displayName = 'Table.Cell';
 
-const TableHeadCell = React.forwardRef<HTMLTableCellElement, TableHeadCellProps>(
-  ({ className, children, ...rest }, ref) => (
-    <th ref={ref} className={className} {...rest}>{children}</th>
-  ),
-);
+const TableHeadCell = React.forwardRef<
+  HTMLTableCellElement,
+  TableHeadCellProps
+>(({ className, children, ...rest }, ref) => (
+  <th ref={ref} className={className} {...rest}>
+    {children}
+  </th>
+));
 TableHeadCell.displayName = 'Table.HeadCell';
 
 // ─── Main Table Component ────────────────────────────────
@@ -136,7 +180,11 @@ function TableInner<T extends Record<string, unknown>>(
     if (!filterable || !filterValue || onFilter) return data;
     const lower = filterValue.toLowerCase();
     return data.filter((row) =>
-      columns.some((col) => String(row[col.key] ?? '').toLowerCase().includes(lower)),
+      columns.some((col) =>
+        String(row[col.key] ?? '')
+          .toLowerCase()
+          .includes(lower),
+      ),
     );
   }, [data, filterable, filterValue, columns, onFilter]);
 
@@ -153,7 +201,9 @@ function TableInner<T extends Record<string, unknown>>(
   }, [filteredData, sortKey, sortDir, onSort]);
 
   // Pagination
-  const totalPages = pagination ? Math.max(1, Math.ceil(sortedData.length / pageSize)) : 1;
+  const totalPages = pagination
+    ? Math.max(1, Math.ceil(sortedData.length / pageSize))
+    : 1;
   const pagedData = pagination
     ? sortedData.slice((currentPage - 1) * pageSize, currentPage * pageSize)
     : sortedData;
@@ -187,12 +237,16 @@ function TableInner<T extends Record<string, unknown>>(
                       onClick={() => handleSort(col.key)}
                       aria-sort={
                         sortKey === col.key && sortDir
-                          ? sortDir === 'asc' ? 'ascending' : 'descending'
+                          ? sortDir === 'asc'
+                            ? 'ascending'
+                            : 'descending'
                           : 'none'
                       }
                     >
                       {col.header}
-                      <SortIcon direction={sortKey === col.key ? sortDir : null} />
+                      <SortIcon
+                        direction={sortKey === col.key ? sortDir : null}
+                      />
                     </button>
                   ) : (
                     col.header
@@ -204,11 +258,15 @@ function TableInner<T extends Record<string, unknown>>(
           <tbody className={styles.body}>
             {loading ? (
               <tr>
-                <td colSpan={columns.length} className={styles.loading}>Loading...</td>
+                <td colSpan={columns.length} className={styles.loading}>
+                  Loading...
+                </td>
               </tr>
             ) : pagedData.length === 0 ? (
               <tr>
-                <td colSpan={columns.length} className={styles.empty}>{emptyText}</td>
+                <td colSpan={columns.length} className={styles.empty}>
+                  {emptyText}
+                </td>
               </tr>
             ) : (
               pagedData.map((row, i) => (
@@ -233,10 +291,15 @@ function TableInner<T extends Record<string, unknown>>(
             <span>Sayfa boyutu:</span>
             <select
               value={pageSize}
-              onChange={(e) => { setPageSize(Number(e.target.value)); setCurrentPage(1); }}
+              onChange={(e) => {
+                setPageSize(Number(e.target.value));
+                setCurrentPage(1);
+              }}
             >
               {pageSizeOptions.map((opt) => (
-                <option key={opt} value={opt}>{opt}</option>
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
               ))}
             </select>
           </div>
@@ -253,7 +316,10 @@ function TableInner<T extends Record<string, unknown>>(
               <button
                 key={page}
                 type="button"
-                className={classNames(styles.pageButton, page === currentPage && styles.active)}
+                className={classNames(
+                  styles.pageButton,
+                  page === currentPage && styles.active,
+                )}
                 onClick={() => setCurrentPage(page)}
               >
                 {page}

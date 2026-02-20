@@ -14,7 +14,9 @@ describe('Input', () => {
 
   it('renders with custom type', () => {
     render(<Input name="pass" type="password" onChange={() => {}} />);
-    expect(document.querySelector('input[type="password"]')).toBeInTheDocument();
+    expect(
+      document.querySelector('input[type="password"]'),
+    ).toBeInTheDocument();
   });
 
   it('renders placeholder', () => {
@@ -37,12 +39,24 @@ describe('Input', () => {
   });
 
   it('renders prefix element', () => {
-    render(<Input name="url" prefix={<span data-testid="prefix">@</span>} onChange={() => {}} />);
+    render(
+      <Input
+        name="url"
+        prefix={<span data-testid="prefix">@</span>}
+        onChange={() => {}}
+      />,
+    );
     expect(screen.getByTestId('prefix')).toBeInTheDocument();
   });
 
   it('renders suffix element', () => {
-    render(<Input name="url" suffix={<span data-testid="suffix">.com</span>} onChange={() => {}} />);
+    render(
+      <Input
+        name="url"
+        suffix={<span data-testid="suffix">.com</span>}
+        onChange={() => {}}
+      />,
+    );
     expect(screen.getByTestId('suffix')).toBeInTheDocument();
   });
 });

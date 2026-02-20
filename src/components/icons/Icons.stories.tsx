@@ -29,7 +29,11 @@ export const Catalog = () => {
               height={20}
               style={{ color: 'var(--cuk-color-text-primary)' }}
             />
-            <span style={{ fontSize: 11, color: 'var(--cuk-color-text-muted)' }}>{name}</span>
+            <span
+              style={{ fontSize: 11, color: 'var(--cuk-color-text-muted)' }}
+            >
+              {name}
+            </span>
           </div>
         </div>
       ))}

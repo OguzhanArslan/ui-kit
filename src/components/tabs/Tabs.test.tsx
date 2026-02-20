@@ -53,8 +53,14 @@ describe('Tabs', () => {
 
   it('marks active tab with aria-selected', () => {
     render(<Tabs items={items} />);
-    expect(screen.getByRole('tab', { name: 'First' })).toHaveAttribute('aria-selected', 'true');
-    expect(screen.getByRole('tab', { name: 'Second' })).toHaveAttribute('aria-selected', 'false');
+    expect(screen.getByRole('tab', { name: 'First' })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
+    expect(screen.getByRole('tab', { name: 'Second' })).toHaveAttribute(
+      'aria-selected',
+      'false',
+    );
   });
 
   it('renders tabpanel', () => {

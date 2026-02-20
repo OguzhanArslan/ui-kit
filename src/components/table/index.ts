@@ -1,10 +1,10 @@
-export { Table } from './Table';
 export type {
-  TableProps,
   ColumnDef,
   SortDirection,
-  TableSectionProps,
-  TableRowProps,
   TableCellProps,
   TableHeadCellProps,
+  TableProps,
+  TableRowProps,
+  TableSectionProps,
 } from './Table';
+export { Table } from './Table';

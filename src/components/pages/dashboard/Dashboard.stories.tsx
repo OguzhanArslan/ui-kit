@@ -26,8 +26,8 @@ import {
   SidebarMenu,
 } from '@/components/layout';
 import { StatCard } from '@/components/stat-card';
-import { Table } from '@/components/table';
 import type { ColumnDef } from '@/components/table';
+import { Table } from '@/components/table';
 import { COLOR } from '@/foundation/colors';
 
 const meta = {
@@ -74,7 +74,8 @@ const UserAvatar = () => (
       width: 32,
       height: 32,
       borderRadius: 'var(--cuk-radius-full)',
-      background: 'linear-gradient(135deg, var(--cuk-color-primary-400), var(--cuk-color-primary-600))',
+      background:
+        'linear-gradient(135deg, var(--cuk-color-primary-400), var(--cuk-color-primary-600))',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -100,7 +101,10 @@ interface Order {
 }
 
 const statusBadge = (status: string) => {
-  const map: Record<string, { variant: 'success' | 'warning' | 'info'; label: string }> = {
+  const map: Record<
+    string,
+    { variant: 'success' | 'warning' | 'info'; label: string }
+  > = {
     Completed: { variant: 'success', label: 'Completed' },
     Pending: { variant: 'warning', label: 'Pending' },
     Processing: { variant: 'info', label: 'Processing' },
@@ -126,7 +130,9 @@ const orderColumns: ColumnDef<Order>[] = [
     header: 'Amount',
     sortable: true,
     render: (v) => (
-      <span style={{ fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>{String(v)}</span>
+      <span style={{ fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>
+        {String(v)}
+      </span>
     ),
   },
   { key: 'status', header: 'Status', render: (v) => statusBadge(String(v)) },
@@ -135,7 +141,12 @@ const orderColumns: ColumnDef<Order>[] = [
     header: 'Date',
     sortable: true,
     render: (v) => (
-      <span style={{ color: 'var(--cuk-color-text-muted)', fontVariantNumeric: 'tabular-nums' }}>
+      <span
+        style={{
+          color: 'var(--cuk-color-text-muted)',
+          fontVariantNumeric: 'tabular-nums',
+        }}
+      >
         {String(v)}
       </span>
     ),
@@ -144,7 +155,20 @@ const orderColumns: ColumnDef<Order>[] = [
 
 const orderData: Order[] = Array.from({ length: 12 }, (_, i) => ({
   id: 1001 + i,
-  customer: ['Ahmet Yilmaz', 'Mehmet Kaya', 'Zeynep Demir', 'Fatma Celik', 'Ali Ozturk', 'Ayse Sahin', 'Burak Arslan', 'Elif Koc', 'Can Yildiz', 'Deniz Tas', 'Emre Acar', 'Gizem Dogan'][i],
+  customer: [
+    'Ahmet Yilmaz',
+    'Mehmet Kaya',
+    'Zeynep Demir',
+    'Fatma Celik',
+    'Ali Ozturk',
+    'Ayse Sahin',
+    'Burak Arslan',
+    'Elif Koc',
+    'Can Yildiz',
+    'Deniz Tas',
+    'Emre Acar',
+    'Gizem Dogan',
+  ][i],
   amount: `$${(Math.random() * 1000 + 100).toFixed(2)}`,
   status: (['Completed', 'Pending', 'Processing'] as const)[i % 3],
   date: `2026-02-${String(i + 1).padStart(2, '0')}`,
@@ -240,7 +264,8 @@ function Render(args: React.ComponentProps<typeof Layout>) {
                 fontFamily: 'inherit',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--cuk-color-background-muted)';
+                e.currentTarget.style.backgroundColor =
+                  'var(--cuk-color-background-muted)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent';

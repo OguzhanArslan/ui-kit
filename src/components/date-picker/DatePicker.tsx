@@ -1,8 +1,19 @@
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+
 import classNames from 'classnames';
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+
 import styles from './DatePicker.module.scss';
 
-export interface DatePickerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
+export interface DatePickerProps extends Omit<
+  React.HTMLAttributes<HTMLDivElement>,
+  'onChange'
+> {
   value?: Date | null;
   onChange?: (date: Date | null) => void;
   placeholder?: string;
@@ -10,11 +21,30 @@ export interface DatePickerProps extends Omit<React.HTMLAttributes<HTMLDivElemen
 }
 
 const DAYS = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
-const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const MONTHS = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
 
 const CalendarIcon: React.FC = () => (
   <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5.333 1.333v2M10.667 1.333v2M2.333 6.06h11.334M14 5.667v5.666c0 2-1 3.334-3.333 3.334H5.333C3 14.667 2 13.333 2 11.333V5.667c0-2 1-3.334 3.333-3.334h5.334C13 2.333 14 3.667 14 5.667z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      d="M5.333 1.333v2M10.667 1.333v2M2.333 6.06h11.334M14 5.667v5.666c0 2-1 3.334-3.333 3.334H5.333C3 14.667 2 13.333 2 11.333V5.667c0-2 1-3.334 3.333-3.334h5.334C13 2.333 14 3.667 14 5.667z"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
@@ -31,7 +61,17 @@ const defaultFormat = (date: Date) =>
   `${date.getDate().toString().padStart(2, '0')}.${(date.getMonth() + 1).toString().padStart(2, '0')}.${date.getFullYear()}`;
 
 export const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>(
-  ({ value, onChange, placeholder = 'Select date', format = defaultFormat, className, ...rest }, ref) => {
+  (
+    {
+      value,
+      onChange,
+      placeholder = 'Select date',
+      format = defaultFormat,
+      className,
+      ...rest
+    },
+    ref,
+  ) => {
     const [open, setOpen] = useState(false);
     const [viewDate, setViewDate] = useState(() => value ?? new Date());
     const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -51,7 +91,11 @@ export const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>(
     useEffect(() => {
       if (!open) return;
       const handler = (e: MouseEvent) => {
-        if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) setOpen(false);
+        if (
+          wrapperRef.current &&
+          !wrapperRef.current.contains(e.target as Node)
+        )
+          setOpen(false);
       };
       document.addEventListener('mousedown', handler);
       return () => document.removeEventListener('mousedown', handler);
@@ -67,8 +111,10 @@ export const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>(
     );
 
     const cells: { day: number; current: boolean }[] = [];
-    for (let i = 0; i < firstDay; i++) cells.push({ day: prevMonthDays - firstDay + 1 + i, current: false });
-    for (let i = 1; i <= daysInMonth; i++) cells.push({ day: i, current: true });
+    for (let i = 0; i < firstDay; i++)
+      cells.push({ day: prevMonthDays - firstDay + 1 + i, current: false });
+    for (let i = 1; i <= daysInMonth; i++)
+      cells.push({ day: i, current: true });
     const remaining = 42 - cells.length;
     for (let i = 1; i <= remaining; i++) cells.push({ day: i, current: false });
 
@@ -94,20 +140,52 @@ export const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>(
         {open && (
           <div className={styles.dropdown}>
             <div className={styles.header}>
-              <button type="button" className={styles.navButton} onClick={() => setViewDate(new Date(year, month - 1, 1))}>‹</button>
-              <span className={styles.monthYear}>{MONTHS[month]} {year}</span>
-              <button type="button" className={styles.navButton} onClick={() => setViewDate(new Date(year, month + 1, 1))}>›</button>
+              <button
+                type="button"
+                className={styles.navButton}
+                onClick={() => setViewDate(new Date(year, month - 1, 1))}
+              >
+                ‹
+              </button>
+              <span className={styles.monthYear}>
+                {MONTHS[month]} {year}
+              </span>
+              <button
+                type="button"
+                className={styles.navButton}
+                onClick={() => setViewDate(new Date(year, month + 1, 1))}
+              >
+                ›
+              </button>
             </div>
             <div className={styles.grid}>
-              {DAYS.map((d) => <div key={d} className={styles.dayName}>{d}</div>)}
+              {DAYS.map((d) => (
+                <div key={d} className={styles.dayName}>
+                  {d}
+                </div>
+              ))}
               {cells.map((cell, i) => {
-                const isToday = cell.current && cell.day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
-                const isSelected = value && cell.current && cell.day === value.getDate() && month === value.getMonth() && year === value.getFullYear();
+                const isToday =
+                  cell.current &&
+                  cell.day === today.getDate() &&
+                  month === today.getMonth() &&
+                  year === today.getFullYear();
+                const isSelected =
+                  value &&
+                  cell.current &&
+                  cell.day === value.getDate() &&
+                  month === value.getMonth() &&
+                  year === value.getFullYear();
                 return (
                   <button
                     key={i}
                     type="button"
-                    className={classNames(styles.day, !cell.current && styles.outside, isToday && styles.today, isSelected && styles.selected)}
+                    className={classNames(
+                      styles.day,
+                      !cell.current && styles.outside,
+                      isToday && styles.today,
+                      isSelected && styles.selected,
+                    )}
                     onClick={() => cell.current && handleSelect(cell.day)}
                     tabIndex={cell.current ? 0 : -1}
                   >

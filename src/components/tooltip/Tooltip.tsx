@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
+
 import styles from './Tooltip.module.scss';
 
 export type TooltipPlacement = 'top' | 'right' | 'bottom' | 'left';
@@ -14,7 +15,10 @@ export interface TooltipProps {
 const OFFSET = 8;
 
 export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
-  ({ content, placement = 'top', delayShow = 200, children, className }, ref) => {
+  (
+    { content, placement = 'top', delayShow = 200, children, className },
+    ref,
+  ) => {
     const [visible, setVisible] = useState(false);
     const [coords, setCoords] = useState({ top: 0, left: 0 });
     const triggerRef = useRef<HTMLDivElement | null>(null);

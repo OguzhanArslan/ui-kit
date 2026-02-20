@@ -1,7 +1,9 @@
 import React from 'react';
 
 import ReactApexChart from 'react-apexcharts';
+
 import { useChartColors, useChartTheme } from './useChartTokens';
+
 import styles from './ChartTooltip.module.scss';
 
 export type MonthlyReportRow = {
@@ -107,7 +109,15 @@ export function LineChart({
       tooltip: {
         shared: true,
         intersect: false,
-        custom: ({ series: s, dataPointIndex: idx, w }: { series: number[][]; dataPointIndex: number; w: { globals: { labels: string[] } } }) => {
+        custom: ({
+          series: s,
+          dataPointIndex: idx,
+          w,
+        }: {
+          series: number[][];
+          dataPointIndex: number;
+          w: { globals: { labels: string[] } };
+        }) => {
           const label = w.globals.labels[idx] || categories[idx] || '';
           const revenueVal = s[0]?.[idx] ?? 0;
           const trendVal = s[1]?.[idx] ?? 0;

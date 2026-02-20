@@ -1,5 +1,7 @@
-import classNames from 'classnames';
 import React from 'react';
+
+import classNames from 'classnames';
+
 import styles from './Alert.module.scss';
 
 export type AlertVariant = 'info' | 'success' | 'warning' | 'danger';
@@ -15,12 +17,31 @@ export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const CloseIcon: React.FC = () => (
   <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      d="M12 4L4 12M4 4L12 12"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
 export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
-  ({ variant = 'info', title, dismissible, onDismiss, action, icon, className, children, ...rest }, ref) => (
+  (
+    {
+      variant = 'info',
+      title,
+      dismissible,
+      onDismiss,
+      action,
+      icon,
+      className,
+      children,
+      ...rest
+    },
+    ref,
+  ) => (
     <div
       ref={ref}
       role="alert"
@@ -34,7 +55,12 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         {action && <div className={styles.actions}>{action}</div>}
       </div>
       {dismissible && (
-        <button type="button" className={styles.dismiss} onClick={onDismiss} aria-label="Dismiss">
+        <button
+          type="button"
+          className={styles.dismiss}
+          onClick={onDismiss}
+          aria-label="Dismiss"
+        >
           <CloseIcon />
         </button>
       )}

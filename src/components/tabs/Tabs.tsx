@@ -1,6 +1,9 @@
-import classNames from 'classnames';
 import React, { useCallback, useState } from 'react';
+
+import classNames from 'classnames';
+
 import { useKeyboardNavigation } from '../../hooks';
+
 import styles from './Tabs.module.scss';
 
 export interface TabItem {
@@ -10,7 +13,10 @@ export interface TabItem {
   disabled?: boolean;
 }
 
-export interface TabsProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
+export interface TabsProps extends Omit<
+  React.HTMLAttributes<HTMLDivElement>,
+  'onChange'
+> {
   items: TabItem[];
   defaultActiveKey?: string;
   activeKey?: string;
@@ -18,14 +24,27 @@ export interface TabsProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'o
 }
 
 export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
-  ({ items, defaultActiveKey, activeKey: controlledKey, onChange, className, ...rest }, ref) => {
-    const [internalKey, setInternalKey] = useState(defaultActiveKey ?? items[0]?.key);
+  (
+    {
+      items,
+      defaultActiveKey,
+      activeKey: controlledKey,
+      onChange,
+      className,
+      ...rest
+    },
+    ref,
+  ) => {
+    const [internalKey, setInternalKey] = useState(
+      defaultActiveKey ?? items[0]?.key,
+    );
     const currentKey = controlledKey ?? internalKey;
 
-    const { containerRef, handleKeyDown } = useKeyboardNavigation<HTMLDivElement>({
-      orientation: 'horizontal',
-      itemSelector: 'button[role="tab"]:not([disabled])',
-    });
+    const { containerRef, handleKeyDown } =
+      useKeyboardNavigation<HTMLDivElement>({
+        orientation: 'horizontal',
+        itemSelector: 'button[role="tab"]:not([disabled])',
+      });
 
     const handleSelect = useCallback(
       (key: string) => {
@@ -54,7 +73,10 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
               aria-controls={`panel-${item.key}`}
               tabIndex={item.key === currentKey ? 0 : -1}
               disabled={item.disabled}
-              className={classNames(styles.tab, item.key === currentKey && styles.active)}
+              className={classNames(
+                styles.tab,
+                item.key === currentKey && styles.active,
+              )}
               onClick={() => handleSelect(item.key)}
             >
               {item.label}
@@ -62,7 +84,11 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
           ))}
         </div>
         {activePanel && (
-          <div role="tabpanel" id={`panel-${activePanel.key}`} className={styles.panel}>
+          <div
+            role="tabpanel"
+            id={`panel-${activePanel.key}`}
+            className={styles.panel}
+          >
             {activePanel.content}
           </div>
         )}

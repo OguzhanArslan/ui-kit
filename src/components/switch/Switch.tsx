@@ -1,22 +1,42 @@
-import classNames from 'classnames';
 import React, { useId } from 'react';
+
+import classNames from 'classnames';
+
 import styles from './Switch.module.scss';
 
-export interface SwitchProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'onChange'> {
+export interface SwitchProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  'type' | 'onChange'
+> {
   checked?: boolean;
   onChange?: (checked: boolean) => void;
   label?: string;
 }
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
-  ({ checked = false, onChange, label, disabled, className, id: propId, ...rest }, ref) => {
+  (
+    {
+      checked = false,
+      onChange,
+      label,
+      disabled,
+      className,
+      id: propId,
+      ...rest
+    },
+    ref,
+  ) => {
     const autoId = useId();
     const id = propId ?? autoId;
 
     return (
       <label
         htmlFor={id}
-        className={classNames(styles.wrapper, disabled && styles.disabled, className)}
+        className={classNames(
+          styles.wrapper,
+          disabled && styles.disabled,
+          className,
+        )}
       >
         <input
           ref={ref}

@@ -1,4 +1,4 @@
-import { render, screen, act } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
@@ -9,8 +9,16 @@ const ToastTrigger = () => {
   return (
     <div>
       <button onClick={() => toast.success('Saved')}>Success</button>
-      <button onClick={() => toast.error('Failed', { description: 'Try again' })}>Error</button>
-      <button onClick={() => toast.info('Info', { action: { label: 'Undo', onClick: vi.fn() } })}>
+      <button
+        onClick={() => toast.error('Failed', { description: 'Try again' })}
+      >
+        Error
+      </button>
+      <button
+        onClick={() =>
+          toast.info('Info', { action: { label: 'Undo', onClick: vi.fn() } })
+        }
+      >
         WithAction
       </button>
     </div>
@@ -83,6 +91,8 @@ describe('Toast', () => {
       useToast();
       return null;
     };
-    expect(() => render(<Bad />)).toThrow('useToast must be used within ToastProvider');
+    expect(() => render(<Bad />)).toThrow(
+      'useToast must be used within ToastProvider',
+    );
   });
 });

@@ -1,11 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { Tooltip } from './Tooltip';
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Components/Tooltip',
   component: Tooltip,
   argTypes: {
-    placement: { control: 'select', options: ['top', 'right', 'bottom', 'left'] },
+    placement: {
+      control: 'select',
+      options: ['top', 'right', 'bottom', 'left'],
+    },
   },
 };
 

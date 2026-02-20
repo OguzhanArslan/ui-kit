@@ -122,7 +122,12 @@ export const Error: Story = {
         <FormGroup>
           <Label htmlFor="errorSelect">City</Label>
           <Story />
-          <span style={{ fontSize: 'var(--cuk-font-size-xs)', color: 'var(--cuk-color-danger)' }}>
+          <span
+            style={{
+              fontSize: 'var(--cuk-font-size-xs)',
+              color: 'var(--cuk-color-danger)',
+            }}
+          >
             Please select a city
           </span>
         </FormGroup>
