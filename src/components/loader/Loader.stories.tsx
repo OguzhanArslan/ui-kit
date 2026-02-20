@@ -1,42 +1,52 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { SIZE } from '@/foundation/sizes';
-
+import { Button } from '../button';
 import { Loader } from './Loader';
 
-const meta = {
+const meta: Meta<typeof Loader> = {
   title: 'Components/Loader',
   component: Loader,
-  argTypes: {
-    size: {
-      control: 'radio',
-      options: [SIZE.sm, SIZE.md, SIZE.lg],
-    },
-  },
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
-} satisfies Meta<typeof Loader>;
+};
 
 export default meta;
+type Story = StoryObj<typeof Loader>;
 
-type Story = StoryObj<typeof meta>;
-
-export const LoaderSmall: Story = {
-  args: {
-    size: SIZE.sm,
-  },
+export const Default: Story = {
+  render: () => (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+      <Loader size="sm" />
+      <Loader size="md" />
+      <Loader size="lg" />
+    </div>
+  ),
 };
 
-export const LoaderMedium: Story = {
-  args: {
-    size: SIZE.md,
-  },
+export const InButton: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Button label="Saving..." isLoading size="sm" />
+      <Button label="Processing..." isLoading />
+      <Button label="Loading..." isLoading variant="secondary" />
+    </div>
+  ),
 };
 
-export const LoaderLarge: Story = {
-  args: {
-    size: SIZE.lg,
-  },
+export const InlineWithText: Story = {
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        fontSize: 'var(--cuk-font-size-sm)',
+        color: 'var(--cuk-color-text-muted)',
+      }}
+    >
+      <Loader size="sm" />
+      <span>Loading data...</span>
+    </div>
+  ),
 };

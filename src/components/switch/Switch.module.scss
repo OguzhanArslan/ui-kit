@@ -22,8 +22,16 @@
   transition: background-color 150ms ease;
   flex-shrink: 0;
 
+  &:hover {
+    background-color: var(--cuk-color-neutral-300);
+  }
+
   &.checked {
     background-color: var(--cuk-color-primary);
+
+    &:hover {
+      background-color: var(--cuk-color-primary-hover);
+    }
   }
 }
 
@@ -34,7 +42,7 @@
   width: 16px;
   height: 16px;
   border-radius: var(--cuk-radius-full);
-  background-color: var(--cuk-color-white);
+  background-color: var(--cuk-color-surface);
   box-shadow: var(--cuk-shadow-sm);
   transition: transform 150ms ease;
 
@@ -53,7 +61,6 @@
   &:focus-visible + .track {
     outline: 2px solid var(--cuk-color-focus);
     outline-offset: 2px;
-    box-shadow: 0 0 0 4px var(--cuk-color-focus-ring);
   }
 }
 
