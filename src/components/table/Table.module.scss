@@ -151,8 +151,12 @@
 
   &.active {
     background-color: var(--cuk-color-primary);
-    color: #ffffff;
+    color: var(--cuk-color-text-inverse);
     border-color: var(--cuk-color-primary);
+
+    &:hover:not(:disabled) {
+      background-color: var(--cuk-color-primary-hover);
+    }
   }
 
   &:focus-visible {
