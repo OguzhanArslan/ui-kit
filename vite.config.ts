@@ -24,11 +24,21 @@ export default defineConfig({
   plugins: [react()],
   test: {
     projects: [
+      // Unit tests
+      {
+        extends: true,
+        test: {
+          name: 'unit',
+          include: ['src/**/*.test.{ts,tsx}'],
+          environment: 'jsdom',
+          setupFiles: ['./src/test/setup.ts'],
+          css: { modules: { classNameStrategy: 'non-scoped' } },
+        },
+      },
+      // Storybook browser tests
       {
         extends: true,
         plugins: [
-          // The plugin will run tests for the stories defined in your Storybook config
-          // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
           storybookTest({
             configDir: path.join(dirname, '.storybook'),
           }),
