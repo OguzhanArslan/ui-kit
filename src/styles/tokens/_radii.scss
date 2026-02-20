@@ -1,11 +1,13 @@
-// Border Radius Tokens — Shadcn-inspired
+// Border Radius Tokens — Shadcn v4
+// Base radius = 10px (--cuk-radius-lg), others derived via calc
 
 :root {
   --cuk-radius-none: 0;
-  --cuk-radius-sm: 0.25rem;
-  --cuk-radius-md: calc(var(--cuk-radius-lg) - 2px);
-  --cuk-radius-lg: 0.5rem;
-  --cuk-radius-xl: 0.75rem;
-  --cuk-radius-2xl: 1rem;
+  --cuk-radius-xs: 0.25rem;                          // 4px (checkbox)
+  --cuk-radius-sm: calc(var(--cuk-radius-lg) - 4px);  // 6px
+  --cuk-radius-md: calc(var(--cuk-radius-lg) - 2px);  // 8px
+  --cuk-radius-lg: 0.625rem;                          // 10px (BASE — shadcn --radius)
+  --cuk-radius-xl: calc(var(--cuk-radius-lg) + 4px);  // 14px
+  --cuk-radius-2xl: 1rem;                             // 16px
   --cuk-radius-full: 9999px;
 }

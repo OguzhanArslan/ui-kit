@@ -18,7 +18,7 @@
   align-items: flex-start;
   gap: var(--cuk-spacing-3);
   padding: var(--cuk-spacing-4);
-  border-radius: var(--cuk-radius-lg);
+  border-radius: var(--cuk-radius-2xl);
   background-color: var(--cuk-color-surface);
   border: 1px solid var(--cuk-color-border);
   box-shadow: var(--cuk-shadow-lg);
@@ -109,8 +109,10 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--cuk-color-focus);
-    outline-offset: 2px;
+    outline: 2px solid transparent;
+    outline-offset: 0px;
+    border-color: var(--cuk-color-focus);
+    box-shadow: 0 0 0 3px var(--cuk-color-focus-ring);
   }
 }
 
@@ -131,8 +133,10 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--cuk-color-focus);
-    outline-offset: 2px;
+    outline: 2px solid transparent;
+    outline-offset: 0px;
+    border-color: var(--cuk-color-focus);
+    box-shadow: 0 0 0 3px var(--cuk-color-focus-ring);
   }
 
   svg {

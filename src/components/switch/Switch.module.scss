@@ -15,8 +15,8 @@
 
 .track {
   position: relative;
-  width: 36px;
-  height: 20px;
+  width: 32px;
+  height: 18px;
   border-radius: var(--cuk-radius-full);
   background-color: var(--cuk-color-neutral-200);
   transition: background-color 150ms ease;
@@ -37,8 +37,8 @@
 
 .thumb {
   position: absolute;
-  top: 2px;
-  left: 2px;
+  top: 1px;
+  left: 1px;
   width: 16px;
   height: 16px;
   border-radius: var(--cuk-radius-full);
@@ -47,7 +47,7 @@
   transition: transform 150ms ease;
 
   .checked & {
-    transform: translateX(16px);
+    transform: translateX(14px);
   }
 }
 
@@ -59,8 +59,10 @@
   clip: rect(0, 0, 0, 0);
 
   &:focus-visible + .track {
-    outline: 2px solid var(--cuk-color-focus);
-    outline-offset: 2px;
+    outline: 2px solid transparent;
+    outline-offset: 0px;
+    border-color: var(--cuk-color-focus);
+    box-shadow: 0 0 0 3px var(--cuk-color-focus-ring);
   }
 }
 

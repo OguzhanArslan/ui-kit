@@ -39,8 +39,7 @@
     "chromatic": "npx chromatic --project-token=chpt_c39d1b5b0f455b9"
   },
   "dependencies": {
-    "@fontsource/dm-sans": "^5.2.8",
-    "@fontsource/inter": "^5.2.8"
+    "@fontsource/dm-sans": "^5.2.8"
   },
   "peerDependencies": {
     "apexcharts": "^5.3.6",

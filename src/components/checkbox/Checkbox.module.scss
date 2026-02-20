@@ -23,8 +23,10 @@
     }
 
     &:focus-visible + label .checkbox {
-      outline: 2px solid var(--cuk-color-focus);
-      outline-offset: 2px;
+      outline: 2px solid transparent;
+      outline-offset: 0px;
+      border-color: var(--cuk-color-focus);
+      box-shadow: 0 0 0 3px var(--cuk-color-focus-ring);
     }
 
     &:disabled + label {
@@ -49,8 +51,9 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    border-radius: var(--cuk-radius-sm);
+    border-radius: var(--cuk-radius-xs);
     border: 1px solid var(--cuk-color-input-border);
+    background-color: var(--cuk-color-input-bg);
     width: 16px;
     height: 16px;
     flex-shrink: 0;

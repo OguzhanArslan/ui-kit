@@ -7,23 +7,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  animation: fadeIn 200ms ease-out;
+  background-color: var(--cuk-color-overlay);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 100ms ease-out;
 }
 
 .modal {
   position: relative;
   background-color: var(--cuk-color-surface);
-  border: 1px solid var(--cuk-color-border);
-  border-radius: var(--cuk-radius-lg);
-  box-shadow: var(--cuk-shadow-xl);
+  border: none;
+  border-radius: var(--cuk-radius-xl);
+  box-shadow: 0 0 0 1px var(--cuk-color-ring);
   max-height: 85vh;
   display: flex;
   flex-direction: column;
-  animation: scaleIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  animation: scaleIn 100ms cubic-bezier(0.16, 1, 0.3, 1);
   margin: var(--cuk-spacing-4);
 
-  &.sm { width: 400px; }
+  &.sm { width: 384px; }
   &.md { width: 520px; }
   &.lg { width: 680px; }
 }
@@ -33,7 +34,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--cuk-spacing-4);
-  padding: var(--cuk-spacing-5) var(--cuk-spacing-5) var(--cuk-spacing-3);
+  padding: var(--cuk-spacing-4) var(--cuk-spacing-4) var(--cuk-spacing-3);
   flex-shrink: 0;
 }
 
@@ -83,8 +84,10 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--cuk-color-focus);
-    outline-offset: 2px;
+    outline: 2px solid transparent;
+    outline-offset: 0px;
+    border-color: var(--cuk-color-focus);
+    box-shadow: 0 0 0 3px var(--cuk-color-focus-ring);
   }
 
   svg {
@@ -94,7 +97,7 @@
 }
 
 .body {
-  padding: 0 var(--cuk-spacing-5) var(--cuk-spacing-5);
+  padding: 0 var(--cuk-spacing-4) var(--cuk-spacing-4);
   overflow-y: auto;
   flex: 1;
   font-size: var(--cuk-font-size-sm);
@@ -107,7 +110,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: var(--cuk-spacing-2);
-  padding: var(--cuk-spacing-3) var(--cuk-spacing-5);
+  padding: var(--cuk-spacing-3) var(--cuk-spacing-4);
   border-top: 1px solid var(--cuk-color-border);
   flex-shrink: 0;
 }

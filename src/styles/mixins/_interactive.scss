@@ -2,7 +2,7 @@
 
 @mixin interactive($include-focus: true) {
   cursor: pointer;
-  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+  transition: all 150ms ease;
 
   &:hover:not(:disabled) {
     @content;
@@ -23,9 +23,10 @@
 
   @if $include-focus {
     &:focus-visible {
-      outline: 2px solid var(--cuk-color-focus);
-      outline-offset: 2px;
-      box-shadow: 0 0 0 4px var(--cuk-color-focus-ring);
+      outline: 2px solid transparent;
+      outline-offset: 0px;
+      border-color: var(--cuk-color-focus);
+      box-shadow: 0 0 0 3px var(--cuk-color-focus-ring);
     }
   }
 }

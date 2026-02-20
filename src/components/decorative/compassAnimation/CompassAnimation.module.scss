@@ -90,9 +90,9 @@
   height: 180px;
   border-radius: 50%;
   border: 2px solid var(--cuk-color-primary-300);
-  background: rgba(255, 255, 255, 0.8);
+  background: oklch(1 0 0 / 0.8);
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgb(99 102 241 / 0.15);
+  box-shadow: 0 8px 32px oklch(0.541 0.281 293 / 0.15);
 }
 
 // Directions
@@ -139,7 +139,7 @@
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 35px solid var(--cuk-color-primary-500);
-  filter: drop-shadow(0 2px 4px rgb(99 102 241 / 0.4));
+  filter: drop-shadow(0 2px 4px oklch(0.541 0.281 293 / 0.4));
 }
 
 .needleSouth {
@@ -163,7 +163,7 @@
   height: 12px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--cuk-color-primary-600), var(--cuk-color-primary-700));
-  box-shadow: 0 2px 8px rgb(99 102 241 / 0.3);
+  box-shadow: 0 2px 8px oklch(0.541 0.281 293 / 0.3);
 }
 
 @keyframes needleSwing {
