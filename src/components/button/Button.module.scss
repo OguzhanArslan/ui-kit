@@ -62,11 +62,11 @@
 
   &.primary {
     background-color: var(--cuk-color-primary);
-    color: #ffffff;
+    color: var(--cuk-color-text-inverse);
     box-shadow: var(--cuk-shadow-xs);
 
     svg {
-      fill: #ffffff;
+      fill: var(--cuk-color-text-inverse);
     }
 
     &:not(:disabled):hover {
@@ -164,10 +164,10 @@
 
   &.success {
     background-color: var(--cuk-color-success);
-    color: #ffffff;
+    color: var(--cuk-color-text-inverse);
     box-shadow: var(--cuk-shadow-xs);
 
-    svg { fill: #ffffff; }
+    svg { fill: var(--cuk-color-text-inverse); }
 
     &:not(:disabled):hover {
       background-color: var(--cuk-color-success-600);
@@ -182,10 +182,10 @@
 
   &.warning {
     background-color: var(--cuk-color-warning);
-    color: #ffffff;
+    color: var(--cuk-color-text-inverse);
     box-shadow: var(--cuk-shadow-xs);
 
-    svg { fill: #ffffff; }
+    svg { fill: var(--cuk-color-text-inverse); }
 
     &:not(:disabled):hover {
       background-color: var(--cuk-color-warning-600);
@@ -200,10 +200,10 @@
 
   &.error {
     background-color: var(--cuk-color-danger);
-    color: #ffffff;
+    color: var(--cuk-color-text-inverse);
     box-shadow: var(--cuk-shadow-xs);
 
-    svg { fill: #ffffff; }
+    svg { fill: var(--cuk-color-text-inverse); }
 
     &:not(:disabled):hover {
       background-color: var(--cuk-color-danger-600);

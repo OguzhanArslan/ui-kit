@@ -107,6 +107,11 @@
   &:hover {
     opacity: 1;
   }
+
+  &:focus-visible {
+    outline: 2px solid var(--cuk-color-focus);
+    outline-offset: 2px;
+  }
 }
 
 .close {
@@ -123,6 +128,11 @@
 
   &:hover {
     opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--cuk-color-focus);
+    outline-offset: 2px;
   }
 
   svg {

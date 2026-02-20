@@ -13,7 +13,7 @@
     visibility: hidden;
 
     &:checked + label .checkbox {
-      color: #ffffff;
+      color: var(--cuk-color-text-inverse);
       background-color: var(--cuk-color-primary);
       border-color: var(--cuk-color-primary);
 

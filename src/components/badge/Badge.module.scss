@@ -79,6 +79,11 @@
     opacity: 1;
   }
 
+  &:focus-visible {
+    outline: 2px solid var(--cuk-color-focus);
+    outline-offset: 2px;
+  }
+
   svg {
     width: 12px;
     height: 12px;
