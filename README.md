@@ -1,127 +1,256 @@
-# Cari UI Kit
+# cari-ui-kit
 
-A modern, customizable React UI component library built with **TypeScript**, **Vite**, and **Sass**. Designed to provide a consistent and robust design system for your applications.
+Shadcn v4 (Nova) ile uyumlu, OKLCH renk uzayinda tasarlanmis modern React UI component kutuphanesi. TypeScript, Vite ve Sass ile insa edilmistir.
 
-## � Installation
+[![npm version](https://img.shields.io/npm/v/cari-ui-kit.svg)](https://www.npmjs.com/package/cari-ui-kit)
+[![license](https://img.shields.io/npm/l/cari-ui-kit.svg)](LICENSE)
 
-Install the library using your preferred package manager:
+---
+
+## Kurulum
 
 ```bash
 npm install cari-ui-kit
-# or
+# veya
 yarn add cari-ui-kit
-# or
-pnpm add cari-ui-kit
 ```
 
-## � Usage
+### Peer Dependencies
 
-### 1. Import Styles
-
-Import the global CSS file at the root of your application (e.g., in `main.tsx` or `App.tsx`) to ensure proper styling:
-
-```tsx
-import 'cari-ui-kit/styles.css';
+```bash
+npm install react react-dom classnames react-select apexcharts react-apexcharts
 ```
 
-### 2. Import and Use Components
-
-You can import components directly from the package:
+## Hizli Baslangic
 
 ```tsx
-import { Button, Input, Typography, Select } from 'cari-ui-kit';
+// 1. CSS import (main.tsx veya App.tsx)
+import 'cari-ui-kit/dist/cari-ui-kit.css';
+
+// 2. Component'leri kullanin
+import { Button, Input, Card, ToastProvider, useToast } from 'cari-ui-kit';
 
 function App() {
   return (
-    <div style={{ padding: '20px' }}>
-      <Typography variant="h1">Welcome to Cari UI</Typography>
-      
-      <div style={{ margin: '20px 0' }}>
-        <Input 
-          label="Email Address" 
-          placeholder="Enter your email" 
-          onChange={(e) => console.log(e.target.value)}
-        />
-      </div>
-
-      <div style={{ margin: '20px 0' }}>
-        <Select
-          label="Choose a role"
-          options={[
-            { value: 'admin', label: 'Admin' },
-            { value: 'user', label: 'User' },
-          ]}
-        />
-      </div>
-
-      <Button variant="primary" onClick={() => alert('Clicked!')}>
-        Submit
-      </Button>
+    <div className="scope">
+      <ToastProvider>
+        <MyPage />
+      </ToastProvider>
     </div>
+  );
+}
+
+function MyPage() {
+  const toast = useToast();
+
+  return (
+    <Card>
+      <Card.Header>
+        <h3>Merhaba</h3>
+      </Card.Header>
+      <Card.Body>
+        <Input name="email" placeholder="E-posta" />
+      </Card.Body>
+      <Card.Footer>
+        <Button
+          label="Kaydet"
+          color="primary"
+          onClick={() => toast.success('Kaydedildi!')}
+        />
+      </Card.Footer>
+    </Card>
   );
 }
 ```
 
-## 🧱 Available Components
+> **Not:** `.scope` class'i component'lerin dogru stil almasi icin gereklidir.
 
-The library includes a comprehensive set of typed React components:
-
-| Component | Description |
-| :--- | :--- |
-| `Button` | Interactive buttons with multiple variants. |
-| `Input` | Text input fields with label support. |
-| `Select` | Dropdown selection component. |
-| `Checkbox` | Boolean selection input. |
-| `Typography` | Text components for consistent headings and body text. |
-| `Icons` | A set of SVG icons (e.g., `IconHome`, `IconUser`). |
-| `Loader` | Loading spinners and indicators. |
-| `FormGroup` | Wrapper for grouping form elements. |
-| `Label` | Standalone label component. |
-| `TextArea` | Multi-line text input. |
-| `Sidebar` | Navigation sidebar component. |
-
-## 🎨 Foundation & Tokens
-
-You can also access the design tokens directly if you need to build custom components that match the system:
+## Dark Mode
 
 ```tsx
-import { colors, weight } from 'cari-ui-kit';
+// Aktif
+document.documentElement.setAttribute('data-theme', 'dark');
 
-const myStyle = {
-  color: colors.primary,
-  fontWeight: weight.bold
-};
+// Pasif
+document.documentElement.removeAttribute('data-theme');
 ```
 
----
+## Component'ler
 
-## 🛠 Local Development & Contributing
+### Form
 
-If you want to contribute to the library or run it locally:
+| Component | Aciklama |
+|-----------|----------|
+| **Button** | 8 renk varyanti, 4 boyut (xs/sm/md/lg), loading state, icon destegi |
+| **Input** | Prefix/suffix slot, hata durumu, loading state |
+| **Textarea** | Cok satirli input, otomatik yeniden boyutlandirma |
+| **Select** | react-select tabanli, tekli/coklu secim, arama destegi |
+| **Checkbox** | Etiketli boolean input |
+| **Switch** | Toggle switch, etiket destegi |
+| **DatePicker** | Tarih secici |
+| **SearchInput** | Arama odakli input |
+| **FormGroup** | Label + input gruplama |
+| **Label** | Bagimsiz etiket |
 
-1.  **Clone the repo:**
-    ```bash
-    git clone <repository-url>
-    cd ui-kit
-    ```
+### Veri Gosterimi
 
-2.  **Install dependencies:**
-    ```bash
-    yarn install
-    ```
+| Component | Aciklama |
+|-----------|----------|
+| **Table** | Siralama, filtreleme, sayfalama; sunucu/istemci tarafli |
+| **Card** | Compound: `Card.Header`, `Card.Body`, `Card.Footer` |
+| **StatCard** | Istatistik karti — trend gostergesi, ikon |
+| **Badge** | 5 varyant, dot gostergesi, kaldirilabilir |
+| **Typography** | h1-h6, paragraph, small, caption |
+| **Charts** | ApexCharts entegrasyonu |
+| **Tooltip** | Hover aciklama |
+| **Loader** | Yukleniyor gostergesi |
 
-3.  **Start Storybook:**
-    This is the best way to develop and test components in isolation.
-    ```bash
-    yarn storybook
-    ```
+### Geri Bildirim
 
-4.  **Build the Library:**
-    To generate the `dist` folder:
-    ```bash
-    yarn build:lib
-    ```
+| Component | Aciklama |
+|-----------|----------|
+| **Toast** | Provider/hook deseni, 4 varyant, aksiyon butonu, otomatik kapatma |
+| **Alert** | info/success/warning/danger, kapatilabilir |
+| **Modal** | Portal tabanli, focus trap, ESC/backdrop kapatma |
 
-## 📄 License
+### Layout
+
+| Component | Aciklama |
+|-----------|----------|
+| **Grid** | CSS Grid wrapper |
+| **Box** | Genel amacli container |
+| **Layout** | Sayfa iskelet yapisi |
+
+### Dekoratif
+
+| Component | Aciklama |
+|-----------|----------|
+| **BrandContent** | Marka icerigi |
+| **CompassAnimation** | Animasyonlu pusula |
+| **Icons** | SVG ikon seti |
+
+## Ornek Kullanimlar
+
+### Button Varyantlari
+
+```tsx
+<Button label="Onayla" color="primary" />
+<Button label="Iptal" color="tertiary" />
+<Button label="Sil" color="error" />
+<Button label="Yukle" color="primary" prefix={<UploadIcon />} isLoading />
+<Button label="Kucuk" size="xs" color="secondary" />
+```
+
+### Tablo
+
+```tsx
+<Table
+  columns={[
+    { key: 'name', header: 'Ad', sortable: true },
+    { key: 'role', header: 'Rol' },
+    { key: 'status', header: 'Durum', render: (v) => (
+      <Badge variant={v === 'active' ? 'success' : 'danger'}>{v}</Badge>
+    )},
+  ]}
+  data={users}
+  filterable
+  pagination
+  pageSize={10}
+/>
+```
+
+### Modal
+
+```tsx
+const [open, setOpen] = useState(false);
+
+<Modal open={open} onClose={() => setOpen(false)} size="sm">
+  <Modal.Header title="Onayla" onClose={() => setOpen(false)} />
+  <Modal.Body>Emin misiniz?</Modal.Body>
+  <Modal.Footer>
+    <Button label="Iptal" color="tertiary" onClick={() => setOpen(false)} />
+    <Button label="Evet" color="primary" onClick={handleConfirm} />
+  </Modal.Footer>
+</Modal>
+```
+
+### Toast
+
+```tsx
+const toast = useToast();
+
+toast.success('Basarili', { description: 'Kayit olusturuldu.' });
+toast.error('Hata', { description: 'Bir sorun olustu.', duration: 8000 });
+toast.warning('Uyari', {
+  action: { label: 'Geri Al', onClick: handleUndo }
+});
+```
+
+### StatCard
+
+```tsx
+<StatCard
+  title="Toplam Gelir"
+  value="$128.430"
+  trend="up"
+  trendValue="+12.5%"
+  icon={<TrendUpIcon />}
+/>
+```
+
+## Accessibility
+
+Yerlesik erisilebilirlik hook'lari:
+
+```tsx
+import { useFocusTrap, useKeyboardNavigation, useAriaAnnounce } from 'cari-ui-kit';
+
+// Modal/dropdown icin focus sinirlandirma
+const { trapRef } = useFocusTrap({ active: isOpen, onEscape: close });
+
+// Liste/menu ok tusu navigasyonu
+const { containerRef, handleKeyDown } = useKeyboardNavigation({
+  orientation: 'vertical',
+  loop: true,
+});
+
+// Ekran okuyucu bildirimi
+const { announce } = useAriaAnnounce();
+announce('3 sonuc bulundu');
+```
+
+## Design Token'lari
+
+Shadcn v4 uyumlu, OKLCH tabanli token sistemi:
+
+| Kategori | Token Ornegi | Deger |
+|----------|-------------|-------|
+| Radius | `--cuk-radius-lg` | 10px (base) |
+| Spacing | `--cuk-spacing-4` | 16px |
+| Shadow | `--cuk-shadow-md` | OKLCH golge |
+| Primary | `--cuk-color-primary` | Vivid Violet |
+| Danger | `--cuk-color-danger` | Coral |
+| Focus Ring | `--cuk-color-focus-ring` | Primary %50 opacity |
+
+**Renk Paleti (Aurora Bloom):** Vivid Violet primary, Emerald success, Amber warning, Coral danger, Blue-Violet info, mor tonlu neutral skalasi.
+
+## Gelistirme
+
+```bash
+git clone https://github.com/OguzhanArslan/ui-kit.git
+cd ui-kit
+yarn install
+
+# Storybook
+yarn storybook
+
+# Build
+yarn build
+
+# Test
+yarn test
+```
+
+## Lisans
 
 [MIT](LICENSE)
