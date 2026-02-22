@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+
 import classNames from 'classnames';
 
 import { CheckIcon } from '../icons';
@@ -15,24 +17,34 @@ export interface ICheckboxProps {
   checked?: boolean;
 }
 
-export const Checkbox = (props: ICheckboxProps) => {
-  const { label, name, id, isError, ...rest } = props;
-  const checkboxId = id || name;
+export const Checkbox = forwardRef<HTMLInputElement, ICheckboxProps>(
+  (props, ref) => {
+    const { label, name, id, isError, ...rest } = props;
+    const checkboxId = id || name;
 
-  return (
-    <div
-      className={classNames(styles.wrap, {
-        [styles.error]: isError,
-      })}
-    >
-      <input id={checkboxId} name={name} type="checkbox" {...rest} />
+    return (
+      <div
+        className={classNames(styles.wrap, {
+          [styles.error]: isError,
+        })}
+      >
+        <input
+          ref={ref}
+          id={checkboxId}
+          name={name}
+          type="checkbox"
+          {...rest}
+        />
 
-      <Label htmlFor={checkboxId}>
-        <span className={styles.checkbox}>
-          <CheckIcon width={16} height={16} />
-        </span>
-        <span>{label}</span>
-      </Label>
-    </div>
-  );
-};
+        <Label htmlFor={checkboxId}>
+          <span className={styles.checkbox}>
+            <CheckIcon width={16} height={16} />
+          </span>
+          <span>{label}</span>
+        </Label>
+      </div>
+    );
+  },
+);
+
+Checkbox.displayName = 'Checkbox';
