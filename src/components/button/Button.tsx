@@ -21,6 +21,7 @@ export interface IButtonProps {
   isActive?: boolean;
   isCircle?: boolean;
   isHiddenLabel?: boolean;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export const Button = (props: IButtonProps) => {
@@ -39,11 +40,13 @@ export const Button = (props: IButtonProps) => {
     isActive,
     isCircle,
     isHiddenLabel,
+    type = 'button',
     ...restProps
   } = props;
 
   return (
     <button
+      type={type}
       role="button"
       className={classNames(
         styles.button,

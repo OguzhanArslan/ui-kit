@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+
 import classNames from 'classnames';
 
 import { Loader } from '../loader';
@@ -18,7 +20,7 @@ export interface IInputProps {
   suffix?: React.ReactNode;
 }
 
-export const Input = (props: IInputProps) => {
+export const Input = forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
   const {
     type = 'text',
     name,
@@ -41,6 +43,7 @@ export const Input = (props: IInputProps) => {
       {prefix && <div className={styles.prefix}>{prefix}</div>}
 
       <input
+        ref={ref}
         id={inputId}
         name={name}
         type={type}
@@ -63,4 +66,6 @@ export const Input = (props: IInputProps) => {
       )}
     </div>
   );
-};
+});
+
+Input.displayName = 'Input';
