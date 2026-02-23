@@ -1,3 +1,5 @@
+import type { ElementType } from 'react';
+
 import classNames from 'classnames';
 
 import { Loader } from '@/components/loader/Loader';
@@ -22,6 +24,8 @@ export interface IButtonProps {
   isCircle?: boolean;
   isHiddenLabel?: boolean;
   type?: 'button' | 'submit' | 'reset';
+  as?: ElementType;
+  [key: string]: unknown;
 }
 
 export const Button = (props: IButtonProps) => {
@@ -41,35 +45,41 @@ export const Button = (props: IButtonProps) => {
     isCircle,
     isHiddenLabel,
     type = 'button',
+    as,
     ...restProps
   } = props;
 
+  const Component = as || 'button';
+
+  const sharedProps = {
+    className: classNames(
+      styles.button,
+      styles[color],
+      styles[size],
+      className,
+      {
+        [styles.loading]: isLoading,
+        [styles.fullWidth]: isFullWidth,
+        [styles.active]: isActive,
+        [styles.circle]: isCircle,
+        [styles.textCenter]: !prefix && !suffix,
+      },
+    ),
+    onClick,
+    'aria-label': label || ariaLabel,
+    ...restProps,
+  };
+
+  const buttonOnlyProps = !as
+    ? { type, role: 'button' as const, disabled: isLoading || disabled }
+    : {};
+
   return (
-    <button
-      type={type}
-      role="button"
-      className={classNames(
-        styles.button,
-        styles[color],
-        styles[size],
-        className,
-        {
-          [styles.loading]: isLoading,
-          [styles.fullWidth]: isFullWidth,
-          [styles.active]: isActive,
-          [styles.circle]: isCircle,
-          [styles.textCenter]: !prefix && !suffix,
-        },
-      )}
-      onClick={onClick}
-      disabled={isLoading || disabled}
-      aria-label={label || ariaLabel}
-      {...restProps}
-    >
+    <Component {...sharedProps} {...buttonOnlyProps}>
       {prefix}
       {!isHiddenLabel && label}
       {suffix}
       {isLoading && <Loader size={SIZE.sm} />}
-    </button>
+    </Component>
   );
 };
