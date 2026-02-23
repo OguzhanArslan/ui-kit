@@ -143,7 +143,6 @@ function Render(args: React.ComponentProps<typeof Sidebar>) {
           <SidebarUser
             name="Oğuzhan Arslan"
             email="oguzhan@caripusula.com"
-            initials="OA"
             collapsed={!isOpen}
             menuItems={[
               {
