@@ -1,5 +1,8 @@
+import { Children, isValidElement, type ReactNode } from 'react';
+
 import classNames from 'classnames';
-import type { ReactNode } from 'react';
+
+import { Tooltip } from '@/components/tooltip/Tooltip';
 
 import styles from './SidebarMenu.module.scss';
 
@@ -13,7 +16,21 @@ export const SidebarMenu = (props: ISidebarMenuProps) => {
 
   return (
     <div className={classNames(styles.menu, { [styles.collapsed]: collapsed })}>
-      {children}
+      {collapsed
+        ? Children.map(children, (child) => {
+            if (
+              isValidElement<{ label?: string }>(child) &&
+              child.props.label
+            ) {
+              return (
+                <Tooltip content={child.props.label} placement="right">
+                  {child}
+                </Tooltip>
+              );
+            }
+            return child;
+          })
+        : children}
     </div>
   );
 };
