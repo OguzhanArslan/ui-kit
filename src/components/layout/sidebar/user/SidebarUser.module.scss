@@ -1,0 +1,171 @@
+@use '../../../../styles/colors.scss';
+
+.container {
+  position: relative;
+}
+
+// Trigger button
+.trigger {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: var(--cuk-spacing-2) var(--cuk-spacing-2-5);
+  margin: 0;
+  font: inherit;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: var(--cuk-spacing-2-5);
+  width: 100%;
+  border-radius: var(--cuk-radius-md);
+  transition: background-color 150ms ease;
+  color: var(--cuk-color-text-muted);
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background-color: var(--cuk-color-background-muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--cuk-color-focus);
+    outline-offset: 1px;
+  }
+
+  &.collapsed {
+    justify-content: center;
+    padding: var(--cuk-spacing-2);
+  }
+}
+
+// Initials avatar
+.initialsAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--cuk-radius-full);
+  background: linear-gradient(
+    135deg,
+    var(--cuk-color-primary-400),
+    var(--cuk-color-primary-600)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+// User info inside trigger
+.info {
+  flex: 1;
+  text-align: left;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: var(--cuk-font-size-sm);
+  font-weight: 500;
+  color: var(--cuk-color-text-primary);
+  line-height: 1.3;
+}
+
+.email {
+  font-size: 11px;
+  color: var(--cuk-color-text-muted);
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Popup menu
+.menu {
+  position: absolute;
+  bottom: calc(100% + var(--cuk-spacing-2));
+  left: 0;
+  right: 0;
+  background-color: var(--cuk-color-surface);
+  border: 1px solid var(--cuk-color-border);
+  border-radius: var(--cuk-radius-lg);
+  box-shadow: var(--cuk-shadow-lg);
+  padding: var(--cuk-spacing-1) 0;
+  z-index: 50;
+}
+
+// Menu header (user info)
+.menuHeader {
+  padding: var(--cuk-spacing-2-5) var(--cuk-spacing-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.menuHeaderName {
+  font-size: var(--cuk-font-size-sm);
+  font-weight: 600;
+  color: var(--cuk-color-text-primary);
+  line-height: 1.3;
+}
+
+.menuHeaderEmail {
+  font-size: 11px;
+  color: var(--cuk-color-text-muted);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+// Divider
+.divider {
+  height: 1px;
+  background-color: var(--cuk-color-border);
+  margin: var(--cuk-spacing-1) 0;
+}
+
+// Menu items
+.menuItem {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: var(--cuk-spacing-2) var(--cuk-spacing-3);
+  margin: 0;
+  font: inherit;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: var(--cuk-spacing-2);
+  width: 100%;
+  font-size: var(--cuk-font-size-sm);
+  color: var(--cuk-color-text-primary);
+  transition: background-color 150ms ease;
+
+  &:hover {
+    background-color: var(--cuk-color-background-muted);
+  }
+
+  &:focus-visible {
+    background-color: var(--cuk-color-background-muted);
+    outline: none;
+  }
+}
+
+.menuItemIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cuk-color-text-muted);
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}

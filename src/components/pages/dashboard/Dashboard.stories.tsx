@@ -9,12 +9,13 @@ import {
   BarChartAltIcon,
   BuildingIcon,
   CalendarIcon,
-  ChevronRightIcon,
   CreditCardIcon,
   DollarIcon,
   GearIcon,
   HomeIcon,
+  LogoutIcon,
   ShopingBagIcon,
+  UserIcon,
   UsersIcon,
 } from '@/components/icons';
 import {
@@ -24,6 +25,7 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarMenu,
+  SidebarUser,
 } from '@/components/layout';
 import { StatCard } from '@/components/stat-card';
 import type { ColumnDef } from '@/components/table';
@@ -67,27 +69,6 @@ const SectionLabel = ({ label, isOpen }: { label: string; isOpen: boolean }) =>
       }}
     />
   );
-
-const UserAvatar = () => (
-  <div
-    style={{
-      width: 32,
-      height: 32,
-      borderRadius: 'var(--cuk-radius-full)',
-      background:
-        'linear-gradient(135deg, var(--cuk-color-primary-400), var(--cuk-color-primary-600))',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: '#ffffff',
-      fontSize: 12,
-      fontWeight: 600,
-      flexShrink: 0,
-    }}
-  >
-    OA
-  </div>
-);
 
 // --- Table data ---
 
@@ -247,62 +228,24 @@ function Render(args: React.ComponentProps<typeof Layout>) {
           />
         </SidebarMenu>
         <SidebarFooter>
-          {isOpen ? (
-            <button
-              type="button"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 10,
-                width: '100%',
-                padding: '8px 10px',
-                border: 'none',
-                background: 'none',
-                borderRadius: 'var(--cuk-radius-md)',
-                cursor: 'pointer',
-                transition: 'background-color 150ms ease',
-                fontFamily: 'inherit',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor =
-                  'var(--cuk-color-background-muted)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }}
-            >
-              <UserAvatar />
-              <div style={{ flex: 1, textAlign: 'left', minWidth: 0 }}>
-                <div
-                  style={{
-                    fontSize: 'var(--cuk-font-size-sm)',
-                    fontWeight: 500,
-                    color: 'var(--cuk-color-text-primary)',
-                    lineHeight: 1.3,
-                  }}
-                >
-                  Oguzhan Arslan
-                </div>
-                <div
-                  style={{
-                    fontSize: 11,
-                    color: 'var(--cuk-color-text-muted)',
-                    lineHeight: 1.3,
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  oguzhan@caripusula.com
-                </div>
-              </div>
-              <ChevronRightIcon />
-            </button>
-          ) : (
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <UserAvatar />
-            </div>
-          )}
+          <SidebarUser
+            name="Oğuzhan Arslan"
+            email="oguzhan@caripusula.com"
+            initials="OA"
+            collapsed={!isOpen}
+            menuItems={[
+              {
+                label: 'Profil Detay',
+                icon: <UserIcon />,
+                onClick: () => console.log('Profil Detay'),
+              },
+              {
+                label: 'Çıkış',
+                icon: <LogoutIcon />,
+                onClick: () => console.log('Çıkış'),
+              },
+            ]}
+          />
         </SidebarFooter>
       </Sidebar>
 

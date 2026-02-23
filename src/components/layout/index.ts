@@ -5,3 +5,4 @@ export { SidebarFooter } from './sidebar/footer/SidebarFooter';
 export { SidebarHeader } from './sidebar/header/SidebarHeader';
 export { SidebarMenu } from './sidebar/menu/SidebarMenu';
 export { Sidebar } from './sidebar/Sidebar';
+export { SidebarUser } from './sidebar/user/SidebarUser';
