@@ -14,7 +14,7 @@
   font-size: var(--cuk-font-size-sm);
   font-weight: var(--cuk-font-weight-medium);
   padding: var(--cuk-spacing-1-5) var(--cuk-spacing-2-5);
-  height: 32px;
+  height: 36px;
   transition: all 150ms ease;
   white-space: nowrap;
 
@@ -32,7 +32,7 @@
   }
 
   &.lg {
-    height: 36px;
+    height: 40px;
     padding: var(--cuk-spacing-2) var(--cuk-spacing-2-5);
   }
 

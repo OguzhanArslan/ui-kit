@@ -52,7 +52,7 @@
 
   // Focus — ring-3 pattern (3px semi-transparent)
   --cuk-color-focus: var(--cuk-color-primary-500);
-  --cuk-color-focus-ring: oklch(0.541 0.281 293.009 / 0.5);
+  --cuk-color-focus-ring: oklch(0.53 0.290 293 / 0.5);
 
   // Ring — card/dialog subtle border via box-shadow
   --cuk-color-ring: oklch(0.16 0.030 276 / 0.10);
@@ -76,7 +76,7 @@
   --cuk-color-sidebar-border: var(--cuk-color-border);
 
   // Chart series — Aurora Bloom palette
-  --cuk-color-chart-1: oklch(0.541 0.281 293);
+  --cuk-color-chart-1: oklch(0.53 0.290 293);
   --cuk-color-chart-2: oklch(0.65 0.200 350);
   --cuk-color-chart-3: oklch(0.55 0.225 270);
   --cuk-color-chart-4: oklch(0.75 0.150 80);
@@ -107,7 +107,7 @@
   --cuk-color-ring: oklch(0.93 0.015 274 / 0.12);
 
   // Focus ring — semi-transparent for dark
-  --cuk-color-focus-ring: oklch(0.541 0.281 293.009 / 0.4);
+  --cuk-color-focus-ring: oklch(0.53 0.290 293 / 0.4);
 
   // Input bg — tinted for dark mode
   --cuk-color-input-bg: oklch(0.40 0.040 276 / 0.15);
