@@ -5,4 +5,5 @@ export type {
   ToastOptions,
   ToastVariant,
 } from './Toast';
-export { ToastProvider, useToast } from './Toast';
+export { ToastProvider } from './Toast';
+export { useToast } from './useToast';

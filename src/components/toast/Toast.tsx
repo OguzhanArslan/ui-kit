@@ -1,11 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import classNames from 'classnames';
 import { createPortal } from 'react-dom';
@@ -14,6 +7,7 @@ import AlertCircleIcon from '../icons/generated/AlertCircleIcon';
 import AlertOctagonIcon from '../icons/generated/AlertOctagonIcon';
 import CircleCheckIcon from '../icons/generated/CircleCheckIcon';
 import InfoIcon from '../icons/generated/InfoIcon';
+import { ToastContext } from './ToastContext';
 
 import styles from './Toast.module.scss';
 
@@ -56,16 +50,6 @@ const variantIcons: Record<ToastVariant, React.FC> = {
   warning: AlertCircleIcon,
   info: InfoIcon,
 };
-
-// ─── Context ─────────────────────────────────────────────
-
-const ToastContext = createContext<ToastAPI | null>(null);
-
-export function useToast(): ToastAPI {
-  const ctx = useContext(ToastContext);
-  if (!ctx) throw new Error('useToast must be used within ToastProvider');
-  return ctx;
-}
 
 // ─── Single Toast ────────────────────────────────────────
 
