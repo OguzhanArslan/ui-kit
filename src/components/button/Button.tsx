@@ -1,14 +1,14 @@
-import type { ElementType } from 'react';
-
 import classNames from 'classnames';
+import type { ElementType } from 'react';
 
 import { Loader } from '@/components/loader/Loader';
 import { COLOR, type COLORS } from '@/foundation/colors';
 import { SIZE, type SIZES } from '@/foundation/sizes';
+import type { IPolymorphicProps } from '@/types/polymorphic';
 
 import styles from './Button.module.scss';
 
-export interface IButtonProps {
+export interface IButtonOwnProps {
   className?: string;
   label?: string;
   prefix?: React.ReactNode;
@@ -24,11 +24,16 @@ export interface IButtonProps {
   isCircle?: boolean;
   isHiddenLabel?: boolean;
   type?: 'button' | 'submit' | 'reset';
-  as?: ElementType;
-  [key: string]: unknown;
 }
 
-export const Button = (props: IButtonProps) => {
+export type IButtonProps<C extends ElementType = 'button'> = IPolymorphicProps<
+  C,
+  IButtonOwnProps
+>;
+
+export const Button = <C extends ElementType = 'button'>(
+  props: IButtonProps<C>,
+) => {
   const {
     className,
     label,
@@ -49,7 +54,7 @@ export const Button = (props: IButtonProps) => {
     ...restProps
   } = props;
 
-  const Component = as || 'button';
+  const Component: ElementType = as || 'button';
 
   const sharedProps = {
     className: classNames(
