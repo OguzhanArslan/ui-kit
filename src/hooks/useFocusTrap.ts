@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
-export interface UseFocusTrapOptions {
+export interface UseFocusTrapOptions<T extends HTMLElement = HTMLElement> {
   /** Trap aktif mi */
   active?: boolean;
   /** Escape ile trap'ten cikis */
@@ -11,6 +11,8 @@ export interface UseFocusTrapOptions {
   initialFocusSelector?: string;
   /** Trap deaktif olunca focus'un donecegi element */
   returnFocusOnDeactivate?: boolean;
+  /** Disaridan ref gecmek icin (portal gibi durumlarda) */
+  externalRef?: React.RefObject<T | null>;
 }
 
 export interface UseFocusTrapReturn<T extends HTMLElement> {
@@ -28,7 +30,7 @@ const FOCUSABLE_SELECTOR = [
 ].join(', ');
 
 export function useFocusTrap<T extends HTMLElement = HTMLElement>(
-  options: UseFocusTrapOptions = {},
+  options: UseFocusTrapOptions<T> = {},
 ): UseFocusTrapReturn<T> {
   const {
     active = true,
@@ -36,26 +38,26 @@ export function useFocusTrap<T extends HTMLElement = HTMLElement>(
     onEscape,
     initialFocusSelector,
     returnFocusOnDeactivate = true,
+    externalRef,
   } = options;
 
-  const trapRef = useRef<T | null>(null);
+  const internalRef = useRef<T | null>(null);
+  const trapRef = externalRef ?? internalRef;
   const previousFocusRef = useRef<HTMLElement | null>(null);
-
-  const getFocusableElements = useCallback((): HTMLElement[] => {
-    if (!trapRef.current) return [];
-    return Array.from(
-      trapRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
-    );
-  }, []);
 
   useEffect(() => {
     if (!active || !trapRef.current) return;
+
+    const container = trapRef.current;
+
+    const getFocusableElements = (): HTMLElement[] =>
+      Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR));
 
     previousFocusRef.current = document.activeElement as HTMLElement;
 
     // Set initial focus
     const initialElement = initialFocusSelector
-      ? trapRef.current.querySelector<HTMLElement>(initialFocusSelector)
+      ? container.querySelector<HTMLElement>(initialFocusSelector)
       : null;
 
     if (initialElement) {
@@ -107,7 +109,7 @@ export function useFocusTrap<T extends HTMLElement = HTMLElement>(
     onEscape,
     initialFocusSelector,
     returnFocusOnDeactivate,
-    getFocusableElements,
+    trapRef,
   ]);
 
   return { trapRef };
