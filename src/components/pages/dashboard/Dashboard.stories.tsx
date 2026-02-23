@@ -231,7 +231,6 @@ function Render(args: React.ComponentProps<typeof Layout>) {
           <SidebarUser
             name="Oğuzhan Arslan"
             email="oguzhan@caripusula.com"
-            initials="OA"
             collapsed={!isOpen}
             menuItems={[
               {
