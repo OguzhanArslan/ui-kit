@@ -19,7 +19,7 @@ export interface ModalProps {
   children: React.ReactNode;
 }
 
-export interface ModalSectionProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type ModalSectionProps = React.HTMLAttributes<HTMLDivElement>;
 
 export interface ModalHeaderProps extends ModalSectionProps {
   title?: string;

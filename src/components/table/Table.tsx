@@ -83,10 +83,10 @@ const SortIcon: React.FC<{ direction: SortDirection }> = ({ direction }) => (
 
 // ─── Compound Sub-components ─────────────────────────────
 
-export interface TableSectionProps extends React.HTMLAttributes<HTMLTableSectionElement> {}
-export interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {}
-export interface TableCellProps extends React.TdHTMLAttributes<HTMLTableCellElement> {}
-export interface TableHeadCellProps extends React.ThHTMLAttributes<HTMLTableCellElement> {}
+export type TableSectionProps = React.HTMLAttributes<HTMLTableSectionElement>;
+export type TableRowProps = React.HTMLAttributes<HTMLTableRowElement>;
+export type TableCellProps = React.TdHTMLAttributes<HTMLTableCellElement>;
+export type TableHeadCellProps = React.ThHTMLAttributes<HTMLTableCellElement>;
 
 const TableHead = React.forwardRef<HTMLTableSectionElement, TableSectionProps>(
   ({ className, children, ...rest }, ref) => (

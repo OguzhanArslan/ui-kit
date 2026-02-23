@@ -88,18 +88,18 @@
   white-space: nowrap;
 }
 
-// Popup menu
+// Popup menu (rendered via portal on body)
 .menu {
-  position: absolute;
-  bottom: calc(100% + var(--cuk-spacing-2));
-  left: 0;
-  right: 0;
+  position: fixed;
+  min-width: 200px;
   background-color: var(--cuk-color-surface);
   border: 1px solid var(--cuk-color-border);
   border-radius: var(--cuk-radius-lg);
   box-shadow: var(--cuk-shadow-lg);
   padding: var(--cuk-spacing-1) 0;
-  z-index: 50;
+  z-index: 9999;
+  transform: translateY(-100%);
+  font-family: inherit;
 }
 
 // Menu header (user info)

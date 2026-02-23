@@ -22,7 +22,7 @@
   background-color: var(--cuk-color-surface);
   border: 1px solid var(--cuk-color-border);
   box-shadow: var(--cuk-shadow-lg);
-  font-family: var(--cuk-font-family-sans);
+  font-family: inherit;
   font-size: var(--cuk-font-size-sm);
   color: var(--cuk-color-text-primary);
   pointer-events: auto;

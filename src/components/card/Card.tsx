@@ -23,7 +23,7 @@ const CardRoot = React.forwardRef<HTMLDivElement, CardProps>(
 );
 CardRoot.displayName = 'Card';
 
-export interface CardSectionProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type CardSectionProps = React.HTMLAttributes<HTMLDivElement>;
 
 const CardHeader = React.forwardRef<HTMLDivElement, CardSectionProps>(
   ({ className, children, ...rest }, ref) => (
