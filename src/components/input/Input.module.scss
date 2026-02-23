@@ -13,7 +13,7 @@
     border: 1px solid var(--cuk-color-input-border);
     border-radius: var(--cuk-radius-lg);
     padding: var(--cuk-spacing-1) var(--cuk-spacing-2-5);
-    height: 32px;
+    height: 36px;
     width: 100%;
     transition: border-color 150ms ease, box-shadow 150ms ease;
 
@@ -50,13 +50,13 @@
 
   &.suffixWrap {
     .input {
-      padding-right: 32px;
+      padding-right: 36px;
     }
   }
 
   &.prefixWrap {
     .input {
-      padding-left: 32px;
+      padding-left: 36px;
     }
   }
 
