@@ -17,6 +17,17 @@ export interface ColumnDef<T> {
   render?: (value: T[keyof T], row: T, index: number) => React.ReactNode;
 }
 
+export interface ServerPaginationConfig {
+  mode: 'server';
+  currentPage: number;
+  lastPage: number;
+  total: number;
+  pageSize: number;
+  pageSizeOptions?: number[];
+  onPageChange: (page: number) => void;
+  onPageSizeChange?: (pageSize: number) => void;
+}
+
 export interface TableProps<
   T extends Record<string, unknown>,
 > extends React.HTMLAttributes<HTMLDivElement> {
@@ -26,7 +37,7 @@ export interface TableProps<
   emptyText?: string;
   filterable?: boolean;
   filterPlaceholder?: string;
-  pagination?: boolean;
+  pagination?: boolean | ServerPaginationConfig;
   pageSize?: number;
   pageSizeOptions?: number[];
   onSort?: (key: string, direction: SortDirection) => void;
@@ -201,12 +212,29 @@ function TableInner<T extends Record<string, unknown>>(
   }, [filteredData, sortKey, sortDir, onSort]);
 
   // Pagination
-  const totalPages = pagination
-    ? Math.max(1, Math.ceil(sortedData.length / pageSize))
-    : 1;
-  const pagedData = pagination
-    ? sortedData.slice((currentPage - 1) * pageSize, currentPage * pageSize)
-    : sortedData;
+  const isServerPagination =
+    typeof pagination === 'object' && pagination?.mode === 'server';
+
+  const resolvedPageSize = isServerPagination ? pagination.pageSize : pageSize;
+  const resolvedCurrentPage = isServerPagination
+    ? pagination.currentPage
+    : currentPage;
+  const totalPages = isServerPagination
+    ? pagination.lastPage
+    : pagination
+      ? Math.max(1, Math.ceil(sortedData.length / resolvedPageSize))
+      : 1;
+  const pagedData = isServerPagination
+    ? sortedData
+    : pagination
+      ? sortedData.slice(
+          (resolvedCurrentPage - 1) * resolvedPageSize,
+          resolvedCurrentPage * resolvedPageSize,
+        )
+      : sortedData;
+  const resolvedPageSizeOptions = isServerPagination
+    ? (pagination.pageSizeOptions ?? [5, 10, 20, 50])
+    : pageSizeOptions;
 
   return (
     <div ref={ref} className={className} {...rest}>
@@ -290,13 +318,18 @@ function TableInner<T extends Record<string, unknown>>(
           <div className={styles.pageSizeSelect}>
             <span>Sayfa boyutu:</span>
             <select
-              value={pageSize}
+              value={resolvedPageSize}
               onChange={(e) => {
-                setPageSize(Number(e.target.value));
-                setCurrentPage(1);
+                const newSize = Number(e.target.value);
+                if (isServerPagination) {
+                  pagination.onPageSizeChange?.(newSize);
+                } else {
+                  setPageSize(newSize);
+                  setCurrentPage(1);
+                }
               }}
             >
-              {pageSizeOptions.map((opt) => (
+              {resolvedPageSizeOptions.map((opt) => (
                 <option key={opt} value={opt}>
                   {opt}
                 </option>
@@ -307,8 +340,14 @@ function TableInner<T extends Record<string, unknown>>(
             <button
               type="button"
               className={styles.pageButton}
-              disabled={currentPage === 1}
-              onClick={() => setCurrentPage((p) => p - 1)}
+              disabled={resolvedCurrentPage === 1}
+              onClick={() => {
+                if (isServerPagination) {
+                  pagination.onPageChange(resolvedCurrentPage - 1);
+                } else {
+                  setCurrentPage((p) => p - 1);
+                }
+              }}
             >
               ‹
             </button>
@@ -318,9 +357,15 @@ function TableInner<T extends Record<string, unknown>>(
                 type="button"
                 className={classNames(
                   styles.pageButton,
-                  page === currentPage && styles.active,
+                  page === resolvedCurrentPage && styles.active,
                 )}
-                onClick={() => setCurrentPage(page)}
+                onClick={() => {
+                  if (isServerPagination) {
+                    pagination.onPageChange(page);
+                  } else {
+                    setCurrentPage(page);
+                  }
+                }}
               >
                 {page}
               </button>
@@ -328,8 +373,14 @@ function TableInner<T extends Record<string, unknown>>(
             <button
               type="button"
               className={styles.pageButton}
-              disabled={currentPage === totalPages}
-              onClick={() => setCurrentPage((p) => p + 1)}
+              disabled={resolvedCurrentPage === totalPages}
+              onClick={() => {
+                if (isServerPagination) {
+                  pagination.onPageChange(resolvedCurrentPage + 1);
+                } else {
+                  setCurrentPage((p) => p + 1);
+                }
+              }}
             >
               ›
             </button>

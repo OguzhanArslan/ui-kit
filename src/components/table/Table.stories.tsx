@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 import type { ColumnDef } from './Table';
@@ -71,4 +73,47 @@ export const Empty: Story = {
 
 export const Loading: Story = {
   render: () => <Table columns={columns} data={[]} loading />,
+};
+
+const allServerData: User[] = Array.from({ length: 87 }, (_, i) => ({
+  id: i + 1,
+  name: `User ${i + 1}`,
+  email: `user${i + 1}@example.com`,
+  role: i % 3 === 0 ? 'Admin' : i % 3 === 1 ? 'Editor' : 'Viewer',
+  status: i % 2 === 0 ? 'Active' : 'Inactive',
+}));
+
+function ServerSidePaginationExample() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
+
+  const total = allServerData.length;
+  const lastPage = Math.max(1, Math.ceil(total / pageSize));
+  const pageData = allServerData.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize,
+  );
+
+  return (
+    <Table
+      columns={columns}
+      data={pageData}
+      pagination={{
+        mode: 'server',
+        currentPage,
+        lastPage,
+        total,
+        pageSize,
+        onPageChange: (page) => setCurrentPage(page),
+        onPageSizeChange: (size) => {
+          setPageSize(size);
+          setCurrentPage(1);
+        },
+      }}
+    />
+  );
+}
+
+export const ServerSidePagination: Story = {
+  render: () => <ServerSidePaginationExample />,
 };
