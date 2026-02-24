@@ -1,5 +1,6 @@
 export type {
   ColumnDef,
+  ServerPaginationConfig,
   SortDirection,
   TableCellProps,
   TableHeadCellProps,
