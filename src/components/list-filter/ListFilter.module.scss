@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--cuk-spacing-3);
+  flex-wrap: wrap;
+}
+
+.search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter {
+  min-width: 160px;
+}

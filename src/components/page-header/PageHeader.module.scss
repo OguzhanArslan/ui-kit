@@ -1,0 +1,33 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cuk-spacing-4);
+  margin-bottom: var(--cuk-spacing-6);
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--cuk-font-size-2xl);
+  font-weight: 700;
+  color: var(--cuk-color-text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: var(--cuk-font-size-sm);
+  color: var(--cuk-color-text-muted);
+  margin: 4px 0 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--cuk-spacing-2);
+  flex-shrink: 0;
+}
