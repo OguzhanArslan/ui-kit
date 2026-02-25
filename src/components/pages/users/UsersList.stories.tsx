@@ -1,18 +1,22 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Badge } from '@/components/badge';
 import { Button } from '@/components/button';
 import { Card } from '@/components/card';
+import { CommandPalette, CommandPaletteTrigger } from '@/components/command-palette';
+import type { CommandGroup } from '@/components/command-palette';
 import {
   BarChartAltIcon,
   BuildingIcon,
   CalendarIcon,
+  ClockIcon,
   CreditCardIcon,
   GearIcon,
   HomeIcon,
   LogoutIcon,
+  NotificationIcon,
   PlusIcon,
   ShopingBagIcon,
   UserIcon,
@@ -25,8 +29,12 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarMenu,
+  SidebarSectionLabel,
   SidebarUser,
+  TopBar,
 } from '@/components/layout';
+import { LanguageSwitcher } from '@/components/language-switcher';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { ListFilter } from '@/components/list-filter';
 import { PageHeader } from '@/components/page-header';
 import type { ColumnDef } from '@/components/table';
@@ -206,32 +214,6 @@ const columns: ColumnDef<User>[] = [
   { key: 'status', header: 'Durum', render: (v) => statusBadge(String(v)) },
 ];
 
-// --- Sidebar Section Label ---
-
-const SectionLabel = ({ label, isOpen }: { label: string; isOpen: boolean }) =>
-  isOpen ? (
-    <div
-      style={{
-        fontSize: 11,
-        fontWeight: 500,
-        color: 'var(--cuk-color-text-muted)',
-        textTransform: 'uppercase',
-        letterSpacing: '0.05em',
-        padding: '12px 10px 4px',
-      }}
-    >
-      {label}
-    </div>
-  ) : (
-    <div
-      style={{
-        height: 1,
-        backgroundColor: 'var(--cuk-color-border)',
-        margin: '8px 10px',
-      }}
-    />
-  );
-
 // --- Story Meta ---
 
 const meta = {
@@ -247,9 +229,57 @@ type Story = StoryObj<typeof meta>;
 
 // --- Render ---
 
+const languageOptions = [
+  { code: 'TR', label: 'Turkce' },
+  { code: 'EN', label: 'English' },
+  { code: 'DE', label: 'Deutsch' },
+];
+
+const commandGroups: CommandGroup[] = [
+  {
+    label: 'Son Ziyaret Edilenler',
+    items: [
+      { id: 'recent-users', label: 'Kullanicilar', icon: <ClockIcon />, category: 'Yonetim' },
+      { id: 'recent-home', label: 'Ana Sayfa', icon: <ClockIcon />, category: 'Genel' },
+    ],
+  },
+  {
+    label: 'Genel',
+    items: [
+      { id: 'home', label: 'Ana Sayfa', icon: <HomeIcon /> },
+      { id: 'dashboard', label: 'Dashboard', icon: <BarChartAltIcon /> },
+      { id: 'notifications', label: 'Bildirimler', icon: <NotificationIcon /> },
+      { id: 'settings', label: 'Ayarlar', icon: <GearIcon /> },
+    ],
+  },
+  {
+    label: 'Yonetim',
+    items: [
+      { id: 'users', label: 'Kullanicilar', icon: <UsersIcon /> },
+      { id: 'products', label: 'Urunler', icon: <ShopingBagIcon /> },
+      { id: 'transactions', label: 'Islemler', icon: <CreditCardIcon /> },
+      { id: 'calendar', label: 'Takvim', icon: <CalendarIcon /> },
+      { id: 'organization', label: 'Organizasyon', icon: <BuildingIcon /> },
+    ],
+  },
+];
+
 function Render(args: React.ComponentProps<typeof Layout>) {
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
+  const [paletteOpen, setPaletteOpen] = useState(false);
+  const [language, setLanguage] = useState('TR');
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setPaletteOpen(true);
+      }
+    };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, []);
 
   // Filter state
   const [search, setSearch] = useState('');
@@ -290,7 +320,7 @@ function Render(args: React.ComponentProps<typeof Layout>) {
       <Sidebar isOpen={isOpen}>
         <SidebarHeader title="Cari Pusula" isOpen={isOpen} onClick={toggle} />
         <SidebarMenu collapsed={!isOpen}>
-          <SectionLabel label="Main" isOpen={isOpen} />
+          <SidebarSectionLabel label="Main" isOpen={isOpen} />
           <Button
             prefix={<HomeIcon />}
             label="Dashboard"
@@ -324,7 +354,7 @@ function Render(args: React.ComponentProps<typeof Layout>) {
             isHiddenLabel={!isOpen}
           />
 
-          <SectionLabel label="Manage" isOpen={isOpen} />
+          <SidebarSectionLabel label="Manage" isOpen={isOpen} />
           <Button
             prefix={<UsersIcon />}
             label="Users"
@@ -381,6 +411,27 @@ function Render(args: React.ComponentProps<typeof Layout>) {
       </Sidebar>
 
       <Content>
+        <TopBar>
+          <CommandPaletteTrigger onClick={() => setPaletteOpen(true)} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <LanguageSwitcher
+              languages={languageOptions}
+              value={language}
+              onChange={setLanguage}
+            />
+            <ThemeToggle />
+          </div>
+        </TopBar>
+        <CommandPalette
+          open={paletteOpen}
+          onClose={() => setPaletteOpen(false)}
+          onSelect={(item) => {
+            console.log('Selected:', item.id);
+            setPaletteOpen(false);
+          }}
+          placeholder="Sayfa ara..."
+          groups={commandGroups}
+        />
         <div style={{ maxWidth: 1200 }}>
           <PageHeader
             title="Kullanıcılar"
@@ -461,5 +512,8 @@ function Render(args: React.ComponentProps<typeof Layout>) {
 }
 
 export const Default: Story = {
-  render: (args) => <Render {...args} />,
+  args: {
+    children: null,
+  },
+  render: Render,
 };

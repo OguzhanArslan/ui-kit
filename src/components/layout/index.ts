@@ -4,5 +4,7 @@ export { Layout } from './Layout';
 export { SidebarFooter } from './sidebar/footer/SidebarFooter';
 export { SidebarHeader } from './sidebar/header/SidebarHeader';
 export { SidebarMenu } from './sidebar/menu/SidebarMenu';
+export { SidebarSectionLabel } from './sidebar/section-label/SidebarSectionLabel';
 export { Sidebar } from './sidebar/Sidebar';
 export { SidebarUser } from './sidebar/user/SidebarUser';
+export { TopBar } from './topbar/TopBar';

@@ -4,7 +4,7 @@
   background-color: var(--cuk-color-background-subtle);
   box-sizing: border-box;
   flex: 1;
-  padding: var(--cuk-spacing-6);
+  padding: 0 var(--cuk-spacing-6) var(--cuk-spacing-6);
   height: 100vh;
   overflow-y: auto;
 }

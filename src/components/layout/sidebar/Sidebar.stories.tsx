@@ -18,6 +18,7 @@ import { COLOR } from '@/foundation/colors';
 import { SidebarFooter } from './footer/SidebarFooter';
 import { SidebarHeader } from './header/SidebarHeader';
 import { SidebarMenu } from './menu/SidebarMenu';
+import { SidebarSectionLabel } from './section-label/SidebarSectionLabel';
 import { Sidebar } from './Sidebar';
 import { SidebarUser } from './user/SidebarUser';
 
@@ -38,30 +39,6 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const SectionLabel = ({ label, isOpen }: { label: string; isOpen: boolean }) =>
-  isOpen ? (
-    <div
-      style={{
-        fontSize: 11,
-        fontWeight: 500,
-        color: 'var(--cuk-color-text-muted)',
-        textTransform: 'uppercase',
-        letterSpacing: '0.05em',
-        padding: '12px 10px 4px',
-      }}
-    >
-      {label}
-    </div>
-  ) : (
-    <div
-      style={{
-        height: 1,
-        backgroundColor: 'var(--cuk-color-border)',
-        margin: '8px 10px',
-      }}
-    />
-  );
-
 function Render(args: React.ComponentProps<typeof Sidebar>) {
   const [{ isOpen }, updateArgs] = useArgs();
 
@@ -78,7 +55,7 @@ function Render(args: React.ComponentProps<typeof Sidebar>) {
       <Sidebar {...args} isOpen={isOpen}>
         <SidebarHeader title="Cari Pusula" isOpen={isOpen} onClick={toggle} />
         <SidebarMenu collapsed={!isOpen}>
-          <SectionLabel label="Main" isOpen={isOpen} />
+          <SidebarSectionLabel label="Main" isOpen={isOpen} />
           <Button
             prefix={<HomeIcon />}
             label="Dashboard"
@@ -113,7 +90,7 @@ function Render(args: React.ComponentProps<typeof Sidebar>) {
             isHiddenLabel={!isOpen}
           />
 
-          <SectionLabel label="Manage" isOpen={isOpen} />
+          <SidebarSectionLabel label="Manage" isOpen={isOpen} />
           <Button
             prefix={<CalendarIcon />}
             label="Calendar"

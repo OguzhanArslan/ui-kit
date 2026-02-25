@@ -1,0 +1,10 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 57px;
+  box-sizing: border-box;
+  padding: 0 var(--cuk-spacing-6);
+  margin: 0 calc(-1 * var(--cuk-spacing-6)) var(--cuk-spacing-6);
+  border-bottom: 1px solid var(--cuk-color-border);
+}
