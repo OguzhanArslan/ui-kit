@@ -145,6 +145,55 @@ const TableHeadCell = React.forwardRef<
 ));
 TableHeadCell.displayName = 'Table.HeadCell';
 
+// ─── Action Components ──────────────────────────────────
+
+type ActionColor = 'primary' | 'danger' | 'success' | 'info' | 'warning';
+
+const colorClassMap: Record<ActionColor, string> = {
+  primary: styles.actionPrimary,
+  danger: styles.actionDanger,
+  success: styles.actionSuccess,
+  info: styles.actionInfo,
+  warning: styles.actionWarning,
+};
+
+export interface TableActionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  icon: React.ReactNode;
+  label: string;
+  color?: ActionColor;
+}
+
+const TableActions: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className,
+  children,
+  ...rest
+}) => (
+  <div className={classNames(styles.actions, className)} {...rest}>
+    {children}
+  </div>
+);
+TableActions.displayName = 'Table.Actions';
+
+const TableAction = React.forwardRef<HTMLButtonElement, TableActionProps>(
+  ({ icon, label, color = 'primary', className, ...rest }, ref) => (
+    <button
+      ref={ref}
+      type="button"
+      className={classNames(styles.actionBtn, colorClassMap[color], className)}
+      aria-label={label}
+      {...rest}
+    >
+      {icon}
+    </button>
+  ),
+);
+TableAction.displayName = 'Table.Action';
+
+const TableActionDivider: React.FC = () => (
+  <div className={styles.actionDivider} aria-hidden />
+);
+TableActionDivider.displayName = 'Table.ActionDivider';
+
 // ─── Main Table Component ────────────────────────────────
 
 function TableInner<T extends Record<string, unknown>>(
@@ -285,15 +334,32 @@ function TableInner<T extends Record<string, unknown>>(
           </thead>
           <tbody className={styles.body}>
             {loading ? (
-              <tr>
-                <td colSpan={columns.length} className={styles.loading}>
-                  Loading...
-                </td>
-              </tr>
+              Array.from({ length: resolvedPageSize }, (_, rowIdx) => (
+                <tr key={`skeleton-${rowIdx}`}>
+                  {columns.map((col, colIdx) => (
+                    <td key={col.key}>
+                      <div
+                        className={styles.skeleton}
+                        style={{
+                          width: colIdx === 0 ? '40%' : colIdx === columns.length - 1 ? '50%' : '70%',
+                          animationDelay: `${rowIdx * 60 + colIdx * 30}ms`,
+                        }}
+                      />
+                    </td>
+                  ))}
+                </tr>
+              ))
             ) : pagedData.length === 0 ? (
               <tr>
                 <td colSpan={columns.length} className={styles.empty}>
-                  {emptyText}
+                  <div className={styles.emptyInner}>
+                    <svg className={styles.emptyIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                      <polyline points="13 2 13 9 20 9" />
+                    </svg>
+                    <span className={styles.emptyTitle}>{emptyText}</span>
+                    <span className={styles.emptyDesc}>Arama kriterlerinizi değiştirmeyi veya filtrelerinizi temizlemeyi deneyin.</span>
+                  </div>
                 </td>
               </tr>
             ) : (
@@ -311,9 +377,22 @@ function TableInner<T extends Record<string, unknown>>(
             )}
           </tbody>
         </table>
-      </div>
 
-      {pagination && !loading && pagedData.length > 0 && (
+        {pagination && loading && (
+          <div className={styles.pagination}>
+            <div className={styles.skeletonPagination}>
+              <div className={styles.skeleton} style={{ width: 100, height: 14 }} />
+              <div className={styles.skeleton} style={{ width: 50, height: 28, borderRadius: 'var(--cuk-radius-lg)' }} />
+            </div>
+            <div className={styles.skeletonPagination}>
+              {Array.from({ length: 3 }, (_, i) => (
+                <div key={i} className={styles.skeleton} style={{ width: 30, height: 28, borderRadius: 'var(--cuk-radius-lg)', animationDelay: `${i * 80}ms` }} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {pagination && !loading && pagedData.length > 0 && (
         <div className={styles.pagination}>
           <div className={styles.pageSizeSelect}>
             <span>Sayfa boyutu:</span>
@@ -386,7 +465,8 @@ function TableInner<T extends Record<string, unknown>>(
             </button>
           </div>
         </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
@@ -401,5 +481,8 @@ export const Table = Object.assign(
     Row: TableRow,
     Cell: TableCell,
     HeadCell: TableHeadCell,
+    Actions: TableActions,
+    Action: TableAction,
+    ActionDivider: TableActionDivider,
   },
 );

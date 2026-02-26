@@ -8,6 +8,7 @@ import { Card } from '../card';
 import styles from './StatCard.module.scss';
 
 export type TrendDirection = 'up' | 'down' | 'neutral';
+export type StatCardColor = 'default' | 'success' | 'danger' | 'warning' | 'info';
 
 export interface StatCardProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
@@ -16,6 +17,7 @@ export interface StatCardProps extends React.HTMLAttributes<HTMLDivElement> {
   trendValue?: string;
   icon?: React.ReactNode;
   variant?: CardVariant;
+  color?: StatCardColor;
 }
 
 const TrendArrow: React.FC = () => (
@@ -39,14 +41,20 @@ export const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
       trendValue,
       icon,
       variant = 'default',
+      color = 'default',
       className,
       ...rest
     },
     ref,
   ) => (
-    <Card ref={ref} variant={variant} className={className} {...rest}>
+    <Card
+      ref={ref}
+      variant={variant}
+      className={classNames(color !== 'default' && styles[`color-${color}`], className)}
+      {...rest}
+    >
       <Card.Body>
-        <div className={styles.statCard}>
+        <div className={classNames(styles.statCard, color !== 'default' && styles[`color-${color}`])}>
           <div className={styles.header}>
             <p className={styles.title}>{title}</p>
             {icon && <div className={styles.icon}>{icon}</div>}

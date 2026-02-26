@@ -33,16 +33,18 @@
   height: 36px;
   padding: 0;
   border: 1px solid var(--cuk-color-border);
-  border-radius: 9999px;
+  border-radius: var(--cuk-radius-lg);
   background-color: transparent;
-  color: var(--cuk-color-text-primary);
+  color: var(--cuk-color-text-muted);
   cursor: pointer;
   overflow: hidden;
-  transition:
-    background-color 250ms ease,
-    border-color 250ms ease,
-    box-shadow 250ms ease,
-    color 250ms ease;
+  transition: all 150ms ease;
+
+  &:hover {
+    background-color: var(--cuk-color-background-muted);
+    border-color: var(--cuk-color-border-strong);
+    color: var(--cuk-color-text-primary);
+  }
 
   &:focus-visible {
     outline: 2px solid var(--cuk-color-focus);
@@ -52,26 +54,6 @@
   &:active {
     transform: scale(0.92);
     transition: transform 100ms ease;
-  }
-}
-
-// State-aware hover: warm for moon (going dark), cool for sun (going light)
-
-.light {
-  &:hover {
-    background-color: oklch(0.95 0.040 85);
-    border-color: oklch(0.83 0.120 85);
-    box-shadow: 0 0 12px -2px oklch(0.78 0.140 65 / 0.35);
-    color: oklch(0.57 0.130 50);
-  }
-}
-
-.dark {
-  &:hover {
-    background-color: var(--cuk-color-primary-50);
-    border-color: var(--cuk-color-primary-400);
-    box-shadow: 0 0 12px -2px oklch(0.53 0.290 293 / 0.35);
-    color: var(--cuk-color-primary-500);
   }
 }
 

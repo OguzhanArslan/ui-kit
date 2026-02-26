@@ -40,3 +40,43 @@ export const Neutral: Story = {
 export const NoTrend: Story = {
   args: { title: 'Total Orders', value: '1,234' },
 };
+
+export const ColorDanger: Story = {
+  args: {
+    title: 'Toplam Bakiye',
+    value: '₺-1.615.910,87',
+    trend: 'down',
+    trendValue: '-8.3%',
+    color: 'danger',
+  },
+};
+
+export const ColorSuccess: Story = {
+  args: {
+    title: 'Toplam Bakiye',
+    value: '₺2.450.320,00',
+    trend: 'up',
+    trendValue: '+12.5%',
+    color: 'success',
+  },
+};
+
+export const ColorWarning: Story = {
+  args: {
+    title: 'Bekleyen Ödemeler',
+    value: '₺245.000,00',
+    trend: 'neutral',
+    trendValue: '3 fatura',
+    color: 'warning',
+  },
+};
+
+export const ColorInfo: Story = {
+  args: {
+    title: 'Toplam İşlem',
+    value: '1,234',
+    trend: 'up',
+    trendValue: '+24 bu ay',
+    color: 'info',
+  },
+};

@@ -77,3 +77,48 @@
     transform: rotate(180deg);
   }
 }
+
+// ─── Color Variants ──────────────────────────────────────
+
+@mixin stat-color($name) {
+  &.color-#{$name} {
+    .icon {
+      background-color: var(--cuk-color-#{$name}-100);
+      color: var(--cuk-color-#{$name}-600);
+    }
+
+    .value {
+      color: var(--cuk-color-#{$name}-800);
+    }
+  }
+}
+
+.statCard {
+  @include stat-color('success');
+  @include stat-color('danger');
+  @include stat-color('warning');
+  @include stat-color('info');
+}
+
+// Card-level color styles (background + border)
+// Applied via className on the Card root
+
+.color-success {
+  background-color: var(--cuk-color-success-50);
+  border-color: var(--cuk-color-success-200);
+}
+
+.color-danger {
+  background-color: var(--cuk-color-danger-50);
+  border-color: var(--cuk-color-danger-200);
+}
+
+.color-warning {
+  background-color: var(--cuk-color-warning-50);
+  border-color: var(--cuk-color-warning-200);
+}
+
+.color-info {
+  background-color: var(--cuk-color-info-50);
+  border-color: var(--cuk-color-info-200);
+}

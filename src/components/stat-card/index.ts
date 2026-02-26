@@ -1,2 +1,2 @@
-export type { StatCardProps, TrendDirection } from './StatCard';
+export type { StatCardProps, TrendDirection, StatCardColor } from './StatCard';
 export { StatCard } from './StatCard';

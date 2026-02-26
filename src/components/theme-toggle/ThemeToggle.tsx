@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import classNames from 'classnames';
-
 import { MoonIcon, SunIcon } from '../icons';
 
 import styles from './ThemeToggle.module.scss';
@@ -20,7 +18,7 @@ export const ThemeToggle = () => {
   return (
     <button
       type="button"
-      className={classNames(styles.toggle, isDark ? styles.dark : styles.light)}
+      className={styles.toggle}
       onClick={toggle}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
