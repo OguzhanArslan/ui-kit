@@ -11,6 +11,8 @@ export * from './components/charts';
 export * from './components/checkbox';
 export * from './components/command-palette';
 export * from './components/date-picker';
+export * from './components/empty-state';
+export * from './components/error-fallback';
 export * from './components/formgroup';
 export * from './components/grid';
 export * from './components/input';

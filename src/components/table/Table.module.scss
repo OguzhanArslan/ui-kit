@@ -261,35 +261,8 @@
 // ─── Empty ──────────────────────────────────────────────
 
 .empty {
-  padding: var(--cuk-spacing-12) var(--cuk-spacing-4);
+  padding: 0;
   text-align: center;
-}
-
-.emptyInner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--cuk-spacing-2);
-}
-
-.emptyIcon {
-  width: 40px;
-  height: 40px;
-  color: var(--cuk-color-neutral-200);
-  margin-bottom: var(--cuk-spacing-1);
-}
-
-.emptyTitle {
-  font-size: var(--cuk-font-size-sm);
-  font-weight: var(--cuk-font-weight-medium);
-  color: var(--cuk-color-text-secondary);
-}
-
-.emptyDesc {
-  font-size: var(--cuk-font-size-xs);
-  color: var(--cuk-color-text-muted);
-  max-width: 280px;
-  line-height: var(--cuk-line-height-normal);
 }
 
 // ─── Filter ─────────────────────────────────────────────
