@@ -2,6 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 import classNames from 'classnames';
 
+import { EmptyState } from '../empty-state/EmptyState';
 import { SearchInput } from '../search-input/SearchInput';
 
 import styles from './Table.module.scss';
@@ -352,14 +353,10 @@ function TableInner<T extends Record<string, unknown>>(
             ) : pagedData.length === 0 ? (
               <tr>
                 <td colSpan={columns.length} className={styles.empty}>
-                  <div className={styles.emptyInner}>
-                    <svg className={styles.emptyIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
-                      <polyline points="13 2 13 9 20 9" />
-                    </svg>
-                    <span className={styles.emptyTitle}>{emptyText}</span>
-                    <span className={styles.emptyDesc}>Arama kriterlerinizi değiştirmeyi veya filtrelerinizi temizlemeyi deneyin.</span>
-                  </div>
+                  <EmptyState
+                    title={emptyText}
+                    description="Arama kriterlerinizi değiştirmeyi veya filtrelerinizi temizlemeyi deneyin."
+                  />
                 </td>
               </tr>
             ) : (
